@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html {
+  filter: sepia(10);
+}
+
 body {
   font-size: 1.1rem;
   font-family: var(--font);
@@ -35,20 +39,8 @@ a:hover, a:focus, a:active, a:visited {
 .main__wrapper {
   max-width: 1135px;
   margin: auto;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/paper_fibers.png) repeat;
-}
-
-.main__wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -2rem;
-  right: -2rem;
-  bottom: 0;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/paper_fibers.png) repeat;
-  filter: sepia(1) contrast(1.2) brightness(0.95);
-  z-index: -1;
-  pointer-events: none;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/paper_fibers.png) repeat;
+  padding: 4rem 2rem;
 }
 
 h1 {
@@ -89,9 +81,7 @@ em {
 .title--large {
   font-family: var(--font-title);
   font-size: 32px;
-  font-style: italic;
   text-align: left;
-  margin-bottom: 0.8rem;
 }
 @media (min-width: 700px) {
   .title--large {
@@ -114,7 +104,7 @@ main aside {
 }
 @media (min-width: 700px) {
   main .main-title {
-    grid-column: 1/-1;
+    grid-column: 1/-2;
   }
 }
 @media (min-width: 1024px) {
@@ -139,7 +129,7 @@ main aside {
 }
 @media (min-width: 1024px) {
   main .main-text {
-    grid-column: span 2;
+    grid-column: span 4;
   }
 }
 @media (min-width: 700px) {
