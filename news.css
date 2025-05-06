@@ -2,7 +2,7 @@
   --font: "Playfair", serif;
   --font-title: "Playfair Display", serif;
   --font-sans-serif: "Manrope", sans-serif;
-  --black: #1c1f33;
+  --black: #513a1d;
   --black--acc: #222;
   --gray: #eee;
   --gray-1: #ededed;
@@ -44,7 +44,7 @@ h1 {
 }
 @media (min-width: 700px) {
   h1 {
-    font: 70px/1 "Playfair Display SC";
+    font: 70px/1 "Lustria";
   }
 }
 
