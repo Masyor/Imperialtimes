@@ -217,7 +217,6 @@ img {
   width: 100%;
   filter: grayscale(95%);
   margin-bottom: 0.5rem;
-  border: 1px solid var(--black);
   transition: 0.3s ease;
 }
 
@@ -490,4 +489,48 @@ aside > div > div {
 }
 .cssgrid-collection p a:hover {
   border-bottom: 1px solid;
+}
+.title-with-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  text-align: center;
+}
+
+.title-with-images h1 {
+  font: 50px/1 "Lustria";
+  margin: 0;
+  flex-grow: 1; /* Let title take up more space */
+  text-align: center;
+}
+
+.title-image {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0; /* Prevent images from shrinking too much */
+}
+
+@media (min-width: 700px) {
+  .title-with-images h1 {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title-with-images {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .title-with-images h1 {
+    flex-grow: 0; /* Reset grow on small screens to avoid layout issues */
+  }
+}
+
+@media (min-width: 700px) {
+  main .title-with-images {
+    grid-column: 1 / -1;
+  }
 }
