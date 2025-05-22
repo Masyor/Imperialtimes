@@ -1,0 +1,49 @@
+<head>
+  <link rel="stylesheet" href="news.css">
+</head>
+  <div class="main__wrapper">
+  <main>
+<div class="title-with-images">
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Left Image" class="title-image">
+  <h1>THE IMPERIAL TIMES</h1>
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Right Image" class="title-image">
+</div>
+    <aside> 
+      <div>
+        <div class="issue"></div>
+        <div class="date"></div>
+        <div class="edition">Issue #25</div>
+      </div>
+    </aside>
+    <h2 class="title--large main-title">COMBAT OPERATIONS END ON FERRIX</h2>
+    <div class="main-text multi-column-3">
+      <em>From: @muskovite</em>
+</br></br>Governor David Kim has announced the end of all traitorous rebellion that has taken place on wartorn Ferrix. While besieged on multiple sides and looked to collasped. A timely intervention thanks to Tetrarch Julius Fidelis and multiple forces of the Imperium saw it to that traitors' gains were quickly reversed in favor. 
+
+</br></br>Segmentum Command has issued a minor piece earlier stating, "With the end of 8 years of hostilities. We hope the planet will be able to provide more promethium tithe than before. While also being the center of operations to strike back against traitor held areas in the Segmentum."
+
+</br></br>Despite the victory it has cost much over the 8 years of fighting for control on the planet. With estimates being around 5 million loyal citizens having died due to various reasons and estimates on Imperial Guard and PDF forces still haven't been calculated yet. Segmentum Command has declared you, the reader, are ordered to hold a minute of silence in remembrance of those who died by tratiors' hands. As well as a 20 minute long prayer asking the Emperor to guide those souls along.
+
+</br></br>Finally, with the victory in Ferrix. Forces previously tied up fighting traitors on the planet will be redirected elsewhere. To hopefully ensure bloody fighting like on Ferrix is prevented in the future.
+
+</br></br>May we ever forever follow the path of victory and the final securing of the Emperor's Most Holy Imperium.</p>
+      </div>
+    
+    <h2 class="title--large main-title with-border">WAR ON CASCADIA DRAGS ON</h2>
+    <div class="main-text multi-column-3">
+      <em>From: @altonascends</em>
+      </br></br>The Planet of Cascadia-4 has been under a lot of stress recently as attacks from heretical insurgent forces have increased, along with the desperate need of food and ammunition. 
+      
+      </br></br>However the God Emperor does not leave his loyal followers in the dark and wishing for aid. So fresh from their last conquests the legions of the Emperor have arrived on the world. 
+        
+        </br></br>It has gone from a distinct lack of men to two separate Lord Generals with their massive forces of air assault troops fresh off of Ferrix and a massive naval presence of the Hanseatic Fleet has out to help secure the riverways that until that time were under seige by horrific forces. 
+          
+          </br></br>Stay tuned for more information  on ensuing imperial victory and remember to buy your warbonds, a buck today is a baneblade tommorow.</div>
+      
+    <div class="sidebar">
+      <h5>Administratum Updates</h5>
+<p class="magazine"> In a win for historic reanactors and cosplay enthusiasts, Napoleonic and Medieval forces have had their manpower increased by roughly 50% across the board
+  <p class="magazine"> In a win for historic reanactors and cosplay enthusiasts, Napoleonic and Medieval forces have had their manpower increased by roughly 50% across the board
+    </div>
+  </main>
+</div>
