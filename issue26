@@ -1,0 +1,45 @@
+<head>
+  <link rel="stylesheet" href="news.css">
+</head>
+  <div class="main__wrapper">
+  <main>
+<div class="title-with-images">
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Left Image" class="title-image">
+  <h1>THE IMPERIAL TIMES</h1>
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Right Image" class="title-image">
+</div>
+    <aside> 
+      <div>
+        <div class="issue"></div>
+        <div class="date"></div>
+        <div class="edition">Issue #26</div>
+      </div>
+    </aside>
+    <h2 class="title--large main-title">POSSIBLE RECORD BROKEN, PROBABLY NOT RECOGNIZED, DEFINITELY NOT IMPORTANT</h2>
+    <div class="main-text multi-column-3">
+      <em>From: The Edior</em>
+</br></br>Sources within the local Administratum scribal division have tentatively suggested that The Imperial Times may have broken a record for “longest officially published article title” with its recent entry: “A TRANSCRIPT OF THE SPEECH AFTER THE BATTLE OF KINH ON THE WORLD OF FERRIX. TRANSCRIBED BY JIMMY FALCON, SPOKEN BY LORD-COLONEL GREG CASC.” as published in issue 24.
+ 
+</br></br>While the Lexicographic Sub-Department has refused to confirm or deny the record’s existence (citing a backlog originating  in M35), celebrations were briefly considered before being cancelled due to an insufficient number of forms. Regardless, we remain proud of our excessive verbosity.
+
+      </div>
+    
+    <h2 class="title--large main-title with-border">ADEPTUS ADMINISTRATUM DECLARE LOCAL MOON "TECHNICALLY A CHAIR"</h2>
+    <div class="main-text multi-column-3">
+      <em>From: The Editor</em>
+      </br></br>After a three-year jurisdictional dispute between the Estate Imperium, the Departmento Cartographicae, and the Office of Orbital Furnishings (Subsection B), Prefectus Vellox Durn has officially declared the moon of Hark’s Folly to be “technically a chair.” 
+      
+      </br></br>The classification stems from a poorly translated stellar survey, which described the moon’s shape as “reclining and rigid, suitable for support.” Subsequent auto-transcriptions filed it under “Furniture: Ceremonial”, resulting in several sub-sector law codes recognizing it as a seating object rather than a celestial body. 
+        
+        </br></br>While this designation has no immediate effect on planetary operations, it has caused mild logistical confusion, particularly for orbital deployment orders, which now require troops to “disembark upon the Seat.” The local Arbites precinct has begun using the ruling to justify unusual sentencing, including one heretic’s banishment to “sit and reflect on his crimes” for twenty years. 
+          
+          </br></br>Imperial High Command has declined to issue a correction, stating only: “The matter is settled. The moon is a chair. Sit on it.”</div>
+      
+    <div class="sidebar">
+      <h5>Administratum Updates</h5>
+<p class="magazine"> Rumours abound of a new pattern of power armour named "Saturine." Imperial officials vehminently deny its existance and anyone claiming to have access to it is to be declared Excommunicate Tratoris.
+<p class="magazine"> The Orca-class Dropship has been formally added to the Tau section of the sanctioned xenos mercenaries register. Use by loyalist-aligned auxiliaries has been approved under restricted oversight by the Ordo Xenos.
+<p class="magazine"> The central Imperial Forces Register, containing links to all sanctioned military assets, has been updated for improved clarity and navigational efficiency. Personnel are advised to consult the revised index to ensure proper force selection and compliance with deployment protocols. Some say it has everything you need.
+    </div>
+  </main>
+</div>
