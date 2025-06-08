@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href="news.css">
+</head>
+  <div class="main__wrapper">
+  <main>
+<div class="title-with-images">
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Left Image" class="title-image">
+  <h1>THE IMPERIAL TIMES</h1>
+  <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Right Image" class="title-image">
+</div>
+    <aside> 
+      <div>
+        <div class="issue"></div>
+        <div class="date"></div>
+        <div class="edition">Issue #27</div>
+      </div>
+    </aside>
+    <h2 class="title--large main-title">YEARLY FESTIVAL SLASH ORK HUNTING RITUAL SEES NEW RECORD-BREAKING TOWER CREATED BY THE "ABUNDANT NATURAL RESOURCES GIFTED TO US BY THE OMNISSIAH TO ENSURE OUR BLADES STAY SHARP"</h2>
+    <div class="main-text multi-column-3">
+      <em>From: wantheawoo</em>
+</br></br>Breaking bones and new records, Magos Artisan Adraxi displays the winning pile of Ork Skulls for the yearly Ryzan Ork Hunt. Made up of 7,381 skulls fused into large blocks of bone while keeping a general skull motiff, the pillar has been judged to be both an artistic piece of work and a stable structure, breaking the previous record of 6,281 skulls set by Magos Metallurgicus Robert. Work on converting the Tower of Bones into a functional recycling bay for the Ork Corpses that still litter Ryza will begin at the end of the festival.
+<img src="img/Issue27/issue27-1.png">
+      </div>
+    
+    <h2 class="title--large main-title with-border">FANTASTIC FIGHTING ON FARUUN FRIGHTENS AND FLOUDERS FEEBLE FOES FAST.</h2>
+    <div class="main-text multi-column-3">
+      <em>From: altonascends</em>
+      </br></br>The world of Faruun was is recently being reclaimed from non-natural biome degradation by the many skilled and wise adepts of Ryza, Furnace of Shackled Stars. Once more the brilliant minds of the Adeptus Mechanicus have done what the vile and ignorant xenos never could and return this world to some form of life. So enraged to see humanity prospering where the vile xenos could not the perfidious t'au launched a feeble assault. Nearby, Imperial forces swarming to our allies defense allowed for the local Mechanicus forces to not even have to stop their important revitalization of the world. Soon the filthy T'au will not only be booted of off this planet but off of every other possible world they could ever hope to hold. 
+</br></br>Signing off as your War Reporter Jimmy Falcon.
+</div>
+
+    <h2 class="title--large main-title with-border">MORDAXIS HIVE LIBERATED!</h2>
+    <div class="main-text multi-column-3">
+      <em>From: altonascends</em>
+      </br></br>MORDAXIS HIVE — The bells are ringing in Mordaxis, folks — and for once, they’re not tolling for the dead. That’s right: seventeen solar weeks of fire, fury, and faith have paid off. The hive is back in Imperial hands!
+
+</br></br>The Angels in blue — Ultramarines if you're nasty — along with their slick-boot Auxilia, the trench-tough Cadians, our sharp-dressed Tempestus Scions, and the bronze-armored heartthrobs of the Astartes —the Bronze Knights—marched in and made good on the Emperor’s promise: no quarter for xenos scum.
+
+</br></br>But don’t pop your ration-champagne just yet. Because this party’s got a basement. And it stinks.
+
+</br></br>Word on the vox is there’s a rotten nest of Genestealer filth wriggling around in the belly of a derelict Space Hulk buried under the Hive. A real house of horrors: twisted tunnels, bio-freak murals, and hybrids playing dress-up in the faces of your neighbors. It’s not just heresy, folks—it’s family betrayal with tentacles.
+
+</br></br>Up top, the cleanup’s getting spicy. The Ecclesiarchy and the big-letter boys from the Inquisition are turning over every bolt-hole and sump drain. Whole hab-blocks are getting a holy barbecue, and anyone with a suspicious sneeze is getting a gene-scan faster than you can say “Ave Imperator.”
+
+</br></br>Meanwhile, the brave drop teams are spelunking into the black gut of that Hulk. No vox. No light. Just bolters, prayers, and bad odds.
+
+</br></br>Stay tuned, citizens. Sleep with your lasgun. And if your brother starts speaking in riddles — Report. Cleanse. Repeat.
+
+ </br></br>Remember: The Emperor protects — but only if you do your part.
+</div>
+
+    <div class="sidebar">
+      <h5>Administratum Updates</h5>
+<p class="magazine">Naval Breachers have inexplicably arrived en masse, armed to the teeth and organized into their own operational tab. Equipment, unit types, and mission parameters have all been overhauled; refer to the updated Breacher dossier for more information.  
+<p class="magazine"> Following an Adeptus Veto, the previously half-applied Skitarii Maniple size increase has been fully reverted. Skitarii enjoyers are advised to recalculate immediately to avoid disciplinary recalibration.
+<p class="magazine"> The Household dossier now clearly distinguishes between support-focused and military-focused champions. Nobility and retainers are advised to consult the update to ensure proper deployment.
+<p class="magazine"> Renowned War Reporter Jimmy Falcon is well known for his ability to report in the most dangerous of fields, and be present in many scoops even when unfeisably seperated. Recently, insider sources have discovered Jimmy Falcon to be a collective pool of people sharing a singular mind. How he managed to obtain such a state of being is unclear, and people are torn on how to react to this new development. Is it a clever use of his capabilities, or is it a betrayal of the heart of Reporting?
+    </div>
+  </main>
+</div>
