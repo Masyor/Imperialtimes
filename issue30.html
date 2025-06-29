@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times</title>
+    <link rel="stylesheet" href="crossword.css">
+    </head>
+<body>
+    <div class="main__wrapper">
+        <main>
+            <div class="title-with-images">
+                <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Left Image" class="title-image">
+                <h1>THE IMPERIAL TIMES</h1>
+                <img src="https://github.com/Masyor/Imperialtimes/blob/main/Aquilasepia.png?raw=true" alt="Right Image" class="title-image">
+            </div>
+            <aside>
+                <div>
+                    <div class="issue"></div>
+                    <div class="date"></div>
+                    <div class="edition">Issue #30</div>
+                </div>
+            </aside>
+            <h2 class="title--large main-title">ARBITES IN TERTIUM, AN ESCALATION?</h2>
+            <div class="main-text multi-column-3">
+                <em>From: warclaimer</em>
+                </br></br>A week ago, the Times' contacts within the Moebian 53rd have reported sighting of Adeptus Arbites members engaging in combat missions within the Hive City of Tertium on Atoma Prime. Reports detail a variety of units, insignia, honors, and Cyber-Mastiffs present performing the God Emperor's work against the devious Lex Breakers. While it is neither the position of this article to question the soundness of this decision the readers should note that various Guard Regiments have already been deployed to the Hive City in order to combat the rising dissent within the Hive, including but not limited to the Moebian 53rd, 21st, 33rd, and various others including a [REDACTED]. We at the Imperial Times can only hope for the smooth deployment of the Adeptus Arbites on Atoma Prime and for the expedient quelling of uprisings in the Hive City at large.   </div>
+            <h2 class="title--large main-title with-border">THE DEPARTMENTO COMMISSERATUM PRESENTS:</h2>
+            <div class="main-text multi-column-3">
+                <em>From: nmishere_96602</em>
+                  
+</br></br>“Therapy Is Not Heresy™” — Now With Fewer Executions!
+
+</br></br>Feeling stressed? Haunted by the screams of your regiment? Does the daily grind of watching Guardsmen turn into red mist weigh heavily on your soul?
+
+</br></br>You may be entitled to Mandatory Emotional Regulation Therapy, provided by the Commissariat Therapeutica Division—because morale is a resource, and you're wasting it.   
+
+
+</br></br>Your Mind is the Emperor’s Tool. Let Us Sharpen It.
+
+</br></br>Our certified Commissar-Therapists are trained in both cognitive restructuring and summary execution, offering a unique blend of battlefield support and emotional suppression coaching. Whether you're suffering from survivor's guilt or impure thoughts about unauthorized xeno contact, we have a protocol for that. (Usually involves pushups.)
+
+</br></br><b>OUR SERVICES INCLUDE:</b>
+
+</br></br><b>Vox-Based Scream Journaling™</b>
+</br>Shout your feelings directly into the void! A servitor records your emotional outburst and files it somewhere deep in the Administratum where no one will ever read it. Cathartic!
+
+</br></br><b>Trigger Discipline: Emotional Edition</b>
+</br>Learn how to reframe traumatic experiences into productivity reports! Remember: it’s not PTSD, it’s "Post-Theatre Strategic Drive™."
+
+</br></br><b>"One More Word and You're a Heretic" Sessions</b>
+</br>Express yourself freely—within Regulation 55-A, Subsection 4.1 of the Commissariat Emotional Output Parameters. Side effects may include clarity, relief, or laspistol burns.
+
+</br></br><b>Group Therapy (With Chainswords)</b>
+</br>Sometimes the best way to heal is together. Other times, it's learning which squadmates are secretly cowards. Either way, you'll leave with better morale—or at least fewer limbs.
+
+</br></br><b>TESTIMONIAL:</b>
+</br>"I cried in front of Commissar Jarn. He nodded once and told me, 'That's regulation-approved weakness. Carry on.' I haven’t felt feelings since. 10/10.”
+</br>— Trooper Vask, 12th Necromundan
+
+</br></br><b>WHY CHOOSE US?</b>
+
+</br>Because emotional collapse on the battlefield is a form of desertion.
+</br>Because trauma should be purified, not repressed.
+</br>Because we’re the only therapists allowed to carry bolt pistols.
+
+</br></br><b>SIGN UP TODAY!</b>
+</br>Get your free copy of “Coping Through Conformity: A Primer for the Emotionally Frail”, a data-slate full of regulation-approved affirmations like:
+
+</br></br></br></br>"The Emperor protects, but not your feelings."
+
+</br></br>"Suppression is strength."
+
+</br></br>"Your squadmates died so you could file this paperwork."
+
+</br></br>Commissariat Therapeutica Division
+</br>“Because not all wounds are visible… but most still get shot.”
+</div>
+            <hr>
+
+            <section class="crossword-section">
+                <h2 class="title--large">This Week's Warhammer Crossword</h2>
+                <div class="crossword-container">
+                    <div id="crossword-grid" class="crossword-grid">
+                        </div>
+                    <div class="crossword-clues">
+                        <div class="clue-list">
+                            <h5 class="clue-heading">Across</h5>
+                            <ol id="clues-across">
+                                </ol>
+                        </div>
+                        <div class="clue-list">
+                            <h5 class="clue-heading">Down</h5>
+                            <ol id="clues-down">
+                                </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="crossword-controls">
+                    <button id="check-answers" class="btn">Check Answers</button>
+                    <button id="reset-puzzle" class="btn">Reset Puzzle</button>
+                </div>
+            </section>
+
+            <div class="sidebar">
+                <h5>Administratum Updates</h5>
+                <p class="magazine">From the heart of the Imperium, whispers turn to shouts as news of Theia's burgeoning population reaches critical mass, pushing the planet ever closer to its designation as a true hive world. Meanwhile, amidst the smog and toil, resentment simmers amongst Theia's fifteen billion souls as resources are diverted to the pleasure planet Theia Prime, feeding the insatiable appetites of the Harker family.
+                <p class="magazine"> Administratum warband reforms have resulted in bands of like-minded individuals grouping together. There so called "champion bands" are no longer limited by diversity quotas!
+                <p class="magazine"> Reports from numerous forge worlds and explorator fleets suggest that the Adeptus Mechanicus are growing restless. Expect changes soon, or not, the followers of the Omnissiah are famously resistant to change.
+            </div>
+        </main>
+    </div>
+<script>
+          document.addEventListener('DOMContentLoaded', () => {
+          console.log('DOMContentLoaded fired! Script is running.');
+            const crosswordGridElement = document.getElementById('crossword-grid');
+            const cluesAcrossElement = document.getElementById('clues-across');
+            const cluesDownElement = document.getElementById('clues-down');
+            const checkAnswersButton = document.getElementById('check-answers');
+            const resetPuzzleButton = document.getElementById('reset-puzzle');
+          
+          console.log('Check Answers Button:', checkAnswersButton);
+    console.log('Reset Puzzle Button:', resetPuzzleButton);
+
+            // Define your Warhammer-themed crossword data
+            // Format: { answer: "WORD", clue: "Clue text" }
+            // NEW Crossword Data (Imperium-centric)
+const crosswordData = [
+    { word: "IMPERIUM", clue: "The hallowed domain of Mankind, ruled by the Golden Throne, stretching across the stars. (8 Across)" }, // 0
+    { word: "BOLTER", clue: "The blessed weapon of the Adeptus Astartes, spitting sacred rounds. (6 Across)" }, // 1
+    { word: "TERRA", clue: "The Holy Throneworld, birthplace of Mankind and guiding light of the Imperium. (5 Across)" }, // 2
+    { word: "XENOS", clue: "Filthy alien, an abomination to be purged in the Emperor's name. (5 Across)" }, // 3
+    { word: "FAITH", clue: "Our unshakeable conviction, a shield against heresy and despair, provided by the Ecclesiarchy. (5 Down)" }, // 4
+    { word: "ADMECH", clue: "Shortened term for the holy priesthood of Mars, masters of sacred technology and arcane rites. (6 across)" }, // 5
+    { word: "HERESY", clue: "The gravest sin, a betrayal of the Emperor's divine will, punished by flame. (6 Down)" }, // 6
+    { word: "ORGANISE", clue: "A key duty of the Administratum, to efficiently structure the vast demands of tithes and war efforts across countless sectors. (7 Across)" } // 7
+];
+
+// NEW Grid Layout (for a 10x10 grid, adjust maxRows/maxCols if needed)
+// This layout ensures clear overlaps and unique clue numbers.
+// Format: { row, col, direction, length, dataIndex (from crosswordData), clueNumber }
+const gridLayout = [
+    // Across Clues
+    { row: 2, col: 0, direction: 'across', length: 5, dataIndex: 2, clueNumber: 1 },  // 1A: TERRA
+    { row: 4, col: 1, direction: 'across', length: 6, dataIndex: 1, clueNumber: 3 },  // 3A: BOLTER
+    { row: 11, col: 1, direction: 'across', length: 5, dataIndex: 3, clueNumber: 4 },  // 4A: XENOS
+    { row: 7, col: 4, direction: 'across', length: 6, dataIndex: 5, clueNumber: 6 },  // 6A: ADMECH
+
+    // Down Clues
+    { row: 1, col: 4, direction: 'down', length: 5, dataIndex: 4, clueNumber: 2 },   // 2D: FAITH 
+    { row: 7, col: 9, direction: 'down', length: 6, dataIndex: 6, clueNumber: 5 },   // 5D: HERESY
+    { row: 0, col: 6, direction: 'down', length: 8, dataIndex: 0, clueNumber: 8 },   // 8A: IMPERIUM
+    { row: 4, col: 2, direction: 'down', length: 6, dataIndex: 7, clueNumber: 9 }    // 9A: ORGANISE
+];
+
+            const maxRows = 13; // Max rows in the grid
+            const maxCols = 10; // Max columns in the grid
+
+            // Create a 2D array to represent the grid for internal logic
+            let grid = Array(maxRows).fill(null).map(() => Array(maxCols).fill(''));
+
+            function initializeGrid() {
+                // Clear previous grid
+                crosswordGridElement.innerHTML = '';
+                cluesAcrossElement.innerHTML = '';
+                cluesDownElement.innerHTML = '';
+                grid = Array(maxRows).fill(null).map(() => Array(maxCols).fill(''));
+
+                // Fill grid with words based on layout
+                gridLayout.forEach(wordDef => {
+                    const word = crosswordData[wordDef.dataIndex].word;
+                    let { row, col, direction } = wordDef;
+                    for (let i = 0; i < word.length; i++) {
+                        grid[row][col] = word[i]; // Store correct letter
+                        if (direction === 'across') {
+                            col++;
+                        } else {
+                            row++;
+                        }
+                    }
+                });
+
+                // Render the grid HTML
+                crosswordGridElement.style.gridTemplateColumns = `repeat(${maxCols}, 1fr)`;
+                crosswordGridElement.style.gridTemplateRows = `repeat(${maxRows}, 1fr)`;
+
+                for (let r = 0; r < maxRows; r++) {
+                    for (let c = 0; c < maxCols; c++) {
+                        const cell = document.createElement('div');
+                        cell.classList.add('crossword-cell');
+
+                        // Determine if cell should be empty (black) or interactive
+                        const hasWordPart = gridLayout.some(wordDef => {
+                            const word = crosswordData[wordDef.dataIndex].word;
+                            let { row, col, direction } = wordDef;
+                            for (let i = 0; i < word.length; i++) {
+                                if (direction === 'across' && wordDef.row === r && (wordDef.col + i) === c) return true;
+                                if (direction === 'down' && (wordDef.row + i) === r && wordDef.col === c) return true;
+                            }
+                            return false;
+                        });
+
+                        if (!hasWordPart) {
+                            cell.classList.add('empty');
+                        } else {
+                            const input = document.createElement('input');
+                            input.type = 'text';
+                            input.maxLength = '1';
+                            input.dataset.row = r;
+                            input.dataset.col = c;
+                            cell.appendChild(input);
+
+                            // Add clue number if this cell is a starting point for a word
+                            const startingWord = gridLayout.find(wd => wd.row === r && wd.col === c);
+                            if (startingWord) {
+                                const clueNumber = document.createElement('span');
+                                clueNumber.classList.add('clue-number');
+                                clueNumber.textContent = startingWord.clueNumber;
+                                cell.appendChild(clueNumber);
+                            }
+                        }
+                        crosswordGridElement.appendChild(cell);
+                    }
+                }
+
+                // Populate clues
+                const acrossClues = gridLayout.filter(wd => wd.direction === 'across').sort((a, b) => a.clueNumber - b.clueNumber);
+                acrossClues.forEach(wordDef => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${wordDef.clueNumber}.</strong> ${crosswordData[wordDef.dataIndex].clue.replace(/\(.*\)/, '')}`; // Remove (X Across) part
+                    cluesAcrossElement.appendChild(listItem);
+                });
+
+                const downClues = gridLayout.filter(wd => wd.direction === 'down').sort((a, b) => a.clueNumber - b.clueNumber);
+                downClues.forEach(wordDef => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${wordDef.clueNumber}.</strong> ${crosswordData[wordDef.dataIndex].clue.replace(/\(.*\)/, '')}`; // Remove (X Down) part
+                    cluesDownElement.appendChild(listItem);
+                });
+            }
+
+            function checkAnswers() {
+    console.log('Check Answers button clicked!');
+    const inputCells = crosswordGridElement.querySelectorAll('.crossword-cell input');
+    console.log('Total input cells found:', inputCells.length); // NEW LOG
+
+    inputCells.forEach(input => {
+        const row = parseInt(input.dataset.row);
+        const col = parseInt(input.dataset.col);
+        const enteredLetter = input.value.toUpperCase();
+        const correctLetter = grid[row] ? grid[row][col] : undefined; // Added check for grid[row] existence
+
+        console.log(`Processing cell [${row}, ${col}]:`); // NEW LOG
+        console.log(`  Entered: '${enteredLetter}'`); // NEW LOG
+        console.log(`  Correct: '${correctLetter}'`); // NEW LOG
+
+        input.parentNode.classList.remove('correct', 'incorrect'); // Clear previous feedback
+
+        // Check if correctLetter is found and not empty before comparing
+        if (correctLetter !== undefined && correctLetter !== '' && enteredLetter === correctLetter && enteredLetter !== '') {
+            input.parentNode.classList.add('correct');
+            console.log('  -> Marked as CORRECT'); // NEW LOG
+        } else if (enteredLetter !== '') { // Only mark incorrect if something was entered
+            input.parentNode.classList.add('incorrect');
+            console.log('  -> Marked as INCORRECT'); // NEW LOG
+        } else {
+            console.log('  -> Input is empty, no feedback applied'); // NEW LOG
+        }
+    });
+}
+
+            function resetPuzzle() {
+              console.log('Reset Puzzle button clicked!'); 
+                const inputCells = crosswordGridElement.querySelectorAll('.crossword-cell input');
+                inputCells.forEach(input => {
+                    input.value = '';
+                    input.parentNode.classList.remove('correct', 'incorrect');
+                });
+            }
+
+            // Event Listeners
+            checkAnswersButton.addEventListener('click', checkAnswers);
+            resetPuzzleButton.addEventListener('click', resetPuzzle);
+
+            // Initial grid render
+            initializeGrid();
+        });
+</script>
+</body>
+</html>
