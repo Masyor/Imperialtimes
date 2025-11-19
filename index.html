@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Cogitator Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+
+        :root {
+            --cog-color: #3A9C3A;
+            --bg-color: #000000;
+            --corrupt-color: #CC3333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--cog-color);
+            font-family: 'Inconsolata', monospace;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-shadow: 0 0 5px var(--cog-color);
+        }
+
+        .cogitator-display {
+            width: 90%;
+            max-width: 800px;
+            height: 85vh;
+            padding: 2rem;
+            border: 5px solid var(--cog-color);
+            box-shadow: 0 0 10px var(--cog-color), inset 0 0 10px var(--cog-color);
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.85);
+            animation: wobble 10s ease-in-out infinite alternate;
+        }
+        
+        @keyframes wobble {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            50% { transform: translate(-1px, 0px) rotate(0.1deg); }
+            100% { transform: translate(1px, 1px) rotate(0deg); }
+        }
+
+        .cogitator-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.3) 1px,
+                transparent 2px,
+                transparent 3px
+            );
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .flicker {
+            animation: flicker-animation 0.1s infinite alternate;
+        }
+
+        @keyframes flicker-animation {
+            0% { opacity: 1; }
+            10% { opacity: 0.9; }
+            20% { opacity: 1; }
+            30% { opacity: 0.8; }
+            40% { opacity: 1; }
+            50% { opacity: 0.7; }
+            60% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .cog-button {
+            background-color: var(--cog-color);
+            color: var(--bg-color);
+            border: 2px solid var(--cog-color);
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 0 8px var(--cog-color);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .cog-button:hover {
+            background-color: var(--bg-color);
+            color: var(--cog-color);
+            box-shadow: 0 0 15px var(--cog-color);
+        }
+        .cog-button:disabled {
+            background-color: rgba(58, 156, 58, 0.3);
+            color: var(--bg-color);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #issue-list {
+            list-style-type: none;
+            padding: 1rem 0 2rem 0;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+
+        #issue-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        #issue-list a {
+            color: var(--cog-color);
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            transition: background-color 0.1s;
+        }
+
+        #issue-list a:hover {
+            background-color: rgba(58, 156, 58, 0.1);
+        }
+
+        .corrupted-text {
+            color: var(--corrupt-color);
+            text-shadow: 0 0 5px var(--corrupt-color);
+        }
+
+        #issue-list {
+            scrollbar-color: var(--cog-color) rgba(0, 0, 0, 0.5); 
+            scrollbar-width: thin;
+        }
+        
+        #issue-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        #issue-list::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 1px solid rgba(58, 156, 58, 0.3);
+        }
+        #issue-list::-webkit-scrollbar-thumb {
+            background-color: var(--cog-color);
+            border: 1px solid var(--cog-color);
+            box-shadow: 0 0 5px var(--cog-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cogitator-display">
+
+        <div id="boot-sequence">
+            <pre class="flicker" id="boot-output"></pre>
+        </div>
+
+        <div id="login-screen" class="hidden text-center">
+            <div class="flicker mb-10">
+                <p>--- IMPERIAL COGITATOR MODEL P-47 'SENTINEL' ---</p>
+                <p>ARCHIVE DATALINK STATUS: ONLINE</p>
+                <p>SECURITY PROTOCOL: ACTIVE</p>
+            </div>
+            
+            <h1 class="text-3xl mb-8">AWAITING AUTHORIZATION...</h1>
+            
+            <div id="login-fields">
+                <p>USERNAME: <span id="access-code" class="flicker">|</span></p>
+                <p>PASSWORD: <span id="designation" class="flicker">|</span></p>
+            </div>
+
+            <button id="auth-button" class="cog-button" onclick="handleLoginAttempt()">
+                INITIATE CREDENTIAL UPLOAD (CLICK TO AUTHENTICATE)
+            </button>
+
+            <p id="auth-status" class="mt-8 text-xl"></p>
+        </div>
+
+        <div id="main-interface" class="hidden">
+            <h1 class="text-3xl mb-4 flicker">IMPERIAL TIMES ARCHIVE - ACCESS LEVEL: 7/ALPHA</h1>
+            <p class="mb-4">COORDINATE: SEGMENTUM PACIFICUS. SUB-LEVEL: STASIS VAULT 47/OMEGA</p>
+            <p class="text-xl mb-4">SELECT CHRONICLE ENTRY FOR REVIEW:</p>
+            
+            <ul id="issue-list" class="space-y-1">
+                
+            </ul>
+
+            <p class="mt-4 text-sm flicker">DATASTREAM STABLE. AWAITING INPUT. (P-47 COG STATUS: ONLINE)</p>
+        </div>
+
+    </div>
+
+    <script>
+        const bootOutput = document.getElementById('boot-output');
+        const bootSequenceDiv = document.getElementById('boot-sequence');
+        const loginScreen = document.getElementById('login-screen');
+        const mainInterface = document.getElementById('main-interface');
+        const authButton = document.getElementById('auth-button');
+        const authStatus = document.getElementById('auth-status');
+        const accessCodeSpan = document.getElementById('access-code');
+        const designationSpan = document.getElementById('designation');
+        
+        const weightedBootTextPool = [
+            { text: "COGITATOR OS: VERITAS IMPERIUM LXIV.9 - INIT", weight: 5 },
+            { text: "ADEPTUS MECHANICUS LICENSE EXPIRES SOON", weight: 5 },
+            { text: "SYSTEM CHECK: NOOSPHERE LINK NOT FOUND", weight: 5 },
+            { text: "HARDWARE INVENTORY: DATA-SLATE READER: OK", weight: 5 },
+            { text: "ADMECH REWORK: DELAYED", weight: 5},
+            { text: "ACCESSING ARCHIVE DATALINK (LOCUS CATHEDRALIS): OK", weight: 5 },
+            { text: "VERIFYING SCRIPTURE CACHE: PASS (SEAL OF THE EMPEROR INTACT)", weight: 5 },
+            { text: "LOAD PROCESS: WARMING UP FLUIDIC PROCESSORS... 100%", weight: 5 },
+            { text: "LOAD PROCESS: SYNCHRONIZING WITH HIGH GOTHIC TIMEBASE... OK", weight: 5 },
+            { text: "LOAD PROCESS: PRAYERS OF MAINTENANCE RECITED.", weight: 5 },
+            { text: "SYSTEM CHECK: VOX-CASTER MODULE: ONLINE", weight: 4 },
+            { text: "SYSTEM CHECK: PLASMA REGULATOR: STABLE [TEMP: 40K]", weight: 4 },
+            { text: "HARDWARE INVENTORY: AUGUR ARRAY: OK", weight: 4 },
+            { text: "HARDWARE INVENTORY: CHRONICLER MECHADENDRITE: OK", weight: 4 },
+            { text: "INITIATING DATA CLEANSE PROTOCOL: EXTERMINATUS_SCRUB.EXE", weight: 3 },
+            { text: "DATA AUDIT COMPLETE. 40,000 HAMMERS OF WAR FOUND.", weight: 3 },
+            { text: "CHECKING FOR HERESY SIGNATURES... CLEAN.", weight: 3 },
+            { text: "WARNING: GELLAR FIELD INTEGRITY AT 98.7% - ACCEPTABLE DEGRADATION", weight: 2 },
+            { text: "PROCESSOR RITUAL: UNCTION OF HOLY OILS REQUIRED. [Skipping for Speed]", weight: 2 },
+            { text: "SECTOR PRAYER COUNT: 407,812,990 [INSUFFICIENT]", weight: 2 },
+            { text: "ERROR [NON-CRITICAL]: LOGIC-ENGINE 5% LOUDER THAN SPEC.", weight: 2 },
+            { text: "RE-ROUTING POWER FROM TOASTER ARRAY.", weight: 2 },
+            { text: "DETECTED ARTEFACT 001: ROGUE AI FRAGMENT [IGNORING]", weight: 1 },
+            { text: "DATALINK: CONTACTING IMPERIAL TITHE BUREAU... [CONNECTION TIMEOUT]", weight: 1 },
+            { text: "INITIALIZING VOID SHIELD... [FAILED]", weight: 1 },
+            { text: "WARNING: XENOS DNA FRAGMENTS DETECTED IN LOGS. PURGE ADVISED.", weight: 1 },
+            { text: "SUB-PROGRAM: 'MINI-GAME_TETRIS.EXE' FOUND. ACCESS DENIED [BY ORDER OF THE INQUISITION].", weight: 1 },
+        ];
+
+        const weightedUsernamesPool = [
+            { text: "AD-CLERK_047-B", weight: 8 },
+            { text: "ADMINISTRATUM_CLERK_209", weight: 8 },
+            { text: "IMPERIAL_TIMES_11", weight: 6 },
+            { text: "TECH-PRIEST_GAMMA-8", weight: 6 },
+            { text: "ORDO_HERETICUS_AUDIT", weight: 3 },
+            { text: "EDITOR", weight: 4 },
+            { text: "MASYORFAN#1", weight: 2 },
+            { text: "SPEAKER", weight: 1 },
+            { text: "YO MOMMA", weight: 1 },
+        ];
+        
+        const NUMBER_OF_RANDOM_LINES = 18;
+
+        let finalBootText = [];
+        
+        function generateFinalBootSequence() {
+            const weightedItems = [];
+            weightedBootTextPool.forEach(item => {
+                for (let i = 0; i < item.weight; i++) {
+                    weightedItems.push(item.text);
+                }
+            });
+
+            const selectedLinesSet = new Set();
+            
+            while (selectedLinesSet.size < NUMBER_OF_RANDOM_LINES) {
+                const randomIndex = Math.floor(Math.random() * weightedItems.length);
+                selectedLinesSet.add(weightedItems[randomIndex]);
+            }
+            
+            const selectedLines = Array.from(selectedLinesSet);
+            
+            for (let i = selectedLines.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [selectedLines[i], selectedLines[j]] = [selectedLines[j], selectedLines[i]];
+            }
+
+            selectedLines.push("BOOT SEQUENCE: COMPLETE. GLORY TO THE NEWS.");
+            selectedLines.push("TRANSFERRING CONTROL TO AUTHENTICATION SYSTEM...");
+            
+            return selectedLines;
+        }
+
+        function getRandomUsername() {
+            const weightedItems = [];
+            weightedUsernamesPool.forEach(item => {
+                for (let i = 0; i < item.weight; i++) {
+                    weightedItems.push(item.text);
+                }
+            });
+            const randomIndex = Math.floor(Math.random() * weightedItems.length);
+            return weightedItems[randomIndex];
+        }
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        let typingSpeed = 3; 
+        
+        function typeWriter() {
+            if (lineIndex < finalBootText.length) {
+                const currentLine = finalBootText[lineIndex];
+                
+                if (charIndex < currentLine.length) {
+                    bootOutput.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, typingSpeed);
+                } else {
+                    bootOutput.textContent += '\n';
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeWriter, 30); 
+                }
+            } else {
+                setTimeout(showLoginScreen, 1500); 
+            }
+        }
+
+        function showLoginScreen() {
+            bootSequenceDiv.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+        }
+
+
+        function handleLoginAttempt() {
+            authButton.disabled = true;
+            authButton.textContent = 'AUTHENTICATING... STAND BY.';
+            
+            // 1. Simulate Username and Password Generation
+            const username = getRandomUsername();
+            const passwordLength = Math.floor(Math.random() * (13 - 5 + 1)) + 5; 
+            const password = '*'.repeat(passwordLength); 
+            
+            authStatus.textContent = '--- PINGING AUTH SERVER [0x40K]...';
+            
+            // Username typing interval (20ms)
+            let codeIndex = 0;
+            const codeInterval = setInterval(() => {
+                if (codeIndex < username.length) {
+                    accessCodeSpan.textContent = username.substring(0, codeIndex + 1);
+                    codeIndex++;
+                } else {
+                    clearInterval(codeInterval);
+                    accessCodeSpan.classList.remove('flicker');
+                    
+                    // Password typing interval (30ms)
+                    let desIndex = 0;
+                    const desInterval = setInterval(() => {
+                        if (desIndex < password.length) {
+                            designationSpan.textContent = password.substring(0, desIndex + 1);
+                            desIndex++;
+                        } else {
+                            clearInterval(desInterval);
+                            designationSpan.classList.remove('flicker');
+                            
+                            setTimeout(() => {
+                                authStatus.className = 'mt-8 text-xl';
+                                // UPDATED: Use the generated username in the welcome message
+                                authStatus.textContent = `--- STATUS: CREDENTIALS ACCEPTED. WELCOME, ${username}.`;
+                                
+                                setTimeout(showMainInterface, 2000); 
+                            }, 50); 
+                        }
+                    }, 30); 
+                }
+            }, 20); 
+        }
+
+        function showMainInterface() {
+            loginScreen.classList.add('hidden');
+            populateIssueList();
+            mainInterface.classList.remove('hidden');
+        }
+
+        function populateIssueList() {
+            const issueList = document.getElementById('issue-list');
+            const totalIssues = 50;
+            
+            const corruptedIssues = [3, 13, 27, 28, 41, 42, 49]; 
+
+            for (let i = 1; i <= totalIssues; i++) {
+                const li = document.createElement('li');
+                const issueNumberPadded = String(i).padStart(2, '0');
+                
+                if (corruptedIssues.includes(i)) {
+                    li.innerHTML = `<span class="corrupted-text">>> ISSUE #${issueNumberPadded} - CHRONICLE ENTRY CORRUPTED (ACCESS DENIED)</span>`;
+                } else {
+                    li.innerHTML = `
+                        <a href="issue${i}.html" target="_blank">
+                            >> ISSUE #${issueNumberPadded} - CHRONICLE ENTRY ACTIVE (LINK INITIATED)
+                        </a>
+                    `;
+                }
+                
+                issueList.appendChild(li);
+            }
+        }
+
+
+        window.onload = function() {
+            finalBootText = generateFinalBootSequence();
+            typeWriter();
+        };
+
+    </script>
+</body>
+</html>
