@@ -72,49 +72,49 @@ em {
 @media (min-width: 700px) {
   main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 23%;
+    grid-template-s: repeat(4, 1fr) 23%;
     grid-template-rows: repeat(5, auto);
     grid-gap: 1.2rem;
   }
 }
 main h1,
 main aside {
-  grid-column: 1/-1;
+  grid-: 1/-1;
 }
 @media (min-width: 700px) {
   main .main-title {
-    grid-column: 1/-2;
+    grid-: 1/-2;
   }
 }
 @media (min-width: 1024px) {
   main .main-title {
-    grid-column: 1/-2;
+    grid-: 1/-2;
   }
 }
 @media (min-width: 700px) {
   main .main-text {
-    grid-column: span 5;
+    grid-: span 5;
   }
 }
 @media (min-width: 1024px) {
   main .main-text {
-    grid-column: span 4;
+    grid-: span 4;
   }
 }
 @media (min-width: 700px) {
   main .sidebar {
-    grid-column: 1/-1;
+    grid-: 1/-1;
   }
 }
 @media (min-width: 1024px) {
   main .sidebar {
     grid-row: 3/19;
-    grid-column: 5/6;
+    grid-: 5/6;
   }
 }
 @media (min-width: 700px) and (max-width: 1024px) {
   main .magazine {
-    grid-column: 1/3;
+    grid-: 1/3;
   }
 }
 
@@ -158,6 +158,9 @@ aside > div > div {
 @media (min-width: 700px) {
   .multi-column-3 {
     column-count: 3;
+  }
+  .multi-column-2 {
+    column-count: 2;
   }
 }
 .sidebar {
