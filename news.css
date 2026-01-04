@@ -72,49 +72,49 @@ em {
 @media (min-width: 700px) {
   main {
     display: grid;
-    grid-template-s: repeat(4, 1fr) 23%;
+    grid-template-columns: repeat(4, 1fr) 23%;
     grid-template-rows: repeat(5, auto);
     grid-gap: 1.2rem;
   }
 }
 main h1,
 main aside {
-  grid-: 1/-1;
+  grid-column: 1/-1;
 }
 @media (min-width: 700px) {
   main .main-title {
-    grid-: 1/-2;
+    grid-column: 1/-2;
   }
 }
 @media (min-width: 1024px) {
   main .main-title {
-    grid-: 1/-2;
+    grid-column: 1/-2;
   }
 }
 @media (min-width: 700px) {
   main .main-text {
-    grid-: span 5;
+    grid-column: span 5;
   }
 }
 @media (min-width: 1024px) {
   main .main-text {
-    grid-: span 4;
+    grid-column: span 4;
   }
 }
 @media (min-width: 700px) {
   main .sidebar {
-    grid-: 1/-1;
+    grid-column: 1/-1;
   }
 }
 @media (min-width: 1024px) {
   main .sidebar {
     grid-row: 3/19;
-    grid-: 5/6;
+    grid-column: 5/6;
   }
 }
 @media (min-width: 700px) and (max-width: 1024px) {
   main .magazine {
-    grid-: 1/3;
+    grid-column: 1/3;
   }
 }
 
