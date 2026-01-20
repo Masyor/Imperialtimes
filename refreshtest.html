@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="news2.css">
+</head>
+<body>
+  <div class="parchment">
+    <header class="masthead">
+        <div class="aquila-box">
+            [LOGO]
+        </div>
+        <h1>THE IMPERIAL TIMES</h1>
+        <div class="aquila-box">
+            [LOGO]
+        </div>
+    </header>
+
+    <div class="data-bar">
+        <span>Segmentum Pacificus Edition</span>
+        <span>Issue #59</span>
+    </div>
+
+    <article class="span-3" style="border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 30px; margin-bottom: 30px;">
+        <h2 style="font-size: 48px; text-align: center;">News stuff is happening</h2>
+        <div style="column-count: 3; column-gap: 40px;">
+            <p>Cras in orci mi. Pellentesque lorem quam, maximus eu rutrum vitae, finibus ac ligula. Nulla ac mi mollis, volutpat mi eget, fermentum purus. Duis id erat nec massa imperdiet rutrum euismod sed nisi. Aliquam bibendum urna vel dolor semper, non venenatis ante efficitur. Fusce iaculis vestibulum aliquam. Curabitur ultrices eros ipsum, sit amet eleifend magna blandit eu. In consectetur finibus dictum.</p>
+
+<p>Sed eget facilisis est. Nunc turpis orci, tristique id dui nec, pulvinar sagittis nunc. Nulla non tincidunt lorem, eget congue nisl. Morbi non sollicitudin augue, finibus auctor tortor. Nulla faucibus blandit purus, in faucibus urna vehicula sit amet. Suspendisse quis metus ut lacus placerat laoreet. Nullam quam nulla, posuere id magna in, scelerisque blandit nibh. Ut tincidunt risus quis tellus porta maximus. Maecenas metus lectus, pellentesque ut lectus a, eleifend iaculis nulla. Praesent laoreet orci at nisl pretium, id luctus leo venenatis.</p>
+
+<p>Ut congue tellus nec tempor malesuada. Duis dictum justo at nisl gravida, sed luctus nibh rutrum. Aliquam sit amet leo non neque egestas ultrices at ut leo. Praesent blandit dignissim sapien, in fringilla nunc tristique vel. Etiam fermentum, tellus aliquam accumsan efficitur, velit nulla fermentum risus, non auctor lorem ipsum non nulla. Nulla tellus nunc, rhoncus non lectus at, placerat fringilla turpis. Nulla facilisi. Sed rhoncus est efficitur dolor consequat, vitae dignissim nisi pharetra. </p>
+          
+          <p>Cras in orci mi. Pellentesque lorem quam, maximus eu rutrum vitae, finibus ac ligula. Nulla ac mi mollis, volutpat mi eget, fermentum purus. Duis id erat nec massa imperdiet rutrum euismod sed nisi. Aliquam bibendum urna vel dolor semper, non venenatis ante efficitur. Fusce iaculis vestibulum aliquam. Curabitur ultrices eros ipsum, sit amet eleifend magna blandit eu. In consectetur finibus dictum.</p>
+        </div>
+    </article>
+
+    <article style="background: rgba(0,0,0,0.03); padding: 15px; border: 1px solid rgba(0,0,0,0.1);">
+        <h3>administratum updates</h3>
+        <p style="font-size: 12px;">stuff<br>other stuff</p>
+        <hr style="border:0; border-top: 1px solid #000;">
+        <h3>classifieds</h3>
+        <p>stuff<br>other stuff</p>
+    </article>
+
+    <article class="span-2">
+        <h2>IN other news</h2>
+      <div style="column-count: 2; column-gap: 40px;">
+<p>Ut congue tellus nec tempor malesuada. Duis dictum justo at nisl gravida, sed luctus nibh rutrum. Aliquam sit amet leo non neque egestas ultrices at ut leo. Praesent blandit dignissim sapien, in fringilla nunc tristique vel. Etiam fermentum, tellus aliquam accumsan efficitur, velit nulla fermentum risus, non auctor lorem ipsum non nulla. Nulla tellus nunc, rhoncus non lectus at, placerat fringilla turpis. Nulla facilisi. Sed rhoncus est efficitur dolor consequat, vitae dignissim nisi pharetra. </p>
+          
+          <p>Cras in orci mi. Pellentesque lorem quam, maximus eu rutrum vitae, finibus ac ligula. Nulla ac mi mollis, volutpat mi eget, fermentum purus. Duis id erat nec massa imperdiet rutrum euismod sed nisi. Aliquam bibendum urna vel dolor semper, non venenatis ante efficitur. Fusce iaculis vestibulum aliquam. Curabitur ultrices eros ipsum, sit amet eleifend magna blandit eu. In consectetur finibus dictum.</p>
+    </article>
+</div>
+  
+  <button id="download-btn" onclick="downloadNewspaper()">
+    Archive for Administratum
+</button>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+function downloadNewspaper() {
+    const btn = document.getElementById('download-btn');
+    const paper = document.querySelector('.parchment');
+    
+    // 1. Hide the button so it's not in the photo
+    btn.style.display = 'none';
+
+    // 2. Capture the parchment div
+    html2canvas(paper, {
+        backgroundColor: "#080808", // Matches your body background
+        scale: 2, // Higher quality/resolution
+        useCORS: true // Allows loading of external images/textures
+    }).then(canvas => {
+        // 3. Create a download link
+        const link = document.createElement('a');
+        link.download = 'Imperial-Times-Issue59.png';
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        
+        // 4. Bring the button back
+        btn.style.display = 'block';
+    });
+}
+</script>
+  </body>
+</html>
