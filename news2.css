@@ -1,0 +1,137 @@
+/* THE VOID */
+body {
+    background-color: #080808;
+    background-image: radial-gradient(circle, #1a1a1a 0%, #080808 100%);
+    margin: 0;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* THE PAPER - Straight but frayed */
+.parchment {
+    background-color: #b8a994; 
+    background-image: 
+        linear-gradient(90deg, rgba(0,0,0,0.02) 0%, rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.02) 100%),
+        url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    
+    width: 1000px;
+    padding: 50px;
+    color: #1a1a1a;
+    position: relative;
+    box-shadow: 
+        5px 5px 2px rgba(0,0,0,0.4), /* Sharp shadow for thickness */
+        0 0 40px rgba(0,0,0,0.8);
+
+    /* Frayed/Worn Edge: Straighter lines with micro-jags */
+    clip-path: polygon(
+        0% 0.5%, 15% 0%, 35% 0.5%, 65% 0%, 85% 0.5%, 100% 0%, 
+        99.5% 15%, 100% 35%, 99.5% 65%, 100% 85%, 99.5% 100%,
+        85% 99.5%, 65% 100%, 35% 99.5%, 15% 100%, 0% 99.5%,
+        0.5% 85%, 0% 65%, 0.5% 35%, 0% 15%
+    );
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+}
+
+/* THE MASTHEAD - Balanced for one line */
+.masthead {
+    grid-column: 1 / span 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px double #1a1a1a;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.masthead h1 {
+    font-size: 58px; /* Reduced to fit on one line */
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    letter-spacing: 1px;
+    white-space: nowrap; /* Forces one line */
+}
+
+.aquila-box {
+    width: 120px;
+    height: 90px;
+    flex-shrink: 0;
+    /* Placeholder styling */
+    border: 1px dashed rgba(0,0,0,0.2); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DATA BAR */
+.data-bar {
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 6px 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* ARTICLE STRUCTURE */
+.span-3 { grid-column: 1 / span 3; }
+.span-2 { grid-column: span 2; }
+
+article {
+    border-right: 1px solid rgba(0,0,0,0.15);
+    padding-right: 20px;
+    margin-bottom: 40px;
+}
+
+article:nth-child(3n), .span-3 {
+    border-right: none;
+    padding-right: 0;
+}
+
+h2, h3 { 
+    text-transform: uppercase; 
+    margin: 0 0 10px 0;
+}
+
+p {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: "Courier New", Courier, monospace;
+    mix-blend-mode: multiply;
+}
+
+#download-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 20px;
+    background: #6b1212; /* Dried blood red */
+    color: #b8a994;
+    border: 2px solid #1a1a1a;
+    font-family: serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+#download-btn:hover {
+    background: #8b1a1a;
+    transform: scale(1.05);
+}
+
+#download-btn:active {
+    transform: scale(0.95);
+}
