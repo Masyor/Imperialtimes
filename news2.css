@@ -110,6 +110,14 @@ p {
     mix-blend-mode: multiply;
 }
 
+ul {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: "Courier New", Courier, monospace;
+    mix-blend-mode: multiply;
+}
+
 #download-btn {
     position: fixed;
     bottom: 30px;
