@@ -61,7 +61,7 @@ body {
     height: 90px;
     flex-shrink: 0;
     /* Placeholder styling */
-    border: 1px dashed rgba(0,0,0,0.2); 
+    border: 0px dashed rgba(0,0,0,0.2); 
     display: flex;
     align-items: center;
     justify-content: center;
