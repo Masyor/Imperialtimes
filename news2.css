@@ -143,3 +143,16 @@ ul {
 #download-btn:active {
     transform: scale(0.95);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+.ork-writing {
+    font-family: 'Schoolbell', cursive;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #1a1a1a;
+    /* This makes sure the letters don't look too "clean" */
+    filter: contrast(150%) blur(0.2px);
+    /* Prevents words from breaking awkwardly */
+    word-wrap: break-word;
+}
