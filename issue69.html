@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Funny number Edition</span>
+            <span>Issue #69</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `AVOIDING THE VILE TEMPTATIONS OF XENOPHILIA`,
+                author: `beardog2150`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `It is known all throughout the Imperium that the xenos take many forms, all of which are dedicated to the destruction and downfall of humanity.  It is easy to maintain the proper level of hatred for those creatures with too many limbs, whose slavering muzzles are full of teeth or whose tails drip with slime.  However, this can lead the unwary into a false confidence that the human form is a mark of purity.  This is no guarantee of right thought and right action!  Even worse, many xenos who wear the human shape may do so in an attempt to steal the precious bodily fluids of Imperial citizens, and tempt them into dalliance with the enemy!
+
+Here are some simple facts to remember when presented with a seemingly comely xenos!  Let the truth be your armor and disgust your prophylactic!
+
+TAU - Blue skin means sin!  They have hooves!  Their facial grooves are unnatural and disgusting!  Their digits are attainted with the incorrect number!  And despite widespread and base rumors of 'big blue mommy milkers', they are known to lay eggs!  Inconceivable!
+
+ELDAR - Can one even tell the difference between their gangly-limbed sexes?  Can one know the mind of an alien that has lived many human lifetimes?  Their only devotion is to the sorceries practiced by their witches; they would slaughter a thousand babes for the slimmest chance of saving a single eldar life!  Plus they carry venereal diseases that arose before humanity took its first steps!
+
+ORK - THEY ARE MUSHROOMS WITHOUT GENITALS WHO WANT TO KILL YOU!
+
+KROOT - They view all life as food - it would be wiser to associate with an amorous Grox than to put yourself in intimate contact with one of these corpse cannibals!  And who knows what bizarre characteristics they may have developed from their previous meals!  When you dine with a kroot, you dine with everyone they have ever dined upon!
+
+Remember - IF IT AIN'T FROM SOL, DON'T GO IN THAT HOLE!`
+            },
+            {
+                title: `IMPERIAL TIMES INCOMING PURGE`,
+                author: `.rayja`,
+                type: `sidebar`,
+                rowSpan: 3,
+                content: `Due to an unexpected and quite heretical issue submitted from one of the Editors of The Imperial Times, we of The Emperor's Inquisition, acting on behalf of Lord Inquisitor Perigosas of The Ordo Redactus, will be commencing an immediate purge and liquidation of certain sections of The Imperial Time's Personal. This story, that somehow managed to get past some of the most stalwart of The Time's review councils, is not only found to be of astronomical heresy, but is also apart of an issue that itself is also in violation of the recent Administratum Edict dictating the use of Holy Numerals and the expunging of blasphemous numerals. This issue is heresy and risks to put entire populations to decadent and unholy corruption in profanment of The God-Emperor of Humanity. We of the Inquisition, in cooperation with those members of the Imperial Times who have proven cooperative in rooting out many heretical members, will not cease in our efforts to purge the rot of the enemies of Humanity, fear not citizen.
+
+However, dear viewers, if you happen to come across any heretical stories within this issue, please do yourself and your planet a duty to the God-Emperor and contact your local enforcer authority, turn yourself in, and prepare for a righteous and honest repentance in order to avoid corruption. Anything else shall be considered a gross violation of the holy edicts of the Emperor and an attempt to undermine the Authority of Terra. For those that do not, remain vigilant of your closest companions and report any suspicious activities to your local enforcer authority.
+
+The Emperor Protects`
+            },
+            {
+                title: `The Bastards of the Hero of the Imperium`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `A growing number of alleged offspring claim descent from the legendary hero of the Imperium, Commissar Ciaphas Cain. Across the Imperium, there are many audacious claims of this. That this Hero of the Imperium has single handedly created thousands of children. The frequency of these accounts has prompted a formal inquiry. The official statement from the Commissariat states that: 
+
+“Any suggestion that Commissar Cain has fathered a statistically improbable number of offspring across multiple warzones is both logistically unlikely and slander. While Commissar Cain is indeed known to be a charmer by many admirers, it is hard to believe the numbers presented. Such rumors will be investigated, categorized, and, if necessary, dealt with promptly for besmirching the great name of such a hero.”
+
+Whether these claims are the product of opportunists seeking attention by claiming relations to a legend, or something far more substantive, remains beyond the reach of definitive proof. In times such as these where heroes are being made since the return of the Primarch, where myth is often indistinguishable from record, such questions are not easily answered. Yet one conclusion is to be made. For if any man could traverse the stars, defy death time and time again to bring victory to the Imperium of Man, to inspire loyalty, admiration, and no small degree of affection wherever he goes. If any man could arrive at the exact moment he is needed, it would be none other than the Hero of the Imperium himself. And so, whether this surge of claims is true, exaggerated, or some strange alchemy of both, one thing remains certain! Only Commissar Ciaphas Cain would be capable enough to accomplish something so improbable.`
+            },
+            {
+                title: `Vile Cultist Activity Spotted In Rogue Trader Retinue`,
+                author: `_coati_`,
+                type: `mid`,
+                content: `Rogue Trader Talis Averna (descendant of the renowned Lord General Ariana Averna) has found their ship, the 'Averna Votum', in recent disarray. Recent investigation from local enforcers has found evidence of cultist activity aboard the sacred vessel.
+
+Allegedly, there have been several cases of underground groups working to overtake blessed Imperial culture aboard the Ambition-Class Cruiser with vile falsehoods. Descriptions from local authorities lead to an attempted movement whispered to be known as the Exxotica Society. Previously included descriptions of their activities have been censored by the order of the Adeptus Ministratum.
+
+Local Confessor Dael Gannon weighs in, stating "Such vile [activities] should not be tolerated to exist aboard such a vessel, much less within the sanctity of its shrines. All those truly in His eye will help in hunting down these unworthy souls, and brought to execution for their desecrations [...] "
+
+Among various other indecencies on holy ground, they have been said to refuse the Emperor's authority, finding greatness in a false god. Ecclesiarchal staff request anyone in the Adiron sector be on high alert for unholy cultists, and ensure their purging.`
+            },
+          {
+                title: `Helios In-system Vox network hacked`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Another forgotten maintenance cycle or insurrectionist brewing?
+
+Seemingly having not learned from their lessons surrounding the failure of the oxygen scrubbers one year ago due to the lack of maintenance cycles, the in system vox network which linked all the hives on Helios prime went down for over 23 days. The vox network had only just finished being implemented with upgrades to help keep all the Hivecities interlinked,  with the order from Governor of Helios Prime and aid from the Adeptus Mechanicus and conscripted engineers from Hivecity block 17a8 finishing their works mere days prior to the system failure.
+
+While we await the full details of this system failure and the results this will have on both Helios prime but also the wider system, many people are beginning to worry about the true relation of the system failure, believing it be either a gross failure on the engineering and maintenance teams throughout the construction and running of the systems or the beginning of a crimewave, or much worse, an insurrection. Throughout the Vox system failure numerous Hive gangs saw their opportunity and began to hit unsuspecting warehouses and logistical trains heading to nearby Hive cities, without the ability to call in for backup local Militia and Arbites forces still ran head first into danger to protect our glorious city and serve the Emperor, with their efforts they were able to apprehend two targets and stop the train heist before it fully began.
+
+This whole sordid episode serves as a reminder that even whilst we prosper and upgrade our cities in the name of the Emperor, that we must still remain vigilant for any issues or mistakes which could be wanton or not and to report them immediately to your Foreman and your local Arbites force.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
