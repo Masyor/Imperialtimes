@@ -154,3 +154,29 @@ p {
     font-weight: bold;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
+
+.pen-scrawl {
+    position: absolute;
+    top: 30px;         /* Positioned near the top */
+    right: 50px;       /* Pushed to the right side of the title area */
+    width: 280px;      /* Keeps it contained so it doesn't cover the whole title */
+    
+    /* The "Pen" Look */
+    font-family: 'Brush Script MT', 'cursive', 'Segoe Print'; 
+    color: #8e24aa;    /* Slaaneshi Purple */
+    font-size: 16px;
+    line-height: 1.1;
+    text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.2);
+    
+    /* The "Crude" Factor */
+    transform: rotate(5deg);
+    opacity: 0.9;
+    z-index: 100;      /* Ensures it sits ON TOP of the Aquila and Title */
+    pointer-events: none; /* So it doesn't block clicks on the header */
+}
+
+/* Optional: Adding a slight 'ink bleed' feel */
+.pen-scrawl::first-letter {
+    font-size: 24px;
+    font-weight: bold;
+}
