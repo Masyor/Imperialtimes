@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Piety Edition</span>
+            <span>Issue #70</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `EXCLUSIVE: THE PRINCE OF PIETY RETURNS!`,
+                author: `The Editor`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `<b> SOUP AND SALVATION: HOW EMAN HOL IS SAVING THE SECTOR ONE BROADCAST AT A TIME</b>
+                
+He’s back and he’s bigger than ever! After what insiders are calling a "brief divine sabbatical" the sector’s most controversial and charismatic export, Eman Hol, has made a literal mountain-moving return to the spotlight.
+
+And by mountain, we mean The Inevitable Magnificence: a 100-meter mobile church that makes the local Governor’s palace look like a damp hab block.
+
+The whispers are true: Hol has traded the shadows for the spotlight. Clad in robes that cost more than a mid-hive apartment, the "Prophet of the People" appeared on his church’s Grand Balcony yesterday, framed by a halo of stadium-grade lumens that could be seen from orbit.
+
+"The Emperor doesn't want you to be miserable" Hol told our reporter while an assistant touched up his facial oils. "He wants you to be impressed. I am simply the mirror reflecting His absolute, high-definition glory back at you."
+
+But it isn't all about the aesthetics. In an act of "unprecedented, totally-not-for-the-cameras" generosity, Hol has unveiled The Great Feast initiative. Our cameras watched as a "tireless" army of Missionary Assistants erected a series of glossy Alms Centers in the local hive-slums.
+
+The strategy? Pure, unfiltered mercy. Thousands of starving citizens were seen weeping with joy, and possibly from the glare of the professional lighting rigs, as they received "Saintly Soup" served directly from the foot of the Inevitable Magnificence.
+
+"A hungry soul is a distracted soul," Hol remarked, gracefully handing a petrified loaf of bread to a photogenic orphan for the evening broadcast. "Once their bellies are full of my bread, their hearts have plenty of room for my Book."
+
+Addressing the "conspiracy theorists" who pointed out the cathedral’s sixteen twin-linked heavy weapon sponsons, a spokesperson for the Foundation for Visible Mercy laughed off the concerns. "Those aren't weapons in the traditional sense," the source clarified. "They are merely instruments of efficient construction. Sometimes we need to make room for our Alms Centers and sixteen heavy weapons make room very quickly."
+
+The return is already a spiritual triumph. The Third Book of Eman is currently trending on every vox-relay in the sub-sector. If your neighbours haven't secured their copy of the "Direct Revelation" update yet, they should be reported to the nearest Ecclesiarchal Witchhunter's Office.
+
+<i>TRANSPARENCY NOTICE: The Times prides itself on its uncompromising, non-purchasable journalistic integrity. Readers are kindly asked to ignore the massive, gold-plated pallets of currency being unloaded into our loading bay by The Foundation for Visible Mercy. These are merely "paperweight donations" intended to keep our newsroom organized. Furthermore, the brand-new, diamond-encrusted vox-transmitters recently installed on our roof are a purely coincidental gift from a "secret admirer" who just happens to share a name with Mr. Hol. Any suggestion that this article is a paid promotion is a heretical assault on the freedom of the press and will be reported to the local Arbites immediately.</i>`
+            },
+            {
+                title: `Raider Scum Found In Cypra Mundi System`,
+                author: `_coati_`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Rogue Trader Talis Averna, during her blessed travels in the Cypra Mundi System, has come upon concerning quantities of pirates and raiders. These scum-of-the-galaxy traitors have been spotted conducting raiding runs in the Cypra Mundi system for a few hundred years, and have attempted to make themselves known as the 'Blue Sons'.
+
+Among the items they have usurped from Imperial hands, they have stolen large quantities of weapons and armor exports from the Cypra Mundi Forgeworld. Despite attempts from the local Segmentum Fortress to curb these raids through intimidation and retaliation, the raiders continue to prove a plague on the Imperium, denying warfronts precious materials.
+
+While leads on the locations of their home-fleets and possible planetary hide-outs remain unnervingly impossible to locate, Rogue Trader Talis Averna has put forward requests for Imperial aid in uncovering these mysteries and eradicating the raiding problem. Updates will be given as they are recieved, so stay vigilant.
+
+The Emperor Protects.`
+            },
+            {
+                title: `Imperial Victory! Battle of New Chappelus Over, Experts Say War Will End Soon`,
+                author: `advictorian6505`,
+                type: `mid`,
+                content: `Regiments of the Imperial Guard battling traitorous members of the Artesian V Planetary Defense Force have managed to recapture a kilometer-wide sector of the frontline and forced the enemy to withdraw from the area over the course of three days. New Chappelus was a lynchpin of the local frontline, 20 kilometres behind which lays a critical rail junction and road that the rebels use to supply forces to the north of the line, where the Auroran Rifles currently fight for the city of Ypernia.
+
+This victory has been a combined effort of the Roane 4th and Semtexia 6th who, in face of unknown positions, a lack of capable vehicles and a prepared enemy, proceeded to break through to the town after a half-hour preparatory barrage to soften up the defenders that allowed our Imperial troops to filter through the few dissident strongholds that survived the barrage and shatter them completely. The first line of defenses had been shattered and the Regiments were poised to continue on through to the town of Barsett before an insidious ambush by the insurrectionists halted the Imperial advance for the day, as men dug in where they laid, hidden from autocannon and heavy stubber alike. The next morning, just as Imperial forces were preparing for another attack, they were surprised by a ferocious enemy counterattack that was repulsed before following through with the initial attack, successfully attriting the enemy force and forcing them to remain in a defensive posture.
+ 
+On the final day of the battle the brave men from both regiments were reinforced by the newly arrived Castobel 205th, who managed to drive a 200 metre wedge between rebel positions during a night action that involved a battalion-sized frontal charge. With the initial objective of liberating the town of New Chappelus accomplished and the gains threatening to capture the railway at any moment, generals have declared this battle a victory for the Imperium at the cost of sixteen-thousand casualties. Our military experts suggest that with this recent victory, the end of the rebellion that has been plaguing Artesian V may occur in time for Sanguinala.
+
+The Imperial Times will continue to report on the conflict in Artesian V as news arrives from the frontlines, and until then, pray that the Emperor watches over these men performing His will upon the sessionists who have strayed from His light.`
+            },
+            {
+                title: `Tithes, Civic Duty or Civic Thievery?`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `With the recent questions surrounding the civic duty of citizens within the imperium, many are now beginning to question the validity and reality surrounding Tithes and how it affects the individual, the populace, planets and the wider Imperium sectors. Within this investigative issue we will delve into the reality of an Administratum official who helps run the Tithe duties, the planets where our tithes are sorted and stored, and how Tithes help the imperium and the health of its sectors.
+
+When meeting with a dignitary who helps run the tithes when they reach a planet, including with their personal entourage of security, we asked them a couple questions our most loyal, ingenious and hard working civilians asked us.
+
+What is a Tithe?
+
+“The Tithe is a simple concept, every planet has its duty, be it as small as providing some of your production material or that of the mighty shieldworlds who provide mass amounts of infantry to serve the glorious Imperium.”
+How is a Tithe collected?
+
+“When the tithe period is called and it has arrived an official such as myself arrives on the planet as dignitaries on behalf of the Imperium. Majority of the time a tithe happens without a hitch and the Imperium grows stronger each fiscal-tithe period.”
+
+Why do we Tithe?
+
+“It is simple is it not? Protecting our glorious Imperium comes at a cost, be it raw man power, or materials for forge worlds, if not paid we would see planets go without aid, sectors going dark without upkeep or assistance which slowly chips away at the Emperor's protection of all its civilians. No matter how small, each effort to the tithe serves the Emperor! And in extension your peers through the aid given to us by the Emperor, blessed be the Emperor.”
+
+While unlike most I did not house any heretical thoughts surrounding the Tithe or its “Thievery” many sister ‘news’ agents have been peddling, but, after a short interview with someone as busy as the dignitary of the Administratum who I met I have personally grown far more proud of all of our efforts to our planet and its tithe! So reporter in a dusty room I wish to thank all of the hard working citizens of our glorious Imperium and to greatly remind them that ANYONE who goes against our working ethic and its effort to the tithe should be reported to our linesmanager or your local authority, without our workforce how else can the Imperium be strong and protective? And thats why we must protect it and its tithes.`
+            },
+          {
+                title: `ARMAGEDDON ARMOR ANNIHILATES ALIEN ATTACKERS`,
+                author: `beardog2150`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The Emperor expects that every citizen shall spend their life in dutiful service to ensure the survival of our species in a hostile and dangerous galaxy.  Few worlds exemplify this danger more than Gebos, a world that has only recently been allowed to graduate from the category of frontier world to Imperial world - and yet, just as the celebrations were concluding, xenos vessels were detected in the void, on their way to wreak havoc.  The Gebos Planetary Defense Forces managed to hold on to most of the planet's major settlements while waiting for Imperial reinforcements, truly a laudable accomplishment!
+
+When the regiments of the Imperial Guard arrived and began to relieve the beleaguered defenders and push the Alien back, they were faced with a difficult foe: orkoids of the 'Bad Suns' tribe, on crude vehicles, roamed a broad swathe of steppe on Gebos' main continent, making it difficult to pin them down for elimination or to protect against their raids.  A battlegroup was specially assembled to hunt them down, with regiments from Tallarn, Rockatansky, and Attila acting to sweep the plains, while the men of Armageddon acted as their anvil.
+
+After a lengthy campaign of maneuver, the xenos were finally brought to battle, their main battle-fortress destroyed by the fearsome tanks of Colonel Lutz Tanneberger and his 345th Armageddon Armored Regiment.  When reached for an interview while his tank, the Mannheim's Revenge, was undergoing repairs, the Colonel stated "It was a long campaign, but victory in the service of the Emperor is inevitable."  Well said, Colonel!
+
+With the 'Bad Suns' defeated, the main remaining alien formations have been identified as the 'Vandals', the 'Snake-biters', and the 'Skulls of the Dead', and Lord General Valentyne Bamard has proclaimed that it shall not take more than one year apiece to vanquish them.  May all our readers light three candles in prayers for Gebos!`
+            },
+          {
+                title: `Veyland in Flames,`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `As many near astropathic choirs know, the Dark Apostle taunted the wider Imperium of Man. The dreaded Word Bearers begun once more, heading on the warpath. Increased activity has been sighted in the borders of the Segmentum Ultima. One of the 500 Worlds is currently being under siege, that being the Agri-World of Veyland. Bravely, the Ultramar Defense Auxillia held their ground against the traitor astartes and their cultists, but the majority of professionally trained soldiers have now perished in the fighting against the First Heretic’s Legions of the damned. Now, only the militia and partisan groups are present on the planet offering only a token of resistance. However, when all hope seemed lost, the Emperor’s Angels exited from the warp and landed to retake our world.
+
+For the past months, the Ultramarines and their allies have single handedly pushed back the heretical tide. Now the enemy hide in a former cathedral of the world’s saint, continually blasting their heinous sermons. The Sisters of Battle and Ministorum forces present, keep those still loyal to the Golden Throne sane and coherent of the lies of the Archenemy. The moment of truth is upon us all as the last scourge of darkness on Veyland will have its final battle. May the God-Emperor save the souls of those that died standing and to grant His Angels eternal victory over the heretic.
+
+The Emperor Protects.`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
