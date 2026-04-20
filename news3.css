@@ -180,3 +180,30 @@ p {
     font-size: 24px;
     font-weight: bold;
 }
+
+/* REDACTIONS */
+.redacted {
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    
+    background-color: #1a1a1a;
+    color: transparent;
+    padding: 0.1em 0.1em;
+    margin: 0 -0.2em; 
+    border-radius: 4px 4px 4px 4px;
+    filter: blur(0.35px) contrast(140%);
+    mix-blend-mode: multiply;
+    
+    user-select: none;
+    cursor: help;
+}
+
+/* Deredact on hover */
+.redacted:hover {
+    background: rgba(26, 26, 26, 0.08);
+    color: #6b1212;
+    -webkit-mask-image: none;
+    filter: none;
+    transition: all 0.2s ease;
+}
