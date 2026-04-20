@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Should I publish this? Edition</span>
+            <span>Issue #71</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `Conspiracies on Morteli?`,
+                author: `lawson_xi`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `We have received confirmed reports from reputable readers that recently ships of the Imperial Inquisition arrived in the orbit of Morteli, and they were not alone. Accompanying them were members of the Adeptus Astartes and Adeptus Arbites!
+
+What could have the pleasure world of Morteli have done to warrant such responses?
+Insiders tell us that they suspect shipments of the Imperial Tithes have been stolen and haven't been arriving on Terra.
+
+We have spoken with regulars of the planet, many of which claim that it isn't strange for the Administratum to make up claims so they could install new rulers. The visitors claiming that the Governor was nothing but a honest working Imperial citizen.
+
+Morteli is known for producing wines and art of high quality, even reaching the halls on Terra, having the opportunity to taste it, we must say, it really is good as they claim it to be.
+
+The story on Morteli is a developing one, and we will keep you updated as we get more news from our insiders.`
+            },
+            {
+                title: `Nobilitis Ultramarini`,
+                author: `mourhurst`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `The Noble Ultramarines of the 5th Company, Wardens of the Eastern Fringe, have now been fully recalled from the frontiers to aid the homeworlds of Ultramar. The majority of the Imperium’s forces and the chapter are tied up fighting in the glorious Indomitus Crusade to bring death upon the Archenemy and to reclaim Imperial worlds in the Dark Imperium. On worlds where the Planetary Defence Forces had failed, the 5th Company reinforced them. To rid those worlds of  traces of foul heresy and xeno treachery slip through, coordinating with the Tetrarchs of Ultramar to see this breach filled. Entire districts were liberated to ensure nothing malignant endures as per the quarantine procedures enacted by the Imperial Regent. Currently, they are embattled against multiple different types of heresies, yet even then, they are no match for His Holy Angels of Death.
+
+To greater news, the Tithes have been undisturbed due to the actions of the Emperor’s Angels and their swift action. Logistics lines remain fully operational and the final victory will arrive to the Imperium eventually. It is said, that legendarily, the God-Emperor blessed and took control of Lord Guilliman’s body to fell one of the Great Devils during the Plague Wars. The foe’s forces will be defeated in the end. The Emperor Protects.`
+            },
+            {
+                title: `An Interview with an inquisitor`,
+                author: `zeeenz`,
+                type: `mid`,
+                content: `It is no secret that heretical actions and thought crimes are on a sudden rise on Paladria Prime and its major hivecity of the same name, many citizens are questioning how we can combat this sudden rise of heresy and how we can work hand in hand with the Emperor. So, as trustworthy news reporters we asked a local inquisitorial agent some key questions on how to remain loyal, their identity has been hidden for their protection.
+
+<span class="redacted">“What is heresy and what are its actions?”</span>
+
+<span class="redacted">‘Heresy 'is a simple concept, we sadly see it on the daily, even on planets which are compliant. It can be something as simple as turning a blind eye to a ganger, who in turn does repetitive actions which dwindle our supplies and then when the enemy of man attacks, we have little to prepare. Heresy is a silent whisper which eats away at your faith, what makes you…well you.’</span>
+
+<span class="redacted">Worrying, isn’t it? But, it doesn’t end there.</span>
+
+<span class="redacted">“What are the consequences of heretical actions?”</span>
+
+<span class="redacted">‘On the minimal side, riots, anger, death, but, if left unchecked a city may fall, then a continent, then a planet, then a system, then a sector, no matter what size of a heretical action it must be treated the same. Expunge, eradicate, leave no trace.’</span>
+
+<span class="redacted">Terrifying, but, how can we, as powerless civilians, deal with it.</span>
+
+<span class="redacted">‘What should we do to help combat it.’</span>
+
+<span class="redacted">“On the simple side of things, report any and all suspicious people, actions, thought crimes, you name it, if your neighbour is willing to spout about how bad their foreman is, imagine what they are thinking about the governor, then the sector lead and then the Emperor himself, small words can cause terrible, terrible consequences…what is it with all these questions? Do you have something on your mind? Do you need to report something?”</span>
+
+Editor Note, don’t let this go to press, By the Emperor, really, an interview with an Inquisitor? How did you really expect that one to go? Expunge this immediately and censor it, I swear to the Emperor if I see this on the paper tomorrow heads will roll, and yes Irox, I mean censor EVERYTHING, remove it all.`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
