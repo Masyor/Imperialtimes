@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>go play void crusade Edition</span>
+            <span>Issue #72</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `Hope on the Horizon`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `While many settlements and cities are facing growing issues, ranging from population density, food, strife and acts of unknown insurgents such as Helios Prime, there is hope on the horizon with the new settlement of Caledon Prime rapidly underway. While the settlement is just a fledgling, it is proudly still promising any and all troops they can muster to defend this new settlement but also its neighbours within the sector, including any and all resources not promised to the Tithe to nearby settlements to help the Imperium grow.
+
+With the success of building the industrial and Habitation zones residing within the temporary city, although minute compared to your average hivecity, the Governor has pledged that the grounds for the Capital will be fully underway within the next Century, with landmarks such as their spaceport operational within a one year window and an expansive industrial zone to facilitate the rearming and readiness of the sector within a thirty year window.
+
+The history of Caledon is quite short, found by one of the Emperor’s chosen Traders they reluctantly donated it back to the Imperium, opting to instead settle closer to their normal trading lanes, however, a regiment of the finest Imperial Guard have opted to use their right of settlement to jump start the settlement of Caledon Prime ; hoping for this new capital to not only be their new home, but also a new sector for the Imperium to flourish out of, both as a shieldworld, but also resources to bolster our great Imperium through their tithes.
+
+While many settlements do have their rocky periods, Caledon prime has pledged to continue their growth, both manpower and material power, exponentially, to allow them to pay their tithes but also to assist once again with nearby settlements. With this Caledon prime offers two futures for any Imperial citizen out there, firstly, if you can make your way to Caledon prime you will be put to work changing the future and making a home for you generations. If you can not make it to Caledon then the Governor and their regiment is offering enlistment to the guard, pledging themselves to the service of protecting Caledon, its sector and the wider Imperium for a ride to Caledon and a future on Caledon for themselves and their lineage.`
+            },
+            {
+                title: `Will the Aloxanis sector hold?`,
+                author: `lawson_xi`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Just a few standard months ago, the infamous Hulk known as the 'Harbringer of Sorrow' has translated back into realspace after millenia in the immaterium. Reports from the Navis Imperialis suggest that the Hulk grew almost twice in size since the last verified sighting. It now threatens two forge worlds that lay in its path.
+
+Brave defenders have answered the call of need by the forge worlds. A joint force of Navis Imperialis, Adeptus Mechanicus and Adeptus Astartes has set out to investigate and destroy the Space Hulk once and for all.
+
+Some say that something ancient lurks in the Hulk, a danger that could shake the stabiity of the Imperium if let out, but we all know those stories, and never do they turn out to be true.`
+            },
+            {
+                title: `PALACE OF ETERNAL PAIN DESTROYED`,
+                author: `beardog2150`,
+                type: `mid`,
+                content: `For millennia, the space hulk 'Palace of Eternal Pain' has been a menace to Hacyria sector.  Its appearance in a system is a portent of evil, and many worlds have been left savaged in its wake - although the tides of the warp have worked in its favor, and never has it lingered in reality long enough to be explored and dealt with.  But no more!  The sordid travels of the Palace of Eternal Pain have come to an end, and in a most unlikely manner!
+
+Thanks to the forecasting of the Imperial Tarot, it has been known that calamity approached for the world of Nelruna.  The 42nd Torpedo Squadron of the Imperial Navy was moved to the system, as well as the Lunar-class cruiser Plaiedes, in preparation for whatever devilry lay ahead - only for the Palace of Eternal Pain to breach reality!  The Imperial Governor found her hands full simply containing the resulting panic; as for the Navy, while auguries were cast and a few preemptive explorations made, the space hulk was simply too large and too complex to be fully mapped, and too dangerous to be boarded by voidsmen, who reported all manner of unnatural abominations aboard.
+
+In this time, help came from a most unanticipated source - not the Adeptus Astartes, but a battlegroup of Squat warships!  After a tense introduction, Admiral Bhamraeth Anvilmaster of the League of Grungni declared the hulk a 'regional navigational hazard' in need of addressing - no matter what ancient technology or relics it may cost!  Impetuously, exo-armored Squat warriors rushed into the hulk, planting explosives that saw it shattered to pieces!
+
+While Imperial citizens rightly gave thanks to the Emperor for deliverance, a formal protest was lodged with the League, as Imperial adepts probed what they could of the debris; a riot nearly broke out when League Ambassador Grumblechest responded 'you could have just said thank you'.  Truly our abhuman allies are simple folk in need of our guidance, although they may mean well!`
+            },
+                      {
+                title: `Increased Sightings of Abhuman Worlds in Segmentum Tempestus`,
+                author: `_coati_`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Recent investigations from the Emperor's Adeptus Administratum have found an increase in discovered Abhuman worlds when compared to that of surrounding segmentums.
+
+While some begin to wonder if these abhumans should be expelled from these worlds and have their worlds clensed in precaution, Administratum staff believe this to be a blessing in disguise.
+
+With recent movements among criminals in hive cities attempting to refuse the Emperor's glory, and displace their governors, the influx of Nightsiders and Ogryn can be used to effectively combat these rebellions without loss of those gifted with the more prominent visage and purity of Mankind.
+
+Administratum forces are still in talks of how to best delegate these forces, although the Officio Prefectus seems to be handling the matter. Continue reading for further updates on the matter.
+
+The Emperor Protects.`
+            },
+                      {
+                title: `Heresy or Innovation?`,
+                author: `dadyars`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `For decades, the populace of the Tertius Obscura Sector have relied upon the XT pattern dish-cleansing units, a venerable line of machines that swept the manufactorum markets upon their introduction. Yet despite their benefits, buyers have long complained of excessive rattling and water leakage. That is, until the emergence of a controversial figure.
+
+Magos Podius Larse has long been criticized for his radical methods. Yet through his intervention, the new XT+ pattern cleansing unit appears to have eliminated the flaws of its predecessor. By embedding a servitor-grade mind within the circuitry, the machine’s function has been greatly refined, and the act of dish purification markedly improved.
+
+This has not come without cost however, as Larse’s peers now accuse the Magos of techheresy for altering sacred designs. The case remains ongoing, and further details will emerge in time.`
+            },
+                      {
+                title: `Excrucia Controversy`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `A matter of growing discussion has taken hold across Excrucia. The Planetary Defence Force’s practice of retaining isolated populations of feral Orks following the greatest battle in the planet’s history and victory against a massive Waaagh is the point of discussion. Rather than pursuing total eradication, certain Ork remnants have been deliberately contained within designated ash zones beyond the Amber Plains and the outskirts of Hive Agonia. These zones now serve as controlled environments for final-stage training exercises. By standing order, each PDF recruit is required to personally dispatch one Ork to complete basic training.
+
+Command staff describe the measure as practical. “A soldier who has not faced the xenos at arm’s length has not yet learned what it is to stand for the Imperium, a las-round against a target dummy is nothing like living muscle.” Stated Marshal Deyrick of the 3rd Excrucian PDF of Hive Agonia. Drill sergeants now refer to the act as the “First Blood.” It has become a tradition and final rite marking the passage from civilian levy to sworn defender of Excrucia.
+ 
+Despite official endorsement, the practice has not passed without objection. Ecclesiarchy representatives have issued cautions regarding the spiritual risk of allowing the alien to persist, even in chains. “The xenos is a blight to be burned out, not husbanded, to leave any taint is to invite corruption. The xenos is treacherous and cannot be controlled, it must be purged.” Warned Confessor Hale in a recent sermon in Hive Mortanis.
+
+Some manufactorum guilds have also raised logistical concerns, citing the continued allocation of resources to containment efforts. Resources that might otherwise be directed toward reconstruction and tithe fulfillment. Planetary Command maintains that all retained Orkoid populations are strictly monitored and incapable of forming organized threats. Periodic purges are conducted to ensure numbers remain within acceptable parameters. They claim that to face the xenos in a controlled environment is to master fear so it may not happen when a true enemy comes. Excrucia has endured invasion. It has reclaimed its soil in blood and ash. Whether this practice stands as wisdom or overreach will be judged, as all things are, in time in the Emperor’s sight.
+
+The Emperor Protects`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
