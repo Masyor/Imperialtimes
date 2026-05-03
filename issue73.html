@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Love Edition</span>
+            <span>Issue #73</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `Romance on the Frontier`,
+                author: `lawson_xi`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `To break away from our usual reporting, we bring something heart warming in this issue. 
+
+On the world of Terranius a chaos cult prevailed and almost took over the whole surface, it was with the swift intervention of the Sons of Vulkan, the Salamanders, that the cultists were stopped and peace was brought back to the planet.
+
+Almost everyone lost somebody to the cultists or the fighting of said cultists. One of said people is Dones, a member of the local PDF who joined in the defence of Terranius.
+
+It was during one of the last battles against the cultists, he saw a face he hadn't seen in a long time, for over two years in fact. It was a wonder how they were both alive, and he promised himself he would keep her safe. Dones kept watch over Elana as they fought forward alongside His angels against the cultists, at one moment almost all was lost, he was getting pinned down by las fire as with the corner of his eye he saw Elana get jumped by a cultists, in the struggle he had to decide, to risk his life and save her, or to let her die. He chose to risk his own, running through the hail of lasfire he managed to not get hit by any of the shots, reaching the foxhole where Elana and the cultist were struggling, he jumped onto the cultist, rolling to the side, in the process he got the cultists dagger stuck into him before he managed to kill him.
+
+He woke up days later in a field hospital, he was banged up but alive, as he woke he saw her, Elana was sitting by his side, the doctor informing her she sat with him and took care of him the whole time he was out.
+
+One of our journalists visited the planet years later and tried to find Dones. His investigations lead him to a small ranch, outside the hive, there he met Dones and Elana, in the time since meeting they've settled down and had two children.
+
+It does seem that not all is bad in the galaxy, and that even romance can bloom on the battlefield, so who knows? Maybe YOUR true love is somewhere near?`
+            },
+            {
+                title: `Footfall Food Convoy Recovered, Xenos to Blame`,
+                author: `argo_1278`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Footfall, a void station and Imperial outpost in the Koronus Expanse, was under threat of famine due to a heavily delayed shipment, A combined force of Rogue Traders led by Lady Isabella Cantarini and Sir Charles Carolingian joined forces with Battlefleet Bysstrax of the Imperial Navy. Together they followed the convoy, battling raiders and pirates until they reached the convoy, which had been waylaid by foul Xenos with deadly ships spitting atomic fire. Despite this power they were no match for the Imperials, and in the ensuing void battle, the freighters carrying the vital supplies for the outpost were all secured, along with the convoy leader in the form of The Bounty of Agammemnon.
+
+We salute these daring void captains as they prove once again that the Imperium is an indomitable.`
+            },
+            {
+                title: `Piracy on the surge`,
+                author: `zeeenz`,
+                type: `mid`,
+                content: `With many of the Imperium’s naval assets being mobilised to combat the numerous threats present against the Imperium’s stability and ecosystems, the gap left behind by the home fleets is being rapidly exploited by Pirates. The Imperium Galactic Trade Council, a conglomerate focused on the passage of safe none-tithe goods between hives and factions such as Rogue Traders have stated that “While Piracy is on the rise, so far only a few systems are under threat these being Therax, Androi and Caledon, while many more may be soon in the same boat, it is safe to assume this wave is just a fleeting trend.” 
+
+Many are opting to ignore these claims, stating piracy has not been an issue in most imperium owned trade routes for a long time, however, some planets with capable shipyards have opted to increase their tithe payments in an attempt to loosen the burden of the Naval Fleet’s in combating both normal threats but also the growing piracy threat.
+
+However, for some systems and colonies such as Caledon, these Naval Fleets will not arrive in time, while Caledon does have a growing planet defence force, mostly veterans, its Naval capabilities are lackluster. With Helios Prime’s insurgents now believed to be pirates, and, with the conglomerate believing Caledon may be another target for these pirates the Governor of Caledon has offered any Imperium sanctioned mercenary forces to come to Caledon Prime and help defend its Voidspace, offering both the normal boons they offer to their growing populace, but also a high payment plan above par for a growing colony of the Imperium.
+
+Too little too late? We won’t know until either Caledon, the Conglomerate or the Imperial Navy report any more piracy activity or their destruction.`
+            },
+                      {
+                title: `Chaos at the Front`,
+                author: `colonelgorgon`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Armee de Victorum has fallen. Its entire force of 500,000 men, and 900 Guns have fallen silent. Leading to a Gap in the Normandy Line. The Albionite Forces threaten to exploit this gap and manuever behind Armee de Watarloo and Armee de Paruvia. If this happens nothing will stop the Albionite Forces. Grand Marshall Vae has been reportedly KIA when Armee de Victorum was routed and subsequently destroyed. Rumors are there are some remnants scattered about in AO Normandie Centre. But Field Marshal Revout is also reportedly dead. 
+
+This is a Dark day for Eropia and the Frankonian Empire as a Whole. 
+
+Who will plug this gap? With what troops? 
+
+Reportedly the Imperium has sent some of its finest. And they've formed an Armee de [Redacted] and [Redacted] on [Redacted]. Victory is assured, God-Emperor Blesses the brave men and women on the front.`
+            }
+                      
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
