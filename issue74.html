@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I'm trapped in the printing room, send help</span>
+            <span>Issue #74</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `The Damned Marches forward.`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `As the piracy surge continues to overshadow the rapid advances of the Imperial colony on Caledon, the Caledon Defence Fleet (*A Fleet comprising mostly outdated Imperial Navy Vessels and Administratum sanctioned Mercenaries) leave their stationed posts above Asteroid X3M-Ae37 and move to interdiction points throughout the Caledon System. Even amidst the threat of encirclement from the heretical swarms incoming, Caledon Governor has pledged to the Administration once again that they will fulfill all of their tithe needs, including that of the nearby sister settlements which is being done via convoys from these sister colonies before they go dark with their own defence fleets mustering with the CDF.
+
+Many on board these convoys are beginning to wonder if this is purely an act of bravado to embolden the defenders, or, a line of hope tethering any administratum forces to come to Caledon and influence fate into the hands of the Caledonian’s. While initially reporters on one of these convoy vessels believed that many of the transports would be full of Imperial Citizen’s fleeing to Caledon Prime, this was far from the truth, with the convoy merely composing of the Tithed goods and the citizens opting to stay within their respected colonies to defend against the oncoming piracy fleet.
+
+The Commander of the Caledon Defence Fleet (CDF) has notified both Caledon and the Imperial Time’s remembrancer that if the Piracy Fleet is marching on Caledon, and by extension its sister colonies, it will make it to the interdiction points within a few days, and if they fall, planetfall within the week. However, even with this threat looming overhead, every person we interviewed, spoke to, listened to, all had many things in common, hope, defiance and hatred for anyone who opposed the Emperor’s will.`
+            },
+            {
+                title: `Tithe Financial Times.`,
+                author: `zeeenz`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `With numerous threats imposing on the Imperium’s borders, and within, the Imperial Times and its cohorts have requested all information allowed to them through the Administratum’s Exacta spoke person for publicization to show exactly what the worker is working for, and, how their contribution is helping the Imperium win these important battles.
+
+Arion:
+Planet Arion, nearby to the Ultima Segmentum has had their Tithe grade altered, due to constant battle scarring of the planet the Administratum has altered its Tithe to instead include the Populace for use within the Astra Militum, with their focus being to secure nearby colonies and sectors within the Ultima Segmentum. Due to their constant attritions, the Arion 17th have had remarkable success with the defence of Arion, but also wider colonies such as Actaeon and Dustire.
+
+Sirax:
+Planet Sirex within the Segmentum Tempest has had their Tithe grade also altered, however, this is mostly due to an unknown radiological variable which has wiped out numerous of the colonies populace, including as well numerous infrastructure damages. A Administratum Scion team focused on hazardous environmental situations such as Radiological has been dispatched to Sirex to both find the cause of this unknown attack on the planet, but to also evaluate how quickly the planet can resume their original tithe grade of Exactis Secundis.
+
+Silmenus:
+Planet Silmenus within the Ultima Segmentum is a fledgling colony, with its rapidly growing populace and foundry focused infrastructure the Administratum has placed a Tithe grade of Decuma Tertius to allow the Planet to continue its rapid growth whilst supporting the imperium with its Tithe. It is forecasted to begin working on its second Manufactorium level within the next century, with the Tithe forecasted to improve to Exacta Tertius by that time.`
+            },
+            {
+                title: `Lamia Prime`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `For three months, the planet has endured relentless siege at the hands of Severan Dominate-backed separatist forces. The Planetary Defence Force, alongside elements of the Valhallan 144th and 301st Ice Regiments, have fought with stubborn resolve. Reports indicate that despite Imperial reinforcements, attrition and encirclement have steadily reduced Imperial control to a single fortified bastion. Hive Tarsis.
+
+To make matters worse, a third power has entered the war. Astropathic choirs screamed for two nights straight and confirmed what many had already feared. Chaos warband, identified by Ordo Hereticus observers as the Gloam Serpents, are making planetfall across multiple continents, sacrificing many of the rebels and loyalist holdouts to their dark idols.
+
+In the wake of this new threat, Lord General Acastian Rhyne, commanding Imperial forces on Lamia Prime, has entered into a temporary ceasefire with rebel leadership under Marshal Severin Kordhal, a known agent of the Severan Dominate. Joint operations have already been observed in the outer defense rings of Tarsis Ultima, where former enemies now hold the same trench lines against heretical forces.
+
+Lord General Rhyne has publicly declared that, should the combined forces succeed in purging the Chaos presence and stabilizing the planet, all rebel combatants will be granted Imperial pardon. Marshal Kordhal’s response was a counter-declaration transmitted across unsecured vox bands. Kordhal affirmed that Lamia Prime would not return to Imperial rule under any circumstance. Instead, he offered terms of separation. Offering that Imperial forces would be permitted full withdrawal from the planet, unharassed, retaining their banners, arms, and honor. Kordhal’s message read. “We will not kneel again, but neither will we damn ourselves to Chaos. Let us survive this, and we will part as warriors of the Emperor. We would be willing to pay your blasted tithe if you just lowered it.”
+
+The Emperor Protect`
+            },
+                      {
+                title: `Fortress Falls After Weeks of Island Fighting`,
+                author: `amarain12`,
+                type: `mid`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The campaign on Strovaan has been ongoing for over a decade. Around six months ago, additional Imperial forces were deployed to the planet to help restore the tithe. One of these forces is the 5th Belleau Marine Regiment. The regiment spent the first few weeks performing support operations in the southern part of the planet, before receiving orders to proceed to a small island called Aethron Isle, where a large fortress, with a powerful shield was causing issues. 
+
+Alongside other imperial forces, the marines began a prolonged attack on the island, utilizing their Shrike dive bombers to crush the outer defenses, along with their massive battleship, the Halebrook. That ship is worth its own story, having been captured from rebel forces by a Belleau boarding party, but that’s for another time.
+
+The marines forced their way ashore, spending a few weeks fighting their way closer to the citadel, until they had reached the edge of the shield. There, they stopped, for inside the base, a special team was gathering important intelligence, as well as taking the shield down. The marines waited for the team to evacuate, before beginning to level the citadel with a mix of 4,000lb bombs and 16 inch shells from Halebrook. Of course, this is not to mention the countless other munitions from the rest of the fleet. In just a few short hours, the mighty citadel was reduced to little more than rubble, with very few casualties for the marines.
+
+However, the campaign is still ongoing, and the marines still have more fighting ahead of them. At this moment, they are proceeding west, to the site of a vile ritual being conducted by the heretics. However, this site also has a powerful shield, generated by a ritual from a nearby Hive. And so, the marines patiently await their moment to strike.
+
+Imperial War Correspondent Ernie Pyle`
+            }
+                      
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
