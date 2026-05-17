@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Our patron has no ulterior motive, he just believes wholeheartedly in freedom of the press</span>
+            <span>Issue #75</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `SQUAT HOLD RECLAIMED, ORKS SLAUGHTERED`,
+                author: `beardog2150`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Praise be to the Emperor, as once more the strength of human arms has sent the horrible ork into the abyss of death!  Our abbreviated abhuman allies, the Squat League of Grungni, requested assistance from the mighty Imperial Guard to reclaim one of their long-lost holds, and thanks to human strength of arms, the deed was done!
+
+The Squat hold of Koganusan lies not far from Hacyria sector; our Squat friends informed us that long ago, an orkish invasion fell upon the miners, who sold their lives dearly but could not withstand the fierce alien attack.  The loss of Koganusan was recorded as a great offense, but the orks burrowed deep into the ground, and in their numbers, the Squats could not well countenance a counterattack.
+
+Thanks to the recent alliance between the League and Hacyria sector, though, the Squats came to Sector Governor Placide Strazza with a plan for action and for sharing of the fruits of victory; suitably impressed, the Governor pressed the abhumans' suit with the Departmento Munitorum.  The plan was a clever one - long ago, the Squats of Koganusan had devised a means to vent the world's magma onto its surface, but could not execute it before their defeat; while the human regiments bravely faced the orks and lured them to battle alongside Squat forces, a strike team of elite Squat warriors and engineers would enter the hold, repair the mechanism, and see vengeance done!
+
+After a month of battling on the rocky, blasted surface of the hold-world against orks riding a variety of terrifying tusked war-beasts, the legacy of Koganusan was activated, and great fountains of lava began to burst forth!  The Imperial forces made a swift evacuation, leaving the orks behind to be burned away!  The Squats were content to finish securing the hold themselves, and many freighters of valuable ore were dispatched to human worlds in thanks!  Truly, a deed well done and well paid for is its own reward!`
+            },
+            {
+                title: `Pressman freed after two days`,
+                author: `amarain12`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `Following the publication of Issue 74, sharp eyed readers noticed a strange message below the header that read “I’M TRAPPED IN THE PRINTING ROOM, SEND HELP!” A team from the Imperial Times  Combat Response Team was dispatched to open the door, but found themselves unable to get the door open. They attempted to use remote explosives, which failed to breach the door, only destroying the walls around it.
+
+A request for additional assistance was sent to the Administratum Office, which took about 20 hours to be processed, as the form had to be signed by six different officials. However, it was finally complete, and the Administratum dispatched a team of Adeptus Astartes, alongside a Adeptus Mechanicus representative. The techpriest spent some time examining the door, before determining that it was very well built, and gave the Astartes the go ahead to try and breach it. Like the IMCRT, they found the door impossible to breach, even using some of the best explosives they had.
+
+The Astartes decided they needed a better look at the door, so they breached through the wall, allowing the Techpriest a new angle to examine the door. The pressman provided some useful information about the door to the techpriest, and the two spoke for a few hours about the door. Finally, as the Techpriest was examining the door panel, he attempted to press the open and close button, which resulted in the door finally sliding open, nearly 50 hours after the message was first noticed.
+
+The Imperial Times thanks the Adeptus Astartes and Mechanicus for their help in rescuing the pressman, and has informed the public that the situation did not affect the new issue.`
+            },
+            {
+                title: `LORD-GOVERNOR’S CAT RECOVERED AFTER 3 DAY SECTOR-WIDE MANHUNT`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `Prince Grimalkin van del la Floof (the cat), beloved companion of the esteemed nobleman Lord Septimus Vale-Ortrant XIII vanished from the upper spires of Hive World Majoris Thule three days ago. The feline, is described by non-sector related personnel as a grotesquely overfed silver cat genetically engineered to possess the so called majesty of Old Holy Terra’s lions. It disappeared during a private banquet attended by sector high nobles and one confused Ecclesiarchy deacon who reportedly believed he had been invited to do a baptism. In actuality he was called to bless the cat.
+
+12 regiments of the Thule PDF was deployed into the underhives of the capital after there were reports of a fat silver cat roaming the alleyways. Over 200,000 civilians were detained for questioning. The crisis intensified yesterday when Lord Vale-Ortrant appeared publicly upon his palace balcony wearing mourning black silks and proclaiming: “If my precious Grimalkin suffers even a scratch, I shall personally request a full purge upon whichever district harbors the fiends responsible.”
+
+The PDF Marshal later clarified: “We are not going to purge anyone for a cat.” He was almost executed for this statement but was saved because no one wanted to shoot the last sane man in the upper planetary government. Many, many more problems became known as the governor messed with the hive to find his cat. 
+
+The mystery finally concluded this morning when Grimalkin was discovered asleep inside the engine compartment of Lord Vale-Ortrant’s own gilded grav-car. Tech-priests investigating the vehicle reported the animal had survived primarily by consuming ceremonial parchment seals, which were made with imported grox-fat. Lord Vale-Ortrant wept openly. The nobleman has since announced a week-long mandatory celebration. At this time, 17 people have been arrested for calling the cat fat.
+`
+            },
+                      {
+                title: `Sirax Prime gone dark`,
+                author: `amarain12`,
+                type: `mid`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `As mentioned prior within the last Tithe financial times weekly addition, Sirax Prime a once bustling colony focusing on the export of luxury goods within the Ultima Segmentum has gone dark, with its official ruling still in the air many critics are claiming a mixture of xenological lifeforms, xenos and unknown geological events.
+
+However, when the Administratum Scion team made the planet fall the team had prepared for enemy combatants and fortifications, but, all defence infrastructures were docile yet powered up still. The vid relays provided by the Scion team shows numerous key infrastructure still ‘maintained’ by an unknown contingent yet showing damage from what can be assumed as Imperial standard firearms. 
+
+After making their way from their landing coordinates and moving towards aforementioned key infrastructure one Scion member was quoted saying, “Thrones, it’s like no one was ever here” regarding the lack of people, their items and key culture pieces such as the Book of the Emperor. Upon searching through the Control Tower’s, Arbite’s halls and the Administratum record handling warehouses it became evident that the belief of an uprising was improbable however the Scion team and the Administratum has refused to answer any questions. The journey from the Landing area to these key areas is all that the team is willing to disclose and the Adeptus Mechanicus refuses to mention Sirax Prime even though they had a key research facility within the mountains which from the records within the Control Towers highlight that the research facility went dark twelve hours prior to Sirax Prime.
+
+As for now the Imperial Navy has placed a strict quarantine cordon surrounding Sirax, Sirax II and its moons.`
+            }
+                      
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
