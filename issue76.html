@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>In the presence of the xenos lies the invisible miasma of corruption</span>
+            <span>Issue #76</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `IMPERIAL WORLD OF DA REN CELEBRATES TITHING ANOTHER 1,000 REGIMENTS`,
+                author: `beardog2150`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `After completion of another Imperial Tithe collection, the world of Da Ren was swept by a grand holiday to mark another thousand regiments raised for the Emperor!  With grand festivals including fireworks and traditional food and games, the tireless laborers of Da Ren shared in the great honor and privilege that is their due, while the planetary nobility received their own recognition from the Departmento Munitorum and Departmento Exacta!
+
+Da Ren is an Imperial world blessed by temperate climes and abundant resources; these, in turn, led to the development of a substantial population and industrial base.  This development was possible, in part, due to a local warp feature, the Ushios High, a zone where major warp currents travel around a small region of near calm.  This presents something of a hazard, but moreso diverts warp travelers into seeking easier routes.  This delayed Da Ren's connection to its sector, as well as preventing marauding xenos or renegades from easily striking it.
+
+Favoring stability over power and prestige, the nobility of Da Ren stabilized the world at a moderate level of technology, permitting everyone to enjoy a common quality of life, even if they lack access to the greatest gifts the Imperium has to offer.  Thus, the well-fed and peaceful population of Da Ren grows with great rapidity - and, in the name of service to the Imperium as well as maintaining their prized order, a great number of those young people are recruited, trained, and outfitted for service in the Imperial Guard.  Every thousand regiments, a great festival is held, as yet another column is raised on the Avenue of Beneficence around the governor's palace to mark their contribution to the Imperium.
+
+Let us all give thanks to the Emperor for the peace and plenty of Da Ren, and for how many millions of soldiers they have provided for the safety and security of the sector!`
+            },
+            {
+                title: `War on War!`,
+                author: `wantheawoo`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `An armed engagement has escalated from a ball on the pleasure world of War today, as a Magos of the Adeptus Mechanicus kidnapped an agent of the Inquisition! Reporter Jimmy Falcon has been killed three times obtaining interviews from both sides of the conflict, and can report to the dear readers that the Agent was kidnapped to "Tart her up a bit, because she looks like she's been slapped in the face with a dry troat"
+
+Grim news, indeed.`
+            },
+            {
+                title: `Mechanicus Probe Captures Final Days of Doomed Orbital Body`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `By means of blessed noospheric relay and lumen-transmission arrays, citizens across the Makale system may soon witness a celestial death not seen in thousands of years in their sector. Approximately 13 light years from Makale Prime, the moon designated Makale A5b approaches its final destination. Adeptus Mechanicus augurs predict the object will soon cross the Roche Threshold of its host world, where tidal gravitation shall tear the moon apart into countless burning fragments. The event is expected to happen within the week. A5b is believed to be an ancient wandering dwarf planet seized long ago by the gravity of Makale Secundus, a sulphur-veiled world with endless volcanic activity. Planets around the system have been warned ahead of time to prepare their voidshields for the impending fragments that will inevitably strike at them once the large moon tears itself apart.
+
+The orbital observator probe SRO-35, originally deployed during a long-range survey expedition in early M41, has been repositioned into high anchor above Makale A5. There it shall remain, recording the moon’s destruction until transmission loss. The Adeptus Mechanicus has confirmed that public lumenfeeds of the event will be distributed through approved pict-casts and observatoria.
+
+Unauthorized amateur observance through voidship travel is discouraged. Direct telescope viewing without blessing may result in retinal damage. The Emperor Protects.`
+            },
+                      {
+                title: `First to climb Narix`,
+                author: `amarain12`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Within the Ultima Segementum lies Preiv Prime, a Pleasure World delegate for Imperial Guard veterans designated as ‘retired’. However, it isn’t the people or the world which draws the attention for many who attempt to gain access to Preiv even temporarily, it is the Mountain Narix, harder then Tera’s old mountains and nearly double in size.
+
+According to the current cycle of Preiv, in accordance with the wider star date, this will be the 137th season where climbers and dreamers can attempt the daring climb to be the first person to reach the summit of Narix. While it is the 137th season, the true number of attempts is a fraction of that number, resting at an easy 32, while many climbers wish just to enjoy the scenic views Narix provides, especially hard workers of the Imperium, it is Cladius Therux who will be the 33rd attempt at summiting Narix.
+
+Who is the 33rd Climber you may ask, Therux used to be a General of the designator 7318 relief battalion, a company solely focused on fighters from any planet who couldn’t muster a full regiment but still wished to fight, to help provide relief for the far more superior fighting personal such as Cadian’s and Kriegsman.  Therux stated that , “While the climb is hard, the Emperor’s light will guide my hand true and my legs strong”, however, this was half a sun cycle ago, it is unknown if they have made it to the half way point which was suggested by their timeline or not due to a sudden weather shift. It is believed that they will reach Base Camp Three within the next few weeks where vox transmissions should be available once again. Many are wondering if the 33rd attempt will be a lucky one, or, another climber rushing to the Emperor’s embrace once again.`
+            }
+                      
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
