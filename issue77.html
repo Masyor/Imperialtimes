@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Heretical connotations surrounding our issue number should be disregarded</span>
+            <span>Issue #77</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `CHIMERICAL REINFORCEMENTS REACH IMPERIAL GUARD`,
+                author: `beardog2150`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Thanks to the wisdom and timeliness of the Departmento Munitorum, Imperial Guard regiments across the Emperor's demesne are receiving new allocations of war machines!  The venerable Chimera armored personnel carrier, a longstanding and proud component of the Imperial war effort, has served as a base for many alternative patterns with more powerful armaments - such that they were mistakenly labeled as tanks.  But no more!  Now the brave Guardsmen of the Emperor's Armored Fist squads will ride into battle on more devastating treads!
+
+The Chimera APC is sturdy, capable, adaptable, and produced in large numbers; these qualities have invited many specialized variants to be developed through dire need, or rediscovered through brilliant research.  The famed Chimedon with its mighty battle cannon, the Chimerro with its armor-destroying hunter-killer missiles, and the Chimerax with its array of autocannons, have been produced on many worlds; the forge world of Gryphonne IV manufactures and licenses for manufacture its own pattern of Chimera armed with powerful, xenos-shredding twin-linked heavy bolters.  However, to date, these mighty craft were isolated into tank formations, where their ability to carry a squad of humanity's defenders to battle went mostly unused.
+
+After many thoughtful studies and commissions on the matter to ensure they were not acting hastily, the Departmento Munitorum, responsible for the mustering and deployment of the Imperial Guard, reclassified these vehicles, permitting transports with holds full of them to begin heading for Imperial worlds, to outfit regiments old and new.  Indeed, some worlds have been producing 'upgrade kits', whereby well-seasoned vehicles can be modified in the field with the appropriate rituals, their war-spirits revitalized to unleash death upon the enemies of humanity!  May we all sleep a little sounder tonight, knowing the destruction being wrought in our names!`
+            },
+            {
+                title: `War, what is it good for?`,
+                author: `wantheawoo`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `The now redesignated Death World of War has come under litigation from Krieg. The Governor has claimed that War is infringing on it's intellectual property and now after being blasted into oblivion by a civil war, is fully in breach of Krieg's rights. The Governor demands that War ceases and desists all existence at once.`
+            },
+            {
+                title: `Imperial TACTICAL Retreat`,
+                author: `dadyars`,
+                type: `mid`,
+                content: `After weeks of brutal fighting upon the soils of Sopor, the Imperial Army has been forced to retreat from the world following a massive counterattack by the xenos forces. The brave warriors of the Astra Militarum, Adeptus Astartes, and Questoris Imperialis gave their lives in defense of the planet, yet in the end, the overwhelming numerical superiority of the Aeldari warhost made tactical withdrawal the only sound choice.
+
+The war saw entire regiments eradicated at the hands of heretics and aliens alike, yet no enemy of the Emperor found conquest easy. The foe paid in blood for every kilometer of land they sought to deprive from our holy Imperium. From the skies above to the fortresses of the Planetary Defence Force, not a single battle was surrendered without immense sacrifice, proving once again the intellectual, technological, and spiritual superiority of mankind.`
+            },
+                      {
+                title: `Astartes Working With Navigator House`,
+                author: `_coati_`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `After recent tragedies surrounding the planet of Sopor, the Astartes Chapter 'Thalian Lions' has been seen working with House Namraza of the Navis Nobilite. Reports have found significant proximity between the two factions ships after their service planetside.
+
+While the extent of this cooperation is still being investigated, rumors say house Namraza had saved the stranded Thalian Lions from a warp storm. Post-incident, it is alleged that the chapter has sent Astartes to the Navigator House, though House and Chapter officials have yet to confirm this.
+
+"Cooperation between the Navis Nobilite and the Adeptus Astartes is just as important as cooperation between any other branches of the Imperium."
+
+Says Namrazan House Representative Nora.
+
+"Cooperation is only natural. Necessary even, for the sake of His great Imperium. I am honored by the trust the noble Thalian Lions have put in our hands. Though I cannot speak further for now, all I can say, is know the Imperium is now tightening ties for the betterment of humanity."`
+            },
+                      {
+                title: `HIVE AGONIA IS REBUILDING ITS HIVE DISTRICTS`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Hive Agonia of the planet Excrucia was infamous among hivebuilders auditors for its complex hab-zones and inefficient transit networks. Now, however, after nearly 70 years of investment with an Ork Waagh barely delaying the project, matter of fact, it increased it by helping demolish useless structures for free, the transit tunnels will run on time for once. According to the Hive government, the project will significantly reduce transit traffic and shorten average travel times for workers 40%.
+
+Not all citizens have welcomed the changes, but their opinions don’t matter. Imperial officials have achieved many of their redevelopment goals through large-scale acquisition programs. In some cases, entire hab-complexes and family holdings have been purchased or simply taken for demolition crews moved in to clear space for new construction. Long-established families have become some of the most vocal critics about the blatant land grabs and forced relocations. Others have expressed concerns regarding the preservation of local identity and culture, but the Imperial government acts on behalf of the Emperor’s Will. Therefore, to criticize this project is to criticize the Emperor and that would make anyone a heretic. With such sound logic, Arbites and Enforcer squads have detained heretics that do not follow the Emperor’s Will when called to do so immediately and with punitive measures.
+
+The Emperor Protects.`
+            },
+                      {
+                title: ` `,
+                author: `sigmar13`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `A thank you for our Valiant officers, from: Lemon Rush! And it's new Strawberry and Lemon with Amasec Can!
+Never before our True Heroes have had the chance to spark the Primarch in them, with an aftertaste of Strawberry!
+
+
+
+(Amasec ration has been verified and modified by the Administratum to be 'Safe for Work'. Going at $99.99 per can)`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
