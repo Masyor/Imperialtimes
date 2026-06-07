@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>+++ Thought for the day: 👽🔫 +++</span>
+            <span>Issue #78</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `HOLY SAFETY REGULATIONS CHALLENGED ON AEROSTRA`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The Planetary Assembly of Aerostra has approved a controversial decree reducing numerous labor and export regulations governing the world’s atmospheric extraction industry, a move officials claim is necessary to restore economic stability and maintain the world’s increasingly costly skyborne infrastructure. The legislation was passed during an emergency session to loosen restrictions on worker safety requirements and remove limitations affecting the planet’s primary industry. Which is atmospheric carbon harvesting. Aerostra’s population lives on  hundreds of colossal floating platform-cities suspended high above the poisonous lower atmosphere. Vast networks of intake towers descend into the clouds beneath, drawing immense quantities of carbon-rich gases upward for processing by Mechanicus purification facilities.
+
+Despite these exports, maintaining the floating cities has become increasingly expensive. Aging anti-gravitic infrastructure and transit networks consume enormous resources. Planetary government records indicate that platform maintenance expenditures have risen steadily for more than a century. In recent decades, Aerostra’s government sought alternative revenue sources. Licensed pleasure districts, gaming halls, and pilgrimage tourism were all expanded in an effort to attract off-world wealth. While these measures increased revenue, they failed to fully offset infrastructure costs. The new deregulation package is intended to change that.
+ 
+Because of the new legislation, private businesses will be permitted greater operational autonomy. Government officials argue that reducing regulations will increase production and ultimately result in greater tax revenues. Many cirtics though argue that the safety regulations were put in place since the time of the Great Crusade and to change it would be heresy. Demonstrations have occurred on multiple platform-cities, particularly among labor unions, shrine congregations, and worker associations. Several members of the Ecclesiarchy have voiced concern over what they describe as the prioritization of profit over following the wisdom of their ancestors for the greater good of humanity. It surprised the planetary government that the Eccesiarchy was the primary opponent to the change. 
+
+Facing mounting criticism from the faith preachers, the government introduced an amendment less than 24 Terran hours after the legislation’s passage. The amendment mandates a modest increase in minimum wages and compensation benefits for industrial workers employed in extraction facilities and atmospheric processing plants. Opposition groups have largely dismissed the concession as insufficient compared to what they had before. In just a few days, the entire new deregulation fiasco was reversed the moment a Cardinal from the sector’s capital got involved.
+
+The Emperor Protects`
+            },
+            {
+                title: `CANONESS CAUGHT RED HANDED! MORE THAN SISTERS?!`,
+                author: `kale_skope`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `Canonness Heliax was found exiting a hotel in the backlines of wazone tetha B! in the planet of rottan! in her side, a YOUNG NOVITIATE identified as Gloria Huxley! Is this how the Sisters of Battle teach the emperor's word? will this NOVITIATE be suddenly found a full fledged sister? or perhaps the Cannonness will need an PERSONAL ASSISTANT? This is only one of MANY cases being found in the many orders of the Sisters of Battle. we go to High Priest Bigomus for his opinion
+
+"SISTERS OF BATTLE SHOULD STOP BEING GAY! The emperor is a man! and as such the only person that the women of the ministorum should love is also a man! to do anything else is only befitting of the fancy RADICALISTS who promote other debauched and disgusting acts like UNORTHODOX PRAYER. first they kiss girls, then they stop singing hymns to kiss girls, then they start kissing girls during mass. it's not long before they start cavorting with the forces of chaos just to continue smooching women! THIS CANNOT CONTINUE!"
+
+"They do more than kissing women high priest"
+
+"WHAT?!"`
+            },
+            {
+                title: `Battle For Sopor part 1`,
+                author: `dadyars`,
+                type: `mid`,
+                content: `It took days before the Imperial battlegroup was  finally able to deploy planetside. Their efforts stagnated by both bureaucracy and elements. When the time finally came, the bulk of the Astra Militarum along with a small mercenary force settled down on the capital of the world, Hephaestia, while the Knight crusaders fortified the star-port of Goldehilde. In the ensuing days recon missions took place in the nothern mountain range, caused by rumors of bloodshed in that area. This soon commuted into the battle for the Astropathic relay, where the Imperial army, supported by the Adeptus Astartes, went against a force of the xenos species known as Aeldare. The right side of history prevailed once more and the xenos were eventually driven back.
+                
+    However the xenos decided to retaliate. Hours after reports of the Imperial victory, they besieged an Inquisitorial blacksite, triggering a widespread deployment of  all available Imperial troops. The relief effort was a combined force of several Astra Militarum companies, a contingency of Adeptus Astartes and two  Questoris Pattern Knights. The xenos fought fiercely, fueled by savagery, witchcraft and unholy technologies. The situation grew only worse once half of the gathered military forces were ordered by high command to withdraw and later abandoned the world as a whole. Despite the setbacks, the army of humanity pushed back the xenos on two fronts. The Black site was eventually recaptured and after defending against an enemy counterattack the battle was officially won.`
+            },
+            {
+                title: `Merry Orkless!`,
+                author: `wantheawoo`,
+                type: `mid`,
+                content: `It's that time again, the celebration of Orkless, where Ryzan Tech-Priests gather to clear up remaining Ork forces on the Forge World in the most creative and entertaining ways possible, as well as the first official use of last year's winner, Magos Artisan Adraxi's Tower Of Bones. 
+
+This year we are proud to host a very important guest; Magos Kharavi Lambda-IV of the Metallican Legio Cybernetica! Invited to this yearly event by the Hierophant Honouris Egwene Tai, The Gleaming Giant celebrating the end of the Twin Warghs with the Shackled Star is a great sign for the future of the Mechanicus!
+
+Not just a fun time for the Priesthood, but also with a gathering of so many Magi both eccentric and eclectic, the Menials have a chance to shine, show their capabilities and maybe even earn themselves an Acolytehood or place in the Skitarii Corps under one of the many Priests.`
+            },
+                      {
+                title: `Imperial Navy in Tatters.`,
+                author: `_coati_`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `A few issues ago we reported the news surrounding the impending piracy fleet on Caledon prime and the Naval fleet amassed by the local governor and its mercenaries with hope of defeating the Piracy scourge. As of twenty hours ago news from our outer posts confirm that the entire naval fleet has been wiped out, with a few of their smaller void vessels making planet fall before being destroyed, it is unknown if the Piracy fleet is using xenological based weaponry, but, local inquisition believes so with the weird disappearance of the flag ship of the Caledon fleet. Planetside forces have been seen mobilising around the newly built Space port and dockyards, while the planet itself only has a measly number of surface to air and surface to void based weaponry, due to allegiances to nearby forgeworlds, what weaponry they do have shows the true might of both the God Emperor, but also to the supposed Omnissiah.
+
+What information we could gleam off of both Military Intelligence and allowed information from nearby Administratum highlights the impending fall of Caledon, with local experts believing the planet has not even a week before its outer colonies fall and then the Inner Hive Cities. However, all is not lost, a nearby settlement of retired Cadian’s have pledged their sword in the defence of Caledon prime, with such illustrious war-heroes heading their way numerous active serving Cadian’s are following suit. With such a force amassing the scales are slowly tipping in favor of the Caledon’s, even if it is still favoring the xenos and the heretics. For now all we can do is pray to the God Emperor and hope his mercy shines upon the Caledon’s, it is true that they need every bit of it right now.`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
