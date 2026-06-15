@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Running late, but looking great</span>
+            <span>Issue #79</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `SEVERAN SHADOW HAND SUSPECTED IN OH-SEES REBELLION`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Rumors grow as Imperial Forces secure Faraday Resort Island on a planet in the Calixis Sector. What began as a localized rebellion against Imperial authority is increasingly being viewed by Sector Command as something far larger and far more organized. Officially the Severan Dominate has denied involvement in the uprising on Oh-Sees. Nevertheless, rumors continue to spread throughout military circles following the discovery of unusual equipment, intercepted vox traffic, and coordinated rebel actions that many commanders believe exceed the capabilities of a simple Planetary Defence Force mutiny. The once famed paradise world used for hunting exotic fauna is now engulfed in conflict after the execution of Planetary Governor Lysander Vhal, whose death at the hands of elements of his own palace guards marked the beginning of open rebellion. Since then, tithe payments have ceased entirely and loyal Imperial authorities have declared all remaining PDF formations to be traitors.
+                
+8 Astra Militarum regiments have since arrived in-system to restore Imperial control. The strongest evidence fueling speculation emerged following the recapture of Faraday Resort Island, located approximately five kilometers off the coast of the continental capital region. Before the uprising, Faraday was among the most exclusive destinations on Oh-Sees, serving noble families, wealthy merchants, and occasional visiting Imperial dignitaries. When traitor forces seized the island, visitors and staff were reportedly executed en masse with reports that the swimming pools became their mass graves. Imperial commanders of course expected resistance. What they did not expect was evidence suggesting the defenders had prepared for a prolonged siege despite the island’s obvious vulnerability. Military historians note that such planning bears similarities to defensive doctrines employed by Severan military advisors during previous separatist campaigns. The island nevertheless fell within days and has hence become a staging ground for Imperial forces for the upcoming mainland offensive against Cartaghe.
+
+The world occupies a useful position along several regional shipping routes and possesses extensive infrastructure despite its relatively modest population. If successfully incorporated into separatist territory, it could serve as both a propaganda victory and a logistical hub. Whether the Severan Dominate orchestrated these events or merely exploited them after the fact may ultimately matter little. The result is the same, an Imperial world has rebelled and refused the tithe and must be brought back into the God-Emperor’s light.
+
+The Emperor Protects.`
+            },
+            {
+                title: `The Joke of the Week`,
+                author: `lawson_xi`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `<i>Brought to you by the 843rd Vostroyan Regiment</i>
+
+A Guardsman, an Ogryn, and a Sister of Battle are dropped onto a barren death world for a week-long scouting mission. Due to an administrative error by the Departmento Munitorum, they were only packed three days' worth of rations.
+
+By day six, they are starving.
+
+The Sister of Battle kneels in prayer, clutching her rosarius. "I require no physical sustenance," she declares proudly. "My faith in the Golden Throne is a banquet, and the Emperor’s light is my nourishment!"
+
+The Guardsman looks at his empty ration tin, then at his lasgun. "Well, if worst comes to worst, I can set my lasgun cell to overload. The explosion will be quick, merciful, and I won't have to starve to death."
+
+They both turn to look at the Ogryn, who is happily chewing on something, his face covered in grease.
+
+"What are you eating, big guy?" the Guardsman asks, terrified of the answer.
+
+The Ogryn swallows hard, wipes his mouth, and smiles. "Found crunchy metal bugs in the dirt. Tastes like corpse-starch, but extra crunchy!"
+
+The Sister of Battle gasps in horror. "An active Necron scarab infestation?! You ate the foul machines of the xenos?!"
+
+The Ogryn shrugs. "Emp’ror said 'protect the Imperium.' I protected it... by eating it."`
+            },
+            {
+                title: `Governor found dead on Galius Prime.`,
+                author: `zeeenz`,
+                type: `mid`,
+                content: `Unhealthy lifestyle, or devious plot found?
+
+During the night it has been reported by our local insider within the Arbiter forces that Governor Snex has been found dead within the lowerhive, a place far below where you would expect someone as esteemed as Governor Snex. Currently, the nearby planetary defence forces whom found dear Governor Snex within the lowerhive alley claims that “It is evident he died of natural causes, there is no external or internal damages to the body or soul we can see, it seems he simply did what the Emperor willed and that's it.” 
+
+However, Arbites who have begun investigating the odd occurrences this morning have stated the complete opposite, "Governor Snex would not leave the Administratum wing of the planetary governance halls without alerting his security forces, additionally he would’ve alerted Arbite forces about going into the lower hive, which, as of late has been turbulent” It is no secret that this turbulence the Arbites talks about is about new laws and regulations for harsher work environment within the lower factory halls and decks, but, many also now believe it could be linked to Snex’s choice to go with the Feend Factory group over the Laterinus Noble Family factories.
+
+But, the weird situations do not end there, word both within the Administratum wing and within the lowerhive suggests two individuals were spotted walking into the the hall without being stopped and were last seen meeting with the Governor before their disappearance, many also believe that these two mystery people are either linked to the dead Governor or to the noble families.
+
+Fret not though dearest readers, the Administratum has already found a new Governor for Galius, Wilson Laterinus who has reported that he will not be going back on the past deals of Snex, but instead improve them for the entire hive city.`
+            },
+            {
+                title: `Inquisition Commends Navigators For Aid In Warp Storm`,
+                author: `_coati_`,
+                type: `mid`,
+                content: `An Inquisition representative trapped in an unexpected warp storm sent out a request for aid, needing assistance returning from an expedition. Several military vessels and navigator houses were unable or unwilling to help in saving the stranded Inquisitorial representative due to the danger imposed.
+
+Undeterred by the inherent risks, Navigator Nora Namraza of House Namraza lead an expedition alongside venerable Astartes to come to the Inquisition's aid. Having suffered shipwide losses amongst their vessels, the relief force managed to save the Inquisitorial representative and their retinue.
+
+Inquisition officials have publicly commended the Navigator House at service House Namraza held for fallen soldiers, both under Inquisitorial and Household command. Navis Nobilite representatives have given various gifts to the Inquisitors involved as a show of appreciation for their shared service.`
+            },
+                      {
+                title: `Battle For Sopor part 2`,
+                author: `dadyars`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Although the initial battles against the Eldar warhost were won, the same couldn't be said so easily for the battle to retake the orbital site of the planet. The surprise attack of the enemy, cowardly as it was, caught the imperial command of guard, and since the bulk of their forces was already committed to breaking the ongoing siege, they were forced to send reserve units to reinforce the struggling PDF. The Adeptus Astartes wasted no time to deploy. They landed their troops in the heart of the battle and the combined knowledge of three chapters brought death upon the deprived aliens. The fighting was brutal. Many angels fell in the process and countless more mortal troops. 
+
+Attempts to bring reinforcements by other Imperial forces proved futile. A pack of Armigers that was sent to open a way towards the orbital fortress found itself in constant harassment by xenos bikers, which brought great damages to the noble engines. The contingency of scions with the same goal fared much worse. By the time they were reached by the Aspirants every proud warrior of their regiment was found either slain or crucified, begging for the Emperor's mercy. In the end the Adeptus Astartes were forced to overcome the enemy alone, taking on the full weight of the enemy and coming on top bloody, yet victorious.
+
+Above the planet, the void filled with debris and corpses of Ealdary while the streets of Goldhide, found peace after days of riots and battles between rebels and Arbites units. Yet reports of an Ealdar army amassing in secret begone to reach the attention of the Imperial commanders.`
+            },
+          {
+                title: `HE LOVED CATS. BUT MAYBE TOO MUCH!`,
+                author: `kale_skope`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Rogue Trader Boloncius has come under fire for his recent acts as he has confirmed his marriage to 10 different felinid women! this is coming after marrying 23 humans 7 Squats, 4 Ogryns, 2 Pelagus, 1 Tau, and half an Eldar (From the waist up). We asked the Rogue trader for his comment and why he loved mutants so much. 5 correspondents were killed before the 6th managed to get an answer 
+
+"Look buddy, if the Emperor didn't want me to marry a catgirl then he in his holy wisdom wouldn't have made them so damn beautiful, it is humanity's manifest destiny to love every single woman in this galaxy."
+
+The correspondent was subsequently killed by a bolter round from his Sister of Battle Wife
+
+If a Rogue Trader can be so easily charmed by the mutant and the xeno! is this a sign of our glorious empire in decline? what about our beautiful human women?! will heretic rogue traders snatch them all up?`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
