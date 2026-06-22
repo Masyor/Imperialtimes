@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>80? What am I even doing with my life?</span>
+            <span>Issue #80</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `Navigators Return To Excrucia`,
+                author: `_coati_`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Navigator House Namraza returns to Excrucia to provide further Logistical aid. Despite previous efforts from the Astra Militarum, Planetary Defence Force, and the Angels of the Adeptus Astartes, a resurgence in Xenos had been detected. Nearby planets have been identified as unaffected, and will remain under safe classification until further notice.
+
+Despite the Navis Nobilites role as non-combatants, the Navigators of House Namraza continue to provide dangerous, yet crucial support to frontline worlds. When asked about the matter, household representative Nora Namraza commented little on the matter.
+
+“Major Imperial forces are still occupied with other fronts, or remain too far to provide timely aid. Despite this, Excrucia still needs Logistical aid, and strong leadership. If we can help alleviate some of that burden, why shouldn't we?”
+
+“We [House Namraza] have always been strong supporters of humanity, and couldn't pass up the opportunity to show our support for the brave souls of the Astra Militarum. The presence of the Emperor's Angels only emboldens our spirit. It falls on every citizen of the Empire to fight against the threats that lurk.”
+
+Updates on the situation are expected to arise soon.`
+            },
+            {
+                title: `CHOCOLATE RATIONS BROUGHT TO 50 GRAMS`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `In a generous display, the Administratum has authorized chocolate rations to be brought to 50 grams per week. This comes on the heels of Agri-world outputs in the sector exceeding expectations for the year. Further rationing information is listed below.
+- Water, Potable. 6 Liters (contamination level may vary).</br>- Bread. 500 grams (one loaf).</br>- Dried Grain Product (Pasta, Cereal, etc). 500 grams (one carton).</br>- Legumes. 750 grams (one can)</br>- Raw Grains (oatmeal or rice). 250 grams.</br>- Solid Dairy Product. 125 grams.</br>- Cooking Fat. 100 Grams.</br>- Liquid Dairy Product. 1 Liter.</br>- Cured "Meat". 125 grams.</br>- Preserved "Fish". 125 grams.</br>- Bone Broth. 0.5 Liters (one can)</br>- Preserved Fruit Products. 450 grams (one jar).</br>- Preserved Vegetable Products. 450 grams (one can).</br>- Recaf Powder. 50 grams.</br>- Distilled Spirits (Amasec). 0.25 Liters.</br>- Fresh Eggs. Unavailable.</br>- Fresh Meat. Unavailable.</br>- Fresh Fruit. Unavailable.</br>- Fresh Vegetables. Unavailable.</br>- Sweetener. Unavailable.</br>- Seasoning. Unavailable.</br>- Lho Sticks. 10 units.</br>- Soap, body. 200 grams.</br>- Soap, laundry. 200 grams.
+
+The Administratum wishes to remind you that citizens of the imperium are expected to be resourceful. Water rations do not include those meant for washing. You are expected to collect your own wash water.
+
+The Administratum wishes to remind you that imperial citizens are expected to sacrifice for the common good. Certain items may be subject to substitution without notice.
+
+Fuel and power rationing due to promethium shortages are in effect. The Administratum advises against cooking more than once every two days.`
+            },
+            {
+                title: `CALIXIS SECTOR ECONOMIC OBSERVER`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `The ongoing military operation to reclaim the paradise world of Oh-Sees has begun producing consequences far beyond the battlefield, with analysts warning that the planet’s lucrative trout industry may suffer catastrophic disruption should Imperial forces fail to secure key infrastructure in a timely manner. While attention has largely focused upon the traitor occupation of Cartaghe and the military situation surrounding Fort Ardent, economic officials have quietly raised concerns regarding the world’s famous silver-backed paradise trout, a fish species long regarded as one of the sector’s premier luxury exports.
+
+For centuries, Oh-Sees supplied trout products to noble households, shrine worlds, naval officer messes, and select Administratum dining halls throughout the Calixis Sector. The fish represented nearly 78% of the planet’s recorded export revenue and formed the basis of several major commercial guild fortunes. Recent fighting has complicated matters as reports indicate that river traffic has been disrupted and most of the specialized fish farmers have been killed or joined the rebellion.
+
+Sector economists now estimate that even a successful Imperial victory may not restore trout production to projected tithe levels before the end of the current fiscal cycle. The Departmento Exacto issued a statement noting that fish tithes remain secondary to the extermination of heretics, though privately several Administratum clerks expressed concern regarding quota fulfillment projections in addition to other Tithe requirements the planet has failed to provide ever since rebelling.
+
+One internal assessment warned that should the campaign continue for another 6 months, annual trout deliveries could fall below required export targets by as much as 40%. The effects have already begun spreading through regional markets. Shares in several major trout-processing companies have declined sharply over the past week. Investors and shareholders in the sector are suffering from this war.
+
+Should Imperial forces secure the mainland rapidly and preserve critical infrastructure, recovery is expected to be possible within several years. Should the fighting intensify around major waterways, experts fear the sector could face its first significant luxury trout shortage in over a century. At press time, the value of Oh-Sees Trout Consortium shares had fallen another 7%. This has been such a major issue that an Arbites Precinct was recently dispatched in addition to the Imperial Guard to quicken the recapturing.
+
+The Emperor Protects`
+            },
+            {
+                title: `THE EMPEROR TALKED TO ME THROUGH MY PIG! HE'S TELLING ME TO MARRY MY COUSIN?!`,
+                author: `kale_skope`,
+                type: `mid`,
+                content: `Farmer Pagonius has reached out to the Imperial Times to inform us that his prized pig honkious the third GAINED SENTIENCE and proclaimed to be an envoy of the emperor! telling him that he would be the chosen one to be granted the vessel of the golden throne only if he is given 500 thousand thrones, and allowed to marry his cousin twice removed!
+
+We Spoke with a fellow priest of the Imperial Creed who would rather remain anonymous and he gave us this information
+
+"Who the fu- how the fu- are you kidding me? do you really think- by the emperor WHAT are you even saaayiiing?!" 
+
+Is the ecclesiarchy hiding the truth? can the emperor truly commune through porcine means?
+
+We got in contact with a Canonness to see if she would investigate this new miracle
+
+"I am not going to canonize a fucking pig, a pig isn't a relic and frankly I want to send a crusade just to kill the bastard that made up this stupi- Okay that's it, I'm killing you too"
+
+Our brave reporter was killed in action for his bravery and valor, he will be missed`
+            },
+                      {
+                title: `The Imperial Times Celebrates Leonius Day`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Many know the tale, many more do not, upon this day we celebrate Saint Leonius and their devotion to the one true lord, God Emperor of Mankind. Circa M.38, Saint Leonius was martyrd on an unknown planet, in an unknown city, lost, yet they were found by the God Emperor, for anyone willing to devote themselves to our Emperor is never truly lost. The Saints work was well known throughout the Scarus Sector, both infamy and famously, many adored their work and preaching of the God Emperor as many were scared of the lawless nature of the Sector. However, due to their preachings of the God Emperor, Saint Leonius the Blind was martyred through a barbaric act by the heathens, they took their eyes and their life but, they never took their soul, for that belongs now to the Emperor. Like all fighters of the imperium, like all the faithful, our bodies may wither, but our courage and our souls never will. Now, with the Scarus Sector still in turmoil, albeit of different nature, many look back on Saint Leonius and the promise they delivered, every being saved through the Emperor’s love. Many streets are now decorated in their name and many of the Imperium’s PDF and Guards blind themselves with blindfolds and wax as they guard the streets, giving their eyes to Saint Leonius in hopes that they will watch over them when the time comes. For Death comes for us all, Leonious will watch our last stands and guide us to the Emperor’s side, so do not falter, do not be scared, wary traveller, for the Emperor’s warm embrace waits for us all.
+`
+            },
+                      {
+                title: `Battle For Sopor part 3`,
+                author: `dadyars`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The reinforcements arrived only a few hours after the void battle above the skies of Sopor had ended in a Pyrrhic Imperial victory. The incoming forces consisted of an Astra Militarum regiment - the 250th Ferrum Grenadiers -  House Chimaeros led by Kar Chimaeros himself, and She-Wolf, a Warhound-class Titan from Legio Xestobiax. It took approximately three days for the Aeldari to reorganize their forces and prepare for another assault. Their attack targeted the weakest elements of the Imperial defense: PDF Points Alpha and Beta. 
+
+Reinforcements were dispatched shortly after the first reports arrived; however, by the time they reached the PDF strongholds, it was already too late for the local regiments. The ensuing battles inflicted heavy casualties upon both sides. At Point Alpha, the regiments of Alistran’s 1st Corps suffered significant losses during their advance, finding themselves outmatched by superior alien weaponry. Yet they pressed onward and, alongside the Astartes of the Thalian Lions, charged into the enemy lines, locking both armies in a brutal clash that saw no clear victor. House Chimaeros and House Retria also participated in the assault from different fronts, with the former providing fire support for the advancing Imperial Army, while the latter attempted a flanking maneuver against the captured PDF fortress.`
+            },
+          {
+                title: `JOKE OF THE WEEK`,
+                author: ``,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `<i>Brought to you by a anonymous Inquisitor</i>
+
+A Space Marine Captain and a Inquisitor of the Ordo Hereticus are standing on the bridge of a Strike Cruiser. Overlooking a planet that had just been liberated from a cultist uprising.
+
+The Inquisitor, adjusting his collar and looking incredibly smug, turns to the Astartes. "You see, Captain? It takes precision. My network of spies, months of careful interrogation, and a perfectly timed assassination of the cult leader saved this world. The scalpel always triumphs over the hammer."
+
+The Astartes Captain crosses his massive arms, looking down at the mortal. "With respect, Inquisitor, your 'precision' took six months. My company would have dropped in, purged the capital, and wrapped this up in three days."
+
+"Yes," the Inquisitor sneers, "and you would have leveled half the hive cities, destroyed the planetary infrastructure, and left a trillion thrones worth of damage for the Administratum to fix!"
+
+The Captain stares at him through his expressionless helmet lenses for a long moment before replying:
+
+"Precisely. Three days."`
+            }
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
