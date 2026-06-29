@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>You get it when you get it</span>
+            <span>Issue #81</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+            {
+                title: `March of St. Dolores`,
+                author: `rollie.pollie.ollie`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The annual feast-day of St. Dolores the Relentless will be celebrated in Ulimbia's hive cities and across the Rolian sub-sector, in thanks for the saint's intercession on behalf of the faithful of the Imperium. The Imperial Times reminds citizens of the sub-sector in question that participation is mandatory.
+
+St. Dolores was a fiery and passionate sister of the Order of the Bloody Rose, and was ever to be found in the forefront of any attack. Notable miracles performed by the saint include the crossing of the Silpian Alps, where she led her sisters on a forced march through treacherous mountains to surprise a force of foul xenos, and the Holy March of the Caldon plains, where the saint led her sisters over an enemy minefield without a single one detonating. Martyred in 560.M38, St Dolores was taken into the arms of the God-Emperor in her customary way: charging alone against a greenskin titan as the noble Astra Militarum charged their Shadowswords' volcano cannons to slay it.
+
+The feast day celebration will begin with a sermon from Cardinal Orleans, who will raise the spirits of the faithful with his impassioned words and lead the worlds of the sub-sector in prayer. Relics of the Saint, such as the holy teeth of her chainsword, will be on display for veneration. The crowning glory of the festivities, however, is the March. Several thousand penitents and pilgrims will gather at the center of their chosen hives and spend as much time as need be to walk the entire circumference of their hives, subsisting on alms alone. In so doing, they honor the spirit of a woman who let nothing stand in her way.`
+            },
+            {
+                title: `CHOCOLATE RATIONS INCREASED TO 30 GRAMS`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `In a further generous display, the Administratum has authorized chocolate rations to be increased to 30 grams per week. This comes on the heels of Agri-world outputs in the sector exceeding first quarter expectations. Further rationing information is listed below.
+
+Water, Potable. 4 Liters (contamination level may vary).</br>Bread. 350 grams (one loaf).</br>Dried Grain Product (Pasta, Cereal, etc). 350 grams (one carton).</br>Legumes. 500 grams (one can)</br>Raw Grains (oatmeal or rice). 200 grams.</br>Solid Dairy Product. 100 grams.</br>Cooking Fat. 50 Grams.</br>Liquid Dairy Product. 0.5 Liter.</br>Cured "Meat". 100 grams.</br>Preserved "Fish". 100 grams.</br>Bone Broth. 0.25 Liters (one can)</br>Preserved Fruit Products. 300 grams (one jar).</br>Preserved Vegetable Products. 300 grams (one can).</br>Recaf Powder. 100 grams.</br>Distilled Spirits (Amasec). 0.5 Liters.</br>Fresh Eggs. 1</br>Fresh Meat. Unavailable.</br>Fresh Fruit. 1 apple.</br>Fresh Vegetables. Unavailable.</br>Sweetener. 30 grams.</br>Seasoning. Unavailable.</br>Lho Sticks. 20 units.</br>Soap, body. 150 grams.</br>Soap, laundry. 150 grams.</br>Water, Washing. 30 Liters.
+
+The Administratum wishes to remind you that currents of the warp interfere with delivery times. A fresh egg is not guaranteed to be fresh upon delivery and may have spoiled in transit. To ensure you get an egg that has not spoiled, arrive to collect your rations early. The last ones there will get rotten eggs.
+
+The Ministorum wishes to remind you that "blessed is the mind too small for doubt". Any citizens who question the increase in chocolate rations based on previous publications of the imperial times are subject to summary judgement by the Arbites.
+
+Fresh fruit in the form of one apple is to be distributed to each citizen in order to increase health benefits to locals and cut down on public medicae costs. "An apple a day keeps the medicae away".
+
+The emperor protects.`
+            },
+            {
+                title: `On the shoulders of Giants - Part 1`,
+                author: `zeeenz`,
+                type: `mid`,
+                image: `https://images2.imgbox.com/d6/a7/OnsJMlFq_o.png`,
+                content: `One Terran month prior, in a previous Imperial Times Report, our paper reported on the situation within Preiv Prime and its 137th seasonal attempt at climbing Narix, the tallest mountain within the Preiv pleasure world mountain range. On the morn of the last day, climber Moraco, one of fifteen climbers, was seen making their way down the throat of Narix from the peak. This makes Moraco the first human to summit Narix via old-Terran traditions of climbing. Due to this incredible feat from Moraco we designate this report to the first summiter and the fallen fourteen. Luckily one of our reporters was at basecamp with Moraco arrived, allowing us this exclusive interview, the following segment has been provided by said climber.
+
+Days 0-5:
+
+“The climb was nothing like what I imagined, there is beauty and grace, then theres Narix…the initial journey was not one of ease yet, compared to the Mountain and its story, it was. As we climbed up previous seasons attempts at creating basecamps and strongholds, many of the climbers became unnerved, wondering if we would share their same accursed fate, by the time we reached one of the first initial walls which would test our mettle many of the first wave backed out, while fifteen of us attempted the climb five would go back now. Apparently this group of five never made it back to basecamp…only the Emperor now knows where they rest.”
+
+“The wall was again, not as hard as we imagined. The rockface was good and the weather better, I assume that was one grace of it being a pleasure world. Our leadclimber Peter believed to have found numerous ways up, some of the lesser experienced climbers took the easy route following the crack in the wall. However, I and a few others decided to take the scenic route and followed what seemed to be a crack which led to an overhand, it seemed like an illogical route to take, however it tested us for the future climbs.” 
+
+Days 6-10:
+
+“While the climbs on these few days were frequent, their difficulty did not spike, from one of our camping grounds we could see the perilous wall where season 124 fell…many of the newer climbers lost a lot of their energy seeing what awaited us, it was an old wall, near straight vertical with barely any rests…While there were many cracks and holds for us to take, one wrong move or a rock shearing the line and it would be over. But, it was our only route, the other route meant belaying down into the gorge below and adding an extra near two weeks…landing us outside the weather window. Luckily, season 96 created a road for us…we call it a road but it was an old wooden bridge over said gorge…I was on the first wave over…the bridge didn’t survive the second wave, six of our group perished, the fall…the fall was quite long…May the Emperor watch over them.”`
+            },
+            {
+                title: `Tragedy at Doncarus Prime`,
+                author: `dankest0130`,
+                type: `mid`,
+                content: `After nearly five millennia, the ancient archeotech generator responsible for meeting the vast energy demands of the Doncarus Cogitator banks has finally failed. The knowledge of how to maintain the generator has been in steady decline over centuries, with each generation of maintenance crew becoming more inept. Before its final activation, the massive archeotech generator showed signs of decline, activating without the proper rights and dispensing power in unpredictable spikes. The generator finally failed from ages of being overtaxed on a mundane afternoon of simulation. One need not worry about the fate of the maintenance crews, for they have not been allowed to wallow in purposelessness. They have been granted new purpose in servitordom. Millions of the descendants of the first tech-adept crews are now scheduled for servitorization, to be performed over the next decade.
+
+Yet while the end to this ancient child of the Machine God is a tragedy, the greater concern currently is the fate of the Doncarus Cogitator. This vast network of minds is even older than the generator that powers it, spanning a planet-wide network of computation and reasoning. The Doncarus Cogitator was used to accurately predict and simulate many era-defining events throughout the Indomatus Crusade, such as the Fall of Cerinax, the Slaughter of Malasor, and Redemption at Lucien. Magi across the sector are scrambling to find a solution, a replacement so that once more the countless sea of minds that make up the ancient cogitator may hum with life once more.`
+            },
+                      {
+                title: `On the shoulders of Giants - Part 2`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: `https://images2.imgbox.com/46/dc/qDrWdptm_o.png`,
+                caption: ``,
+                content: `Days 11-20:
+
+“We do not know when, but others of the group have now gone down…well we assume down to either the gorge or another route to basecamp…Maybe it is true and this range is cursed…no we couldn’t think like that, less bodies mean less hardships…we could see the wall infront of us now, the five of us still believed it wouldn’t take too long to get up it, but, it would test us.
+
+“Peter believed we could follow the old crack line up the majority of the route, a slow and arduous route but a safe one…or so we thought. What we didn’t account for was the wind tunnel which was the gorge and its destination being this wall…Jersiah fell before they could attach their safety gear, Lasire and Arthur were attached to him when he fell, taking them with them. It’s just me and Peter now, the crack line did take us up the majority of the route, all we had to do was go left a bit more and we finished it.”
+
+Days 20-27:
+
+“The snow planes…they were unique, large sheets of ice with deep crevices, upon reaching a cave on the other side of the planes we could see the peak, the peak of Narix was in sight. The entire time we were dreaming up the unseeable, now we could see it. What we could also see were the countless dead from previous seasons, thrown across ice spires, or, their gear scattered near the edge of small ice gorges. Peter insisted we go down, try again next season, I refused. Sometimes we come for the mountain, come for the peak…sometimes it comes for us. Now it is just I who remains, me and Narix…Narix was so close, yet so far.”
+
+Day’s 27-30:
+
+“I could see the end, after climbing between the ice spires and making it up another plane of ice, all that remained was the final push…oxygen was low here, I couldn’t see straight, yet, amongst the blizzard I could see a person with a Golden glow, it filled me with hope, it was clear who it was, our Emperor. The God Emperor made us strong, made us who we are, it was evident I had to finish this climb. One step, another, a pick, another, up the crack, one leg… It was beautiful, there isn’t a word both in low and high gothic to explain it…the view was sublime, but the climb…more so. You become one with everything, one with Narix. The God Emperor made us, and we made these worlds…to be here, to be one…it was like being with the God Emperor… People in base camp when I made it back asked me what I will do next, and I know you think the same…I want to go again, to Narix. No support or safety equipment…the God Emperor will protect me and assist me. That's all I need. I need this, for Narix, for the previous seasons…it has to be done.”`
+            },
+                      {
+                title: `Navis Nobilite Houses Unite`,
+                author: `_coati_`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Despite recent rising tensions between the Navigator Houses Namraza and Vallenholm, House Namraza has stepped forward with an offer of peace. Navigator House Namraza has proposed a political marriage between house members Lenor Namraza and Vissalith Vallenholm, marrying into House Vallenholm. House representatives are expected to discuss further details soon, although relations are expected to rise.
+
+Breaking their recent streak of tension and political disarray, the houses intend to unite each other under a union of bloodlines and genetic diversity. House Vallenholm, despite their attempts to dissuade Thalian Lions from accepting Namrazan Navigators and publicly renounce their union as ‘without sufficient reasoning and historical backing’, seem to be willing to accept the offer.
+
+House Namraza refuses to pull out of deals with the Astartes Navy, although continues commend the other house's dedication to the Astartes and acknowledge their longtime political ties.
+
+“It is an unexpected situation for us all,” says house representative Nora Namraza. “desperate encounters with the enemies of mankind have driven the bonds between our house and the venerable astartes. We do not claim to be more worthy, or more dedicated than [House Vallenholm]. It is simply a matter of experience together, and trust earned under the most extreme circumstances.”`
+            },
+          {
+                title: `FORT ARDENR TAKEN`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `After a day and night of relentless combat, Imperial forces have achieved a decisive victory against the traitorous garrison of Fort Ardent, one of the largest rebel strongholds on Oh-Sees. Under the determined leadership of Major General Maximillian Ashald and Marshal-Provost Joren Blackwrit, loyal soldiers of the Astra Militarum, supported by the Adeptus Arbites and attached Imperial auxiliaries, shattered the enemy’s defenses through unwavering courage and absolute faith in the God-Emperor. The fortress now flies the Aquila once again.
+
+The battle reached its climax when the sacred superheavy tank, the Prosecutor of Mars unleashed a devastating Quake Cannon shot that annihilated Fort Ardent’s eastern wall. Within moments, Imperial armor and infantry charged bravely into the breach and slew the traitors in their millions! As Imperial forces reached Fort Ardent’s command center, they discovered the traitor’s leadership had taken their own lives rather than answer for their crimes. Cowards! As expected of those who flee from the Emperor’s light! Though Fort Ardent has fallen, operations continue across Oh-Sees. Imperial reconnaissance reports the rebel capital of Cartaghe has begun preparing defensive works after apparently abandoning any attempt to relieve Fort Ardent. Absolute cowards.
+
+For security reasons, further details remain classified. Now onto the trout.
+
+The rivers west of Fort Ardent had already been contaminated by industrial runoff before the campaign began, resulting in many, many trout deaths, in their trillions. Many have migrated to other parts of the river to avoid such problems. On the ground reports by classified Munitorum personnel however say that the increase in corpses that have been tossed into the water have created an abundance of organic matter that became fertilizer for algae and aquatic insects, creating an explosion of food for the surviving trout. These survivors grew unusually large due to the lack of competition created by the previous high population of trout.`
+            },
+          {
+                title: `JOKE OF THE WEEK`,
+                author: `lawson_xi`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `<i>Brought to you by Theta-16-Rho</i>
+
+An Administratum scribe dies and stands before the Golden Throne.
+
+The Emperor grants him one question, so the scribe asks: "My Lord, how many Space Marine Chapters are currently active?"
+
+The Emperor calculates and replies: "THERE ARE EXACTLY ONE THOUSAND."
+
+The scribe goes pale with horror. "Oh Throne... then who have I been sending rations to for forty years?!"`
+            },
+          {
+                title: `Thirst Epidemic grips the imperium`,
+                author: `someguui`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Across the imperium various cases of a virulent disease have broken out. Many experts in the Adminastratum Officio Medicae alongside sisters within the Orders Hospitaller have determined that LIGMA is potent and dangerous disease. Inquisitorial reports and findings have determined that these diseases are not that of the Warp Xenos but still advise that faith shields best against all harm. 
+
+LIGMA's Symptoms include that of loss of social skills , increased sweating and odour production , and general appearnce of sickliness. In later Stages hair loss , projectile vomiting and involuntary defecation become apparent. LIGMA's primary danger comes from water loss meaning those that appear very Thirsty suffer from LIGMA. It is advised to report any Thirsty individuals to your local arbiter or Enforcer.`
+            }          
+          
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
