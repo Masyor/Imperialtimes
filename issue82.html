@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Love can bloom</span>
+            <span>Issue #82</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `NOBODY CAN STOP ME FROM LOVING MY OGRYN WIFE`,
+                author: `kale_skope`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `A legal conundrum occurs today as it leaves Arbites puzzled. Local Factorum overseer JaBungus has shocked the planet with publicly announcing his marriage to Ogryn Abhuman Cheese. this incident had the local Arbites force informing him that per local law, marriage between human and abhuman could not occur, upon punishment of flogging. to this, the man informed that he had married his mutant bride off planet and thusly, could not be punished for the crime
+
+We go to local Sheriff Bazoople for more info
+
+"Frankly, I find it repugnant...I mean it's legal, but repugnant. it shouldn't be legal, but it is. and since it's off planet, we have to enforce imperium law. and there's no rule that says you can't marry an Ogryn"
+
+What new horrid machinations can be created? terrible, terrible thing`
+            },            
+          {
+                title: `Proclamation of Duty`,
+                author: ``,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `<b>By Order of The Noble Rogue Trader Dynasty of House Du Sol</b>
+Let it be known to every citizen, soldier, and noble that the Honorable Rogue Trader Dynasty of House Du Sol together with the Rightful Heir Apparent of House Du Sol, Soren Du Sol, hereby proclaims anew its loyalty to the Holy Imperium of Man to continue the sacred duty that House Du Sol was charged with by the Emperor thousands of years ago. House Du Sol continues to act as a bulwark against those which would cause harm upon the Holy Imperium and its citizens.
+
+The Archenemy shall know nothing but the taste of the Blade, The Xeno shall be purged without discrimination, The Heretics shall be judged in the Emperor’s name, The Mutant shall be persecuted for their impurity, and the Witch shall be sanctioned or face death. 
+
+When the call arises that the Imperium is threatened have it be known that the Honorable Rogue Trader Dynasty of House Du Sol shall answer the call when it comes with unwavering bravery. We stand as instruments of the Emperor’s divine will. 
+
+<b>Ave Imperator!</b>
+<i>On the blades of our forebears, We remain unwavering.</i>`
+            },
+            {
+                title: `JOKE OF THE WEEK`,
+                author: `lawson_xi`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `<i>Brought to you by Cegorach</i>
+
+An Eldar Farseer, a Striking Scorpion, and a Harlequin are watching an Imperial Guard regiment march into a massive, obvious Ork ambush.
+
+The Striking Scorpion sighs. "The mon-keigh are so clumsy. They walk blindly into the jaws of death, completely devoid of grace."
+
+The Harlequin smiles behind his mask. "Yet their tragedy is a beautiful comedy! Look how they wave their tiny flashlights!"
+
+The Farseer gazes into her runes, looking incredibly smug and superior. "Do not pity them. I foresaw this exact moment ten thousand years ago. By allowing these primitive beasts to slaughter each other, a single Eldar maiden world three sectors away will remain undisturbed for another century. Our intricate, web-like schemes are flawless."
+
+Just then, a stray, off-target Ork artillery shell screeches through the sky and lands directly on top of the Eldars hidden observation post.
+
+As they dust themselves off in the rubble, bleeding and bruised, the Scorpion glares at the Farseer. "I thought you foresaw this?"
+
+The Farseer sniffs, adjusting her spirit stone. "I did. I just chose not to tell you so you would learn a valuable lesson about patience."`
+            },
+            {
+                title: `Emerging New Opera Sweeps Through Terra`,
+                author: `.rayja`,
+                type: `mid`,
+                image: ``,
+                content: `While normally, dear and pious readers, we would relegate stories concerning entertainment, up to and including Operas both holo and vox variations, towards our dedicated entertainment articles, a new Opera piece has caused such a shake up down here on Terra that we felt it appropriate to bring it your wider attention.
+
+Named "Donna Ferrovia", the play follows the scandalous, hedonistic, and outright heretical actions of the Donna Ferrovia of the planet Edeonii. Although presented at every turn with offers of repentance for her crimes against her people and her fellow nobility, she continues to terrorize and inflict pain on her subjects with the help of her peasant-turned-seneschal Kortessio, who secretly resents his lack of freedom and consistently petitions a statue of the God-Emperor, ever silent to the masses, for justice. Eventually, on the way to her banquet in which she plans to commit 10000 misdeeds and 'ascend', she is stopped by the same statue, warning her of eternal pain incomprehensible to the mortal mind. She continues on, and at the climax of her banquet, after rebuking her lovers petition to repent one final time, she is stopped and dragged into the darkness by the statue of the God-Emperor, her screams echoing on and on for eternity. Eventually, the rest of the cast, peasant and noble, free from her reign, give thanks and offerings to the God-Emperor and his Imperium before planning for happier days.
+
+While most Operas, especially amongst the thousand performed here on the throne world, are known for their exclusive noble clientele as well as consistently pious overtones, 'Donna Ferrovia' has broken through into the wider populace as well, quite possibility due to the supposed intervention of the Opera's composer, who has remained anonymous so far. Indeed, the simplistic means of production as well as more bitter and grim take has seemed to reach into the popular hearts of the masses, as select riots and unrest have been noted at locations where the Opera was either banned or unable to accommodate enough visitors. 
+
+An official stance on the Opera's legality has yet to come, but many are skeptical in its continued legality after harsh denouncements were made from the noted Opera-hating Cardinal Gerroff Yspilotrokus, who has been quoted describing the Opera as "A despicable and infernal design, made for nothing short of the utter scum amidst the greater scum". Invesigations have been rumored to been conducted in order to locate the composer, who was also rumored to have left Terra in order to spread his work to the rest of the Segmentum. 
+
+Time will tell if this tale of debauchery and grim justice will survive, but either way, we know you ever-so pious readers will keep watch and ensure the continued prosperity of our beloved Imperium. The God-Emperor Prevails.`
+            },
+            {
+                title: `Assault On Navis Imperialis Fleet Causes Commotion Among Navis Nobilite`,
+                author: `_coati_`,
+                type: `feature`,
+                content: `Recently, a fleet defending the Erosian sector has come under attack by a heretical migrant fleet. Various vessels have come under attack, killing thousands of Imperial Citizens and Soldiers alike. While Imperial assets remain victorious, losses have been significant. Recovery missions are still underway.
+
+Navigator House Namraza, a patron of multiple vessels in the fleet, has accused Minutorum recovery teams of foul play, citing they did not properly prioritize the recovery of Navigator Sanctums. Accusations of Navigator lives being lost due to delay in targeted recovery only feed Navis Nobilite unrest as other houses join in.
+
+The Adeptus Minutorum has begun to distribute compensatory resources to affected houses, although unrest continues.
+
+“Two Navigators were killed on hull breach.” Navigator Laura Namraza states, “I only survived because I had left the Sanctum. Multiple guards helped me, remaining at my side as we awaited recovery most of them did not survive starvation and dehydration while we waited for recovery.”
+
+One of the first Navigators to be recovered, it is alleged that several other Navigators could potentially have died due to neglect. Investigations ensue.`
+            },
+                      {
+                title: `Lost Ancient ship found.`,
+                author: `zeeenz`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `After patrolling the Niries system, hunting down fugitives and heretics alike, the Governor and Imperial Navy Collective under laws from the Sub Sector Lord found an ancient warship and colony ship once thought to be lost to the warp. The Niries system has always favoured the unjust and the ilk of the Heretic due to the deep gas clouds and nebulas help them hide from the Emperor’s light and Auspex. However, after the deep thrust of the spear of the Emperor via the Collective, the naval group ventured into the clouds to find these ilk and instead found the colony ship. As we speak thousands of breathers are combing through the colony ship, hoping to find remnants of the Emperor’s old crusades and find any trace of the heretics on board. This is due to the fact that when they boarded they found no trace of enemy fire, damage or plague, but, the entire crew so far was missing, including their bodies. Currently en route to the ships location is more Naval vesss to help defend this sacred site from the heretics, A Magos incase of old technologies which were given to these fledgling colonies can be found and a remberancer, finds like these are rare, and in a horrid time within the Niries system it can become a beacon of hope and light worthy of the Emperor.`
+            },
+          {
+                title: `Successful March of St. Dolores`,
+                author: ``,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Citizens of the Rolian sub-sector celebrated the feast day of St. Dolores the Relentless last week, with all citizens giving thanks to the Emperor for his beneficence, and the saint for her intercession. Casualties from the resulting stampedes were well within acceptable parameters.
+
+The sermon given by Cardinal Orleans exhorted the faithful to diligence, calling on all "to approach their work with the zeal and fortitude of our beloved saint." On display were such relics of St. Dolores as the holy teeth of her chainsword and bolt casings from rounds she fired in life, and no less than five cripples were able to walk again in the presence of such holiness.
+
+The March itself was highly successful, with more than 400,000 pilgrims embarking on the circumnavigation of the holy hives. Representatives from the Water Guild were present at select locations, refreshing the faithful as they continued their journey. Unconfirmed reports state that some 12 penitents appear to have completed their circuit, and are on their way to the local medicae station with sore feet and renewed faith in the Emperor.`
+            },
+          {
+                title: `SIEGE OF OH-SEES NEARING TO VICTORY`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Following intense fighting throughout the night, Imperial Guardsmen are at the gates of Cartaghe, putting it now effectively under siege as the traitors hide behind their walls. Engineering detachments continue clearing extensive minefields while forward elements maintain constant pressure against the city’s outer defenses. Enemy attempts to repair critical infrastructure have reportedly been disrupted throughout the night. The remaining bridge leading into the city remains contested. Across the remaining continents of Oh-Sees, loyal Imperial formations continue successful offensive operations. Departmento Munitorum estimates indicate that several major formations have completed the destruction of organized rebel resistance in their assigned sectors and are now redeploying toward the primary theater. It is estimated additional Imperial forces are mere hours away from joining the siege of Cartaghe.
+
+In other news, the battle in orbit continues to favor the Imperium. Imperial Navy task groups have expanded their control of local void, allowing greater freedom for transport craft delivering supplies, medical personnel, and replacement equipment to Fort Ardent. Dropships escorted by Navy fighters have already begun evacuating prisoners, transporting casualties, and reinforcing the newly established headquarters. The Severan Dominate’s Navy reportedly has fully withdrawn from the sector after crippling losses. Now, leaving the traitors behind for Imperial justice to exact its justified punishment.`
+            },
+          {
+                title: `CELEBRATION OF VICTORY`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `The Sabbat Worlds mark the anniversary of the victory of the Sabbat Worlds Crusade. The occasion is marked with mass celebrations, fireworks, grand parades, and speeches by planetary governors. The weeks-long festival is going to be capped off by an address from the sector governor and an orbital light show produced by the lance batteries of naval ships. Millions of tons of meat and alcohol are being purchased by rogue traders to rush supplies to the Sabbat Worlds ahead of the festivities. The largest celebrations will take place on Hagia, Herodor, Urdesh, and Balhaut. As the bicentennial celebration, this is certain to be a once in a lifetime event. We wish all celebrants a happy anniversary of the liberation of their worlds from the vile clutches of the sanguinary tribes.`
+            }          
+          
+          
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
