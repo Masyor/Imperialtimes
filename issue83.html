@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Sponsored By Lemon Rush</span>
+            <span>Issue #83</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `House Du Sol Seeks a Worthy Servant of the Omnissiah`,
+                author: `sirdb78`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `By the authority of the most honored Heir-Apparent Soren of House Du Sol, Heir-Apparent of the ancient Warrant of Trade.
+
+
+House Du Sol officially extends its hands to the holy cult Mechanicus in search of a tech priest ordained in the path of Technoarcheology who not only seeks to further serve the Imperium of Mankind but also be offered the chance to study and maintained the ancient flagship of House Du Sul the Aurora Regalis Conquest-Class Star Galleon. 
+
+
+Those who are interested in such a position will be requested to come forth to the research world known as Horizon’s End where interviews will first be conducted by the planetary governor. Those who pass this initial interview will then be granted the honor of boarding the Aurora Regalis to not only tour it but also go through rigorous testing and interviews done under the watchful eye of Heir-Apparent Soren of House Du Sol. 
+
+Finally those who pass this final interview will be asked to write a report detailing what they believe their duties will be alongside how they will go about ensuring such duties are fulfilled. Once this has been completed the tech priest who proves themself to be the most capable will be granted the honor of joining the retinue of House Du Sol alongside the title of Enginseer Prime once they have proven they are capable of such a duty. 
+
+The honorable House of Du Sol wishes luck to the tech priests who go through the interview and testing process.
+
+Signed,
+
+Soren Du Sol, Heir-Apparent of the ancient Warrant of Trade`
+            },            
+          {
+                title: `Redemption at Doncarus Prime`,
+                author: `dankest0130`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `The vast Doncarus Cogitator array is active once more. Life and function graces the mind bank once more now that a replacement has been found for its ancient acheotech generators. The   Basilikon Astra, with the assistance of the Imperial Navy, has scoured stars and worlds for a suitable replacement. Cobbling together massive power plexes taken from other worlds, the cogitator array could be utilized for a time, though the plexes quickly burnt out under the strain and power demands of the Doncarus Cogitator. Salvation was found in the Bestuy Sector. Infested with Aeldari Corsairs, a proper replacement was finally found. After a grueling three-year period, countless prayers, and menial lives, the entirety of the ancient generators and the stopgap power plexes were replaced. The minds of the Doncarus Cogitators now sing alive the song of the Omnissaih once more. It has accurately predicted the happenings on multiple systems, including Atoma, Cerinax, and Hemphia.
+`
+            },
+            {
+                title: `LETTERS FROM THE FRONT`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 3,
+                content: `Members of the Astra Militarum have long been allowed to send letters home to their families under commissariat scrutiny. In a display of trust, some families of deceased guardsmen have sent their final letters to us, so the imperium may fully learn the sacrifice they make to keep the enemies of humanity at bay. Below are a few such letters.
+
+"Noble father and chief, I find my mind drifting back to the deep mangrove every night as darkness claims the sky. I no longer know the way home, and my heart aches for the deep woods of the un-till. I miss you all dearly and know I shall never see you again, but I know that it is good and proper to die for the emperor. Send my love to my sisters."
+Corporal Ezsra MkVenner, Gereon 12th nightsiders.
+
+"My dear family. As I don the icon of the blessed Beaty, I recall the storied and sacred history of our home. I know that the emperor protects, and that he sends his saints to guide us. This is why I do not regret my actions. The Beaty guided my hand then, as she does now. Do not mourn me, for I will be martyred in the emperor's name."
+Trooper Hennic, Herodian 306th Volunteer Penitents.
+
+"Never in my life have I seen so much green. This world has forests with trees taller than a hive stack, and grass thicker than the soot in our sky. In a hundred lifetimes I could never have dreamed up such a beautiful place. The sunset here fades from a gentle yellow to a ruddy pink, then a deep blue twilight. If not for the barbed wire and shells, I could almost forget there was a war on. Love as always, your Hesti."
+Lieutenant Hestia Fontaine, 122nd Fortis Binars.
+
+"Ma and Pa. The young commissar is helping me write this since I don't know my letters yet. He's the nicest man in the regiment. I hope that I can come home and tell you what I saw, and how the little 'uns here appreciate a big 'un like me. Sending you my rations since I know you'll be hungry."
+Ogryn Bodyguard Thrudd, Hagean 17th Shrine Guard.`
+            },
+            {
+                title: `The Perfect Eldar`,
+                author: `lawson_xi`,
+                type: `mid`,
+                image: ``,
+                content: `Prep Time: As long as it takes for the ignition cycle
+Cook time: Few seconds
+Yield: One Crispy and Tender Aeldari Child, one less xenos in the galaxy.
+
+---
+
+What you need:
+1x Melta-Rifle or Flamer (Per your choosing)
+1x Aeldari Child
+Fuel for your cooking tool
+
+---
+
+Instructions:
+
+Ignite the Flamer or Melta-Gun: Ensure your Flamer is properly blessed by the Techmarine. If using a Melta-gun, wait for the hum to reach a pitch that vibrates your fillings out of your jaw.
+"Well-Done" Protocol: : Do not attempt a delicate sear. Aim directly at the target's smug aura.
+If using the Flamer: Coat the target evenly from head to toe. If they try to backflip out of the way, remember that promethium sticks to everything, even Eldar acrobatics.
+If using the Melta: Pull the trigger once. The sheer thermal energy will instantly turn the target into a cloud of glowing, ionized vapor before they can even mention their ancient heritage. (Results vary)
+Serve: Pair with a glass of amnsac for pure enjoyment.
+
+Culinary Warning: Do not inhale the smoke. The vaporized remnants of Eldar hubris mixed with superheated promethium has been known to cause extreme irritation to respitory organs. `
+            },
+            {
+                title: `Oh-Sees Tithe Causes Rogue Trader Tensions`,
+                author: `_coati_`,
+                type: `mid`,
+                content: `Oh-Sees, a planet in the Calixis Sector, has recently ceased contact with the rest of the Imperium. Worse than this, they have stopped sending their tithe to the Administratum. While current details as to why are being investigated, tensions seem to be on the rise.
+
+Administratum officials have relied on the 'Silver-Backed Trout' provided by Oh-Sees for hundreds of years to aid in successful trade with Rouge Trader Dynasty Averna. This has allowed them to successfully maintain several generations of cooperative trade, and frequent peaceful political meetings.
+
+Under the recent changes in events, the Averna Dynasty has refused to attend an important diplomatic meeting provided by the Administratum to discuss the future of the Calix Sector. While negotiations are underway, attempts to regain control of the planet have been sanctioned to more direct approaches.`
+            },
+                      {
+                title: `New Noble Pleasure World Founded on Jerah.`,
+                author: `zeeenz`,
+                type: `mid`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Due to the rising numbers of veterans from the numerous sources within our glorious Imperium. The Adeptus Terra alongside the sector lord and a council of Planetary governors have opted to create a new type of pleasure world, and, a unique one. While many pleasure worlds takes the form of old Terra, rolling green hills, deep blue skies, you get it, this one however takes the form of a new type of grav train. The Grav train called “Imdomitus Imperialis” pattern forms a 400 chain linked carriages, allowing an entire city to exist within the train ecosystem. Many within the higher Nobility and Sages question its use, however, the key point is that these almost pleasure worlds exist within our current ecosystems as they run parallel or around major hive cities. This provides an incentive to the hive city members to enlist and, if it comes down to it, our glorious veterans can assist in the protection of the Emperor’s grandest hive cities. These trains have almost fresh air, almost clean services and rooms, jobs to keep you busy and food, what more can you ask for! To earn your place all you have to do is volunteer and fight for the Imperium.
+`
+            },
+          {
+                title: `Oh-Sees Report`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `With Fort Ardent’s planetary guns neutralized, Navy transport craft have begun arriving throughout the captured fortress under fighter escort. Reinforcements, ammunition, medical supplies and engineering equipment continue arriving throughout the morning as the war situation has been deemed stabilized by Segmentum command, and have thus pulled portions of the Vostroyan 587th to a different battlefront. Orbital officials report increasing confidence that void superiority will soon be fully secured. Across the remaining continents of Oh-Sees, Imperial offensives continue to achieve rapid success.
+
+Departmento Munitorum estimates indicate that additional loyal formations are now mere hours away from reinforcing the siege of Cartaghe. The traitors find themselves increasingly isolated.
+
+The Emperor Protects`
+            },
+          {
+                title: `Oh The Horrors!`,
+                author: `bot_valley`,
+                type: `feature`,
+                image: ``,
+                caption: `Initial scans of Hominies Minor Minor.`,
+                content: `Guardsmen have given reports of something awfully fearsome happening on the frontlines! Spotting the Adepta Sororitas fighting, but not just any Sororitas, felinids? Have the abhumans reached that far, to infiltrate the sisterhood of the Adepta Sororitas! We jest, it was only one guardsman that has reportedly seen this and he has been dealt with. The Sisterhood remains pure as ever and no one can tell you otherwise!
+
+Any further attempts to inquire about these events will result in your local Inquisitor coming to pick you up for questioning, please do not attempt to do so, the time of His Inquisition is very valuable`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
