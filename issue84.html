@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Operation Yorkshire Pudding initialising</span>
+            <span>Issue #84</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `Political Shifts On the Frontier`,
+                author: `kelimnac`,
+                type: `feature`,
+                image: ``,
+                content: `Following a recent string of victories by an experimental foray into combined arms, the civilized world of Bel Vor has seen fit to allocate more of their (admittedly slight) resources to the aid of this experimental regiment, known in official listings as the 17th Bel Vor Mixed Infantry. The 17th is currently battling for control of the paradise world Oh-Sees, under traitor occupation.
+
+The Mixed Infantry are currently headed by Major General Maximillian Ashald, third son of a minor house on Bel Vor. Due to the Major General's promotion and formation of a divisional command with the addition of a second regiment, House Ashald has increased in status, the patriarch Lord Tyresias Ashald having expanded the family's network of holdings and alliances to encompass one of the few industrial cities planetside.
+
+Neither Lord Tyresias nor Major General Maximillian could be reached for interview on the change in the political landscape, though the head of household was put on public record for the following statement regarding his son:
+
+"His methods are strange, but he acts with purpose, conviction, and an unshakeable faith in the God-Emperor. My son is making us all very proud."
+
+More news to follow as the situation in Bel Vor, and abroad, develops.`
+            },            
+          {
+                title: `HERETICS HIDE BEHIND XENOS WITCHERY!`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `Disturbing reports from the Spinward Front continue to expose the true nature of the self-proclaimed Severan Dominate. They are xenos worshipping traitors using the weapons of the Imperium’s most hated foes. It has long been known that the enigmatic Eldar have long manipulated human conflicts for motives known only to their deceiving selves, thus they are one of the suspects of supplying the rebels. Others suggest dealings with the Tau Empire, whose expansionist ambitions have brought them into increasing contact with fringe Imperial territories. The most disturbing theories speak of darker alliances still, though authorities have refused to speculate publicly.
+
+The Ordo Xenos has neither confirmed nor denied the existence of an active investigation.
+
+Meanwhile, Imperial commanders emphasize that these alleged alien advantages have not altered the strategic reality of the war. Loyal Guardsmen continue advancing across contested worlds despite every trick employed by the rebels. It does not matter whether they hide behind stolen alien machinery or the lies of witches. The Emperor has already judged them and His Hammer will carry out its justice on all accounts.
+
+Citizens are reminded that possession of alien artifacts, unauthorized psychic practices, or the dissemination of xenos propaganda remain capital crimes under Imperial law. Anyone possessing information regarding suspected collaborators is instructed to contact their nearest Arbites precinct or representative of the Holy Orders of the Emperor’s Inquisition immediately.
+
+The Emperor Protects`
+            },
+            {
+                title: `Joke Of The Week`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `A Guard Regiment is placed in the front lines, next to a company of Space Marines. The Guardsmen are ordered to charge an incoming horde of greenskins and complain bitterly about their fate. However, their commissar silences them with a look.
+
+"You are the imperial guard! The emperor's hammer! Stand to your posts and charge the enemies of mankind! Do well and you may even impress the space marines in the next trench."
+
+With the impassioned speech, and threats of summary execution, the regiment charges the Orks. After taking heavy casualties, the regiment drives off the Orks and returns to their trench. Only a third remain in any condition to fight, and to add insult to injury, the space marine company sends a vox message rebuking them.
+
+"That was a shameful display, your callous waste of lives shows your lack of skill."
+
+That night, the survivors of the regiment hear the sounds of battle from the space marine positions and receive an urgent vox message.
+
+"Reinforcements needed, our lines have been breached."
+
+Knowing that the regiment does not have the forces to hold their own section and reinforce another, the vox-officer replies.
+
+"Hold the line. It's so simple that us unskilled guardsmen can do it in our sleep."`
+            },
+            {
+                title: `Recipe of the Week`,
+                author: `lawson_xi`,
+                type: `mid`,
+                image: ``,
+                content: `<i>Brought to you by Chef Didier</i>
+
+This weeks recipe is brought to you by the sons of Vulkan and his own personal "Vulkan's Cookbook", all measurements have been adjusted for human consumption, errors in adjustion possibly remain, consume at own risk.
+
+Spire-Style Braised Grox Flank
+
+Prep Time: 30 minutes
+Cook Time: 3 to 4 hours (Low and slow is mandatory)
+Yield: 4-6 Servings
+
+Ingredients
+<ul><li>1.5 kg Grox Flank or Brisket, cut into thick 5cm chunks.</li>
+<li>3 tablespoons Ration Oil or animal fat.</li>
+<li>2 Large Hive Onions, coarsely chopped.</li>
+<li>4 Cloves of Garlic, crushed.</li>
+<li>3 large Hydro-Carrots, sliced into thick rounds.</li>
+<li>500ml Amasec.</li>
+<li>500ml Beef/Bone Broth.</li>
+<li>2 tablespoons Corpse-Starch for coating and thickening.</li>
+<li>Coarse Low-Hive Salt and Black Pepper, to taste.</li>
+<li>Dried Bay Leaves and Thyme (Commonly grown in agri-domes).</li></ul>
+Cooking
+
+<ol><li>Pat the Grox chunks dry with a clean cloth. Season them aggressively with salt and black pepper. Dredge the meat lightly in the corpse-starch, shaking off any excess. This helps form a crust and thickens the stew later.</li>
+<li>Heat the oil or fat in a heavy-duty cast-iron pot over high heat. Sear the Grox pieces in small batches. Do not crowd the pan. You want a deep, dark brown crust on all sides to lock in the juices and build flavor at the bottom of the pot. Remove the meat and set it aside.</li>
+<li>Turn the heat down to medium. Add the chopped onions and garlic directly into the remaining fat. Cook until the onions are soft and translucent, scraping up the browned bits left behind by the Grox meat.</li>
+<li>Pour in the Amasec. Let it come to a boil, using a wooden spoon to completely scrape clean the bottom of the pot. Let the alcohol reduce by half to concentrate the flavor.</li>
+<li>Return the seared Grox meat to the pot. Add the hydro-carrots, broth, bay leaves, and thyme. The liquid should just barely cover the meat. Bring it to a gentle simmer, cover tightly with a lid, and drop the heat to low. Let it simmer undisturbed for at least 3 hours, until the tough fibers completely break down and the meat flakes apart with a fork.</li></ol>
+
+Serving
+
+Serve steaming hot over a bed of mashed starch-tubers or alongside dense, ration-bread loaves to soak up the heavy gravy.`
+            },
+            {
+                title: `Heist on Greina, Governor’s gems vanished.`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `Over the course of the night, Arbites of Geina, a large hive city of the same name of the planet, have reported that a sizeable gem collection rumoured to be bestowed down by the God Emperor has been stolen. While no current evidence suggests that they’ve been entirely stolen, Arbites representative states it was the only probable cause, otherwise, how could a governor lose so many gems in such a short period of time. The Gems are protected around the clock, except for a thirty minute period when it’s believed to be stolen. However, rumours on the hive street are that there was a flash of green light during that short period exactly when the gems disappeared.
+
+So the question is, stolen or lost, and if so, by the Governor, a thief or some sort of xenos? Who knows, I suggest we pray to the God Emperor for a speedy recovery.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
