@@ -139,6 +139,14 @@ p {
     mix-blend-mode: multiply;
     margin: 0 0 15px 0;
 }
+ul, ol {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: "Courier New", Courier, monospace;
+    mix-blend-mode: multiply;
+    margin: 0 0 0 0;
+}
 
 /* UI BUTTON */
 #download-btn {
