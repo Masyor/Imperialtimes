@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I've been sick all week :(</span>
+            <span>Issue #85</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `Arbitrator Foreboding: Final Verdict - A Review`,
+                author: `akatoad`,
+                type: `feature`,
+                image: ``,
+                content: `The latest installment in the long-running Arbitrator Foreboding series has arrived in theaters across compliant worlds, and once again audiences are reminded that justice is best delivered at the end of a shock maul.
+
+Starring the ever-reliable Karys Banru as the granite-jawed Arbitrator Foreboding, the film wastes no time at all in throwing viewers into the depths of Hive Mortis Primus. What begins as a routine investigation into a ration forgery ring quickly escalates into a sprawling conspiracy involving corrupt Administratum officials, underhive chem-gangs, and a sinister cult of heretics. I will admit that the plot is admittedly little more than an excuse to move Foreboding from one spectacular gunfight to the next, but that has always been the appeal here. Nobody purchases a ticket expecting the kind of high art a planetary noble would enjoy. They come to watch Arbitrators kick down hive block doors while reciting sections of the Lex Imperialis.
+
+Banru once again proves why he has become synonymous with the role. His portrayal strikes the perfect balance between relentless professionalism and dry, almost imperceptible humor. The script gives him only a handful of one-liners, but every one lands with the force of a shotgun execution shell.
+
+Among the standouts:
+
+"Mandated Edict: Mauling."
+
+And after ejecting a cult leader through the stained-glass window of a desecrated shrine:
+
+"Sentence carried out."
+
+It truly is impossible to imagine anyone but Banru beneath the iconic black carapace armor and mirrored visor.
+
+Visually, the production spares no expense. The hive feels proper, with towering hab-spires that disappear into polluted cloud layers. Practical pyrotechnics dominate over cheap pict-effects, lending every shotgun blast and plasma detonation a satisfying weight. The action choreography is equally impressive as well. Foreboding dispatches heretics with the sort of efficient brutality that has made the franchise famous. There are no elaborate duels or acrobatic flourishes. Every strike is direct. Every shot has purpose. Every criminal receives exactly the amount of mercy prescribed by Imperial law. 
+
+Some critics have suggested the franchise has become predictable. They are correct, of course, but there is good reason that this has worked for over thirty films and countless serialized vox dramas. Director Vistar Lagdan knows exactly what fans of Nimos Cannon’s original work want, and delivers it in spectacular fashion. Arbitrator Foreboding: Final Verdict is exactly what it promises to be: two hours of uncompromising justice, explosive action, and enough legal citations to make an Administratum clerk weep with joy.
+
+Rating: 5/5 Aquilas`
+            },            
+          {
+                title: `Mass disappearance on lost world`,
+                author: `tarnisheddddd`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `The hive world Camaris has recently been returned to the light of the Astronomican in an unsettling state. Having been cut off from the wider Imperium by a warp storm known to the region as the Blue Vortex for over a decade, the storm now recently cleared, allowing for an expedition led by Inquisitor Markvasse to land on its surface and conduct an investigation.
+
+Their findings were troubling indeed; upon landing at the capital hive city of Camaris Ultima, they found the spire completely absent of any local nobility, citizens, or even servitors. Over a month long period they ventured deeper into the lower levels all the way to the underhive and found the same results; a complete and total absence of any human life or local hive fauna. There was, however, no evidence or indication of conflict, damage, or malady beyond the natural states of a hive city. The same results were found at every other hive city explored on the planet. It was as if the entire population, estimated at 151 billion souls per census conducted during the last tithe, had instantly vanished.
+
+Further details have been withheld by Inquisitorial classification, but Inquisitor Markvasse has deemed it fit for resettlement and further examination by the Administratum. Camaris has been handed over to the Departmento Colonia, which has now sent out a call across nearby sectors for aspiring colonists, advertising prime real estate in the empty spires.`
+            },
+            {
+                title: `SERMON OR HERESY?`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `An itinerant preacher has caused controversy within the local Ecclesiarchy after preaching radical ideals in his sermons. He alleges that one must pay for their sins against the throne with repentance, charitable works, and displays of faith. He further states that those who would seek to purchase their forgiveness through a monetary payment to the Ecclesiarchy have been led astray, and have not truly repented. He has also slandered the council of Bishops for "being beholden to unspeakable greed" and misleading the High Cardinal as to their actions, stating "If the High Cardinal was privy to the machinations of his council, he would sooner see his grand cathedral burned and every stone smashed to dust than allow it to be built on the sins of the faithful masses."
+
+In a stunning move, he has received support from local chapter houses of the frateris militia, the holy order of the adepta sororitas, and a sect of death cult assassins. All of whom state that they have dedicated their lives to he who sits upon the throne, and to debase their sacrifice with open bribery is an insult of the highest degree.
+
+In a bid to push this preacher into disrepute, the council of Bishops has issued a warrant of excommunication against him, and sent the planetary defense forces to arrest him on suspicion of heresy. In response, the canoness has offered protection to the preacher, forcing the council of Bishops to decide if they wish to provoke violent reprisals by calling for the arrest of the canoness.
+
+Lutrea braces for religious schism and a possible civil war as the council of Bishops calls for military aid ahead of an expected violent confrontation. The chapter houses of the Frateris Militia made a unified statement saying that they stand ready if a war is to come.`
+            },
+            {
+                title: `Please stop doing Math - A Distressed Magos. `,
+                author: `altonascends`,
+                type: `mid`,
+                image: ``,
+                content: `Dear Imperial Civilians. I understand that you hope to become something with your mostly valueless life. I understand that in order to do this you have tried to undergo such alien concepts as self improvement. DO NOT MAKE THIS SELF IMPROVMENT LEARNING TO COUNT. If I am forced to servitorize another fool who walks up to me speaking of “possible increase to efficacy” or “how does something that (large/small) weigh that (little/much). I will just start servitorizing hab-blocks. 
+
+I understand that you likely do not want this to happen, meatbags like yourself do not tend to like being cut open while alive and turned into something useful. Yet I will be forced to do so should you not stop. If you wish to be proactive in this regard kill anyone with spectacles, burn any textbook you can get your hands on.  Forget what floor you live on, stop counting normal things in your day to day basis. After a quick survey most of you hold the job “Unemployed” you do not need to learn to count to perform this task. Should you wish to cease being un-employed please come to the local manufactorum and ask for me. You will be given over to a scary looking fellow who will give you a job. One where you will not have to count or preform mathematics. 
+
+In summary, please stop asking me why I am consuming millions of tons of weapons grade fiberglass. Stop counting it, if you are counting it, please contact me.`
+            },
+            {
+                title: `Trout Population Update`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `Environmental researchers have confirmed that the native silver-backed trout population of Oh-Sees has made a remarkable recovery following the planet’s liberation. According to the Oh-Sees Department of Wildlife Conservation, trout numbers in the planet’s rivers and jungle lakes have increased by nearly 60% compared to pre-war estimates. Biologis attribute the resurgence to a combination of military success and environmental fortune.
+
+Unlike many worlds that have suffered orbital glassing campaigns during prolonged conflicts, Oh-Sees escaped such devastation. Imperial commanders committed substantial ground forces early in the campaign, securing key population centers, hydroelectric facilities, and transportation hubs before the fighting could escalate into a prolonged siege. The decision to seize the planet through conventional ground operations preserved ecosystems that would have taken centuries to recover from orbital sterilization. Imperial engineers also played an unexpected role in the recovery. Temporary bridges replaced destroyed crossings without obstructing river flow, damaged dams were repaired before spring runoff, and unexploded ordnance was systematically removed from major waterways once combat operations concluded.
+
+The thriving fish population has produced benefits extending well beyond recreational fishing. River otters, fish-eating birds, and several native predator species have all shown measurable increases, suggesting the broader ecosystem is recovering alongside the trout. Economists estimate that renewed commercial and sport fishing has already generated millions of thrones in local revenue, helping communities rebuild after the conflict while creating hundreds of new jobs in tourism and conservation.
+
+Praise be the Emperor.`
+            },
+          {
+                title: `Watch Your Backs`,
+                author: `enmera`,
+                type: `feature`,
+                content: `The enemies of the God Emperor are everywhere. Know the signs! Sedition and protesting working conditions, disobedience, even questioning decisions performed by His Majesty's Imperium are all signs of deep rooted corruption by foul xenos, and even the Archenemy itself. Mutants and abhumans who have been forsaken by His light. What you might think are simple cosmetic deformities may simply be symptoms of a much grander plague. Your neighbor who seems nice and performs innocent little magic tricks is not so innocent at all! These witches use dark powers, and invite the Archenemy into their souls, and the souls of their neighbors. Xeno lovers may claim that there is possibility for peace and cooperation between mankind and the foul aliens, but the xenos know nothing of His holy mission, and have no place in His holy Imperium. If you suspect any of your neighbors of being one of these vile heretics, tell your local Ministorum Priest. The Emperor Protects, and rewards his faithful.
+`
+            },
+          {
+                title: `The Du Sol Gallery`,
+                author: `sirdb78`,
+                type: `feature`,
+                content: `By decree of the Most Honorable House Du Sol, Bearers of the Sacred Warrant of Trade, let it be known throughout the Emperor's Realm:
+
+House Du Sol proudly announces the reopening of the Du Sol Dynasty Gallery that has been closed since the tragic death of Lord-Captain Maximus Du Sol. 
+
+Artists, sculptors, engravers, remembrancers, craftsmen, and all others are invited to submit a work worthy of the gallery and one of the faithful servants of the Emperor. The selected pieces shall be enshrined within the halls of the gallery for all to view, and their creators offered a position within the Dynasty, securing prosperity for themselves and their families. 
+Ave Imperator!
+
+Signed,
+Soren Du Sol, Heir-Apparent of the ancient Warrant of Trade`
+            },
+            {
+                title: `Salamanders Kitchen`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `Hear ye hear ye!
+
+The Salamanders Chapter of the Adeptus Astartes have decided to opne multiple field kitchen across star systems to help improve relationship between the Imperium and its citizens! If you find yourself on the worlds of Pranoda II, Amoli Primus, Salom Teritus, Gonavi or any of their neighbouring moons and planets, you will have the opportunity to be served by the loyal sons of Vulkan.
+
+Meals will be nutritional, and drinks will be served, the perfect time to forget about everything and get closer with your community! Even for the youngest activities have been planned. And if your youngest fits the criteria, he might even be selected to join the ranks of the Salamanders!
+
+Note: The Adeptus Terra is not responsible for any injuries that might occur due to the cooking.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
