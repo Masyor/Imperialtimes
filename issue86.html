@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Keep your jeans safe</span>
+            <span>Issue #86</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `HOW TO SPOT A GENESTEALER`,
+                author: `lawson_xi`,
+                type: `feature`,
+                content: `With the recent uprise in Genestealer activity, the Imperium has decided to publish a pamphlet on how to spot a genestealer in your locale! If you suspect someone of being a genestealer report to your local supervisor (Unless he exhibits these marks)
+
+So you might be wondering, how do genestealers look and how do we differentiate them from ourselves? Well, the only slightly problematic ones to spot would be the 3rd and 4th generation genestealers, the earlier generations should be easier to spot right away, but lets not get too far from the topic. For the sake of this guide we will be only looking at the 4th generation, so, how do we spot them? Well, the facial structure of genestealers has been recorded to be lacking in key areas, namely the eyes and hair, Genestealers seem to be unable to grow hair on their body, meaning they are bald, have no eye-lashes or eyebrows, their eyes are often oversized and lack the need to blink. 
+
+You might think "Hey, this is not a lot to go on, this is my friend Joe!", there certainly could be issues with only these, so here are some other things to look out for; their skincolour seems to have developed a pale or ash colour? and has a undertone of lavander or grey in light? They're likely a genestealers.
+
+But once again, for a lot of you underhivers this might be normal, so here are what we have deemed the ultimate telltale signs of giveaway paired with the rest. Genestealers have been recorded to be extremely calm under stress, have seamless coordination with other workers without needing to speak and lack personal conflict or dissent, they also might preach about a four armed Emperor, Angels from Beyond or have certain styled tattoos.
+
+----
+
+Depending on the success of this pamphlet campaign, we will return will a full guide on how to spot and differentiate different xenos and how to act around them for your own safety! The Emperor Protects!`
+            },            
+          {
+                title: `Kaldrith Reborn`,
+                author: `harrydugg`,
+                type: `feature`,
+                content: `The Knight World of Kaldrith, a frozen wasteland that had been held by the forces of the Archenemy for the past decade, has been retaken by the courageous men and women of the Imperium. Jarl Harald Kaldrith, now High King Harald Kaldrith, has defeated the forces of the Black Tundra, returning his over ten thousand year dynasty to the Imperial fold.
+
+Already, manufactorums long since abandoned have been reconsecrated and reignited, with production beginning at an unprecedented rate. The new King's policy of diplomacy and trade stands in stark contrast to the traditional isolationism for which the world has long been known.
+
+Not all have welcomed the new monarch without reservation. Some grumblings have already been heard regarding the King. One Rogue Trader, whose identity remains anonymous upon request, described the man as "a brute and a savage, who should have remained in the cave he came from." Likewise, the King's extravagant indulgence in alcohol has become a frequent topic of discussion amongst travellers and officials alike.
+
+Nevertheless, Kaldrith now stands as one of the rising pillars of the sector. Whether High King Harald can lead his House back to its former glory remains to be seen, but for the first time in a decade, the future of Kaldrith appears brighter than ever before.`
+            },
+            {
+                title: ``,
+                author: `kale_skope`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Can you find the most glorious words that have been hidden? only a TRUE DEVOUT will find the blessed words hidden within this puzzle. if you can find our hidden word of the day, get in contact with us in planet Athernon to become part of a giveaway and gain ONE WEEK of GROX MEAT!
+
+EMPEROR | MANKIND | BOLTER 
+LASGUN | BANEBLADE | GUILLIMAN
+SORORITAS | COMMISSAR YARRICK 
+DEATH TO XENOS | WARHOUND TITAN 
+PRIMER KIT | SANGUINALA
+COMMISSAR CIAPHAS CAIN`
+            },
+            {
+                title: `IMPERIUM OFFICIALLY SANCTIONED WORDFIND PUZZLE OF THE DAY`,
+                author: `kale_skope`,
+                type: `wide2`,
+                content: `T U H G U I L L I M A N M Y N L K O F N S G E
+U C K Z Q O K A V X S O N E X O T H T A E D Q
+X X R Q J C C U Z P T J I I O G Y R A K F G D
+N R X G R D G Z K E R N W S A T I R O R O S B
+A T K J B X Z M H D X I B A N E B L A D E U Z
+T I C O M M I S S A R C I A P H A S C A I N D
+I K M G B J L Y S I W Q D Z L A S G U N T F N
+T R C O M M I S S A R Y A R R I C K I B U R I
+D E R O V O I T N V M S A N G U I N A L A Z K
+N M T W T G S K C U S R E K A E P S J Y U K N
+U I F B G F O J V W A A Q X Q M J O R N W L A
+O R R O R E P M E V B D R E T L O B C O P M M
+H P P V R C H M I H A T E P U Z Z L E S T T G
+R F O R Q N M G N A P O I E G I L A S G U N I
+A Y V A Q G P R A Y S L A N E E S H G N O V A
+W Y W O M M P C Q E E F E N R O H K O T W O B`
+            },
+            {
+                title: `BEWARE THE HERETIC`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                content: `On the imperial world of Lutrea, it has been declared that the Rector Erudite known as MARTIN JANUS is hereby formally branded a SCHOSMATIC. The imperial Diet at Rodensis formally concluded the trial with a verdict of heresy by schism. While Martin Janus claims to still believe in the imperial creed, he has spoken out publicly and published slanderous works against the Cardinal of Lutrea. His claims would have burdened the Cardinal with suspicion of bribery, corruption, and the misuse of holy ground. As the Schismatic Priest has stated in his own words "if the cardinal could truly absolve the masses of their sins, then why would he sell that service, rather than doing his duty for the good of the imperium?". His base accusations and slander could have led to a planetary revolt, and his silver tongue has enthralled many minds already. The grand regent of Lutrea has interceded on behalf of Martin Janus and his followers. Using his own political sway, he has reduced the original sentence of heresy and branded these renegades as "Schismatics" rather than HERETICS. Martin Janus and his followers are due to be exiled on the next outbound flight from Lutrea.
+`
+            },
+          {
+                title: `Rebukes of Tech-Heresy on the Warfront`,
+                author: `kelimnac`,
+                type: `feature`,
+                content: `The fortress world Vladi-Nouzen is no stranger to conflict, experiencing frequent raids from both Drukhari pirates, Ork incursions, and even rumors of mysterious ruins under the planet's surface.
+
+Vladi-Nouzen's garrison and affiliated defense forces fight vigorously and without complaint against these incursions, though some lesser-minded individuals have recently begun accusing their arachnid-esque mobile tankettes of tech-heresy, being mass produced on the planet's surface and used to navigate its difficult and rocky terrain.
+
+These accusations have come under fire from the planetside Mechanicus, saying that the design is no different from their own Dunecrawler, and is in fact simply a lighter variant of the same chassis, used because of a need to swiftly move into positions of advantage in the mountains of Vladi-Nouzen. The design is cheap and designed incredibly simply, and the resources of the planet are more than enough to keep production high, and their Guardsmen safely (relatively) ensconced inside.
+
+The Captain of the Spearhead Squadron, Vladi-Nouzen's topmost commander of these tankettes, had the following to say:
+
+"The spider-tanks? They're great for what we need them for, but Throne help you if you tried using them anywhere else, they're way too fragile, and the firepower isn't all that much to speak of. Purely a mobility tool at the end of the day. These things are never leaving the planet, but they get the job done."`
+            },
+          {
+                title: `Do not question the disappearance of large amounts of rope`,
+                author: `altonascends`,
+                type: `feature`,
+                content: `Attention imperial citizen you may have noticed there is less rope. You may wonder to yourself where has it gone? Why has it disappeared? Why did my neighbors hab block get turned in servitors. I will tell you you shouldn’t care. You shouldn’t stress your mind thinking about these things and reports of massive amounts of floating skulls, floating in into hardware shops, and buying up all of the rope should be disregarded as a little more than propaganda of the archenemy, if you own rope and wonder where it has gone and consider calling the law-enforcement or enforcers of your hab block, we will find you do not question where the rope is going. 
+
+You may wonder why so many different types of rope have shown up snapped in the middle of the street. Leaving miles and miles of rope behind. You should not wonder such things. 
+
+For those of you who think you are clever by asking about the same disappearance of cabling. You are not, this also applies to cabling. 
+
+Should you have further questions, don’t ask. We are armed, we will kill you.`
+            },
+          {
+                title: `Inquisition Rallies Administratum`,
+                author: `_coati_`,
+                type: `feature`,
+                content: `After spending over a century working on a logistical project for the Inquisition, Ordo Astartes Inquisitor Yetzmov calls upon clerks of the Adeptus Administratum to assist in longstanding logistical considerations.
+
+Unfortunately, due to a lack of capable manpower, he has found himself majorly unable to complete important projects required of the Inquisition.
+
+Having requisitioned various clerks to his cause already, Inquisitor Yetzmov is offering significant rewards for applicants and requesitioned aimed to help the Emperor’s logistical needs.
+
+For further information, speak to your local Ordinatus and rally to His needs.`
+            },
+          {
+                title: `Heckling Grave Imprisoned`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `Deck boss won’t get off your back? Wife won’t stop nagging you? That bastard Artisan that sold you a groxshit power sword that broke almost immediately despite you spending half your Emperor damn thrones on it? Have you considered? Murder?
+
+The above was an advertisement sent to a local newspaper to garner more clients from a group called the Heckling Grave. The ad in the newspaper included their addresses and means of contact with the self proclaimed contract killers. They did not seem to realize that openly threatening the Mechanicus and Imperial leadership of the planet Darcnia, would have consequences. Arbites and Enforcers stormed their building and in a brief firefight, killed 12 members and captured 50 others in the raid. They even kept the paperwork of their clients and who they’ve killed. So, by local verdict, they were burned at the stake to be purified of such corrupted greed to kill their fellow man for coin. The glorious servants of His Imperium suffered zero casualties, for the Emperor Protects His own. Investigations are now ongoing to deliver judgement upon those who’ve used the Hecking Grave’s services.`
+            },
+            {
+                title: `Hivespire collapses in Lezires`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `During the busy afternoon of the bustling Spaceport Hivecity Lezires, an unspeakable issue occurred ceasing all manufacturing as the main Hivespire collapsed, taking out numerous Trainlines, transport lines and also Homes. The Techpriests and work crews designated for such construction and repairs stated their main priority is on the Logistic and Manufacturing efficiencies of the Hivecity, while the homes are important the Imperium needs these resources. The local Arbites and Priests call for extra hands from the underhive, lowerhive and middlehive to assist in repairing these crucial lines to allow more manufacturing to occur to keep up with their tithe and promise that within the next century or two they will repair the habitats within the nearby hivespires and within six centuries they will repair the main hivespire. Many are questioning how the Hivespire collapsed, some say it was old with lack of maintenance, however, local priests and constructors claim that they have been managing the maintenance and no issues occurred until the fateful collapse. Word on the grapevines within the underhive suggest something more…heretical at play, some saw numerous people enter the hivespire before it collapsed, heretics or insurrectionists? No matter why it happened ,it did, and the God Emperor is providing us mercy today, if you notice anything strange report it to your local Arbites.
+`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
