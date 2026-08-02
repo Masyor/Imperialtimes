@@ -80,6 +80,8 @@ body {
 
 .story.feature { grid-column: 1 / span 3; border-right: none; padding-right: 0; }
 .story.mid { grid-column: span 2; }
+.story.wide2 { grid-column: span 2;}
+.story.wide2 p {text-align:center; line-height: 1.1; margin-bottom: 8px;}
 .story.span-v-2 {
     grid-row: span 2;
 }
