@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Workin' all weekend edition</span>
+            <span>Issue #88</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `MUNITORUM HOUSEHOLD TIPS: DEALING WITH A NOISY NEIGHBOR`,
+                author: `lawson_xi`,
+                type: `feature`,
+                image: ``,
+                content: `<i>Brought to you by the Adeptus Administratum Bureau of Domestic Harmony</i>
+
+Greetings, citizens! Has your sleep cycle been disturbed by a neighbor who insists on chanting at odd hours of the night, rearranging furniture in unsettling geometric patterns, or hosting book clubs that run suspiciously late into the night? Before you leap to conclusions, remembe;: not every inconvenience is heretical! Most of the time, it's just Grandpa Jamon's tinnitus again.
+
+However, should the chanting begin to rhyme in a language with no vowels, or the furniture rearrange itself into shapes that make your eyes water when you try to count the corners, the Bureau recommends the following tiered response:
+
+Politely knock and ask them to keep it down. Bring a gift, such as a ration bar or a small wooden icon of the Emperor.
+Note whether the icon reacts.
+If they answer the door and their smile does not quite reach all the way around, back away slowly while continuing to smile yourself. Do not run. Running is a dinner bell.
+File a Form 66-B (Disturbance, Possibly Metaphysical) with your local Ecclesiarchy office. Do NOT file a Form 66-A (Disturbance, Mundane) by mistake, as this will simply result in a very confused Arbites officer confiscating their music synthesizer instead of their soul.
+If the walls begin to weep, that is a structural issue and should be reported to Habs Maintenance, not the Inquisition. Please stop calling the Inquisition about your plumbing.
+
+Remember, citizen: a quiet hab block is a happy hab block, and a happy hab block is one the Inquisition has no reason to visit at 3am with a flamer and a very short list of questions.
+
+The Emperor Protects! 
+<i>(your right to a peaceful night's rest, within reason)</i>.`
+            },            
+          {
+                title: `Gold mines run dry on Aureliana Primus`,
+                author: `tarnisheddddd`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `Disturbing news arrives from the mining world of Aureliana Primus; its gold mines have seemingly run completely dry. The proud planet, once legendary across the entire segmentum and beyond for its excessive reserves of aurum throughout its planetary crust, has delivered none of the precious metal whatsoever in its most recent tithe; merely a paltry amount of iron, tin, and nickel.
+
+This news finds itself at an especially pressing time within the Imperial Palace upon Holy Terra, the Throneworld being, of course, Aureliana Primus's most crucial importer. As renovations and repairs are being undergone on several districts throughout the Outer Palace, the most sacred of metals is of immense importance and a fresh supply is nigh-permanently required. This disruption in supply could lead, some within the Departmento Exacta fear, to several edifices within the Palace being refurbished with far lesser metals such as platinum or even copper.
+
+Already, the governor of Aureliana Primus has been summarily dealt with, and the Departmento Exacta is currently undergoing a thorough and aggressive correction and investigation as to the planet's trifling tithe delivery. Multiple penal worlds have been requisitioned for the importing of hundreds of thousands of fresh laborers to Aureliana Primus to mine even deeper into the planetary crust.`
+            },
+            {
+                title: `Machine Spirits Mood`,
+                author: `bot_valley`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `An Imperial Navy gunnery instructor is training cadets on the proper procedure for engaging enemy vessels. "The process is simple," she says, pointing at a targeting cogitator older than most of their home planets. "Step one, identify target. Step two, request firing solution from the Machine Spirit. Step three, present the Machine Spirit with the appropriate incense and a written petition explaining why you deserve a firing solution today." A cadet raises his hand nervously. "Ma'am, what if the enemy ship is already firing on us?" The instructor nods solemnly. "Then you skip straight to step four." "What's step four?" "You pray the Machine Spirit was already in a generous mood this morning."`
+            },
+            {
+                title: `Avadenta Saved!`,
+                author: `enmera`,
+                type: `mid`,
+                image: ``,
+                content: `Recently, upon the minor forge world of Kalisk IV, an assassination attempt was made against the governing Arch-Magos Bartolomus Osmium. Details of the investigation are underway as we speak, but from what we in The Imperial Times were able to gather, the attempt began when Arch-Magos was due for a routine data-package from Mars, detailing necessary production quotas for the forge world. Although the Lex-mechanic in charge of the package was investigated and found unable to have performed any malicious sabotage, the package was picked up on Jurist's data-readings as containing slight errors which would later be revealed to contain scrap code meant to incapacitate and potentially cripple Kalisk IV's venerable Noosphereic servers.
+
+However, thanks to the ever-diligent, albeit frightening, Jurists of the Mechanicus, the package was intercepted and destroyed before it could take the life of the venerable Arch-Magos and sabatage production for the Imperial war effort. Investigations are currently focusing on a connection between the sabotage and a recent invasion against Kalisk IV by a heretical pirate fleet, which was only repelled by a visiting Freeblade, Taran Eógan, and the 2265th Vostroyan Firstborn Regiment led by former Colonel Dimitry Maxim, which also involved a scrap-code attack against the Arch-Magos. We will keep you updated on any further developments should they occur. 
+
+The God-Emperor Protects.`
+            },
+            {
+                title: `THE ADVENTURES OF CAPTAIN ARMSTRONG!`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                content: `Captain Armstrong, hero of the stalwart imperial guard set a high standard for all men and women in the service today. While fighting the foul Xenos scum known as the Eldar, him and his valiant canid companion Sergeant Stubbs laid waste to a patrol of these vile freaks. To hear the man himself say it "it was as easy as mowing down corn with a combine harvester". With a heavy stubber in each hand, he ripped into his unsuspecting foes before they even noticed him, and when one began to cast vile warp sorcery, his faithful canid companion tore the wretched witch apart. Captain Armstrong is to be awarded a medal for bravery, and Sergeant Stubbs will be given a grox-steak to help get the foul taste of Xenos out of his mouth. Both will be honored at a ceremony this week. Stay tuned, and remember to buy war bonds. Every throne spent could save a regiment.`
+            },
+          {
+                title: `ADMECH JURISTS BUST POSTAL ASSASINATION`,
+                author: `.rayja`,
+                type: `feature`,
+                content: `Recently, upon the minor forge world of Kalisk IV, an assassination attempt was made against the governing Arch-Magos Bartolomus Osmium. Details of the investigation are underway as we speak, but from what we in The Imperial Times were able to gather, the attempt began when Arch-Magos was due for a routine data-package from Mars, detailing necessary production quotas for the forge world. Although the Lex-mechanic in charge of the package was investigated and found unable to have performed any malicious sabotage, the package was picked up on Jurist's data-readings as containing slight errors which would later be revealed to contain scrap code meant to incapacitate and potentially cripple Kalisk IV's venerable Noosphereic servers.
+
+However, thanks to the ever-diligent, albeit frightening, Jurists of the Mechanicus, the package was intercepted and destroyed before it could take the life of the venerable Arch-Magos and sabatage production for the Imperial war effort. Investigations are currently focusing on a connection between the sabotage and a recent invasion against Kalisk IV by a heretical pirate fleet, which was only repelled by a visiting Freeblade, Taran Eógan, and the 2265th Vostroyan Firstborn Regiment led by former Colonel Dimitry Maxim, which also involved a scrap-code attack against the Arch-Magos. We will keep you updated on any further developments should they occur. 
+
+The God-Emperor Protects.`
+            },
+          {
+                title: `HIVE CITY ERUPTS IN REVOLT DURING ENFORCER CRACKDOWN`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `On the planet of Yendor, citizens across D291-291 took to the streets yesterday after four Enforcers repeatedly struck a priest named Lohma of that worked in the lowerhive chapel with shock mauls to death. Pict footage was circulated by an unknown source. The hive governor has stated they are on the side of the Enforcers and that the priest is a heretic and anyone who disagrees will be arrested. By nightfall, thousands had gathered in the lower hive, where peaceful demonstrations rapidly became less peaceful after someone threw a brick through the window of an Enforcer station as they headed up to the middle hive. What followed was described by witnesses as the most productive looting. Hab-workers stole ration packs, furniture, several crates of ammunition, and even a Chimera. Local PDF units were ordered to restore order but reportedly became distracted when their commanding officer received conflicting orders from the Governor, the Arbites, the Administratum, and the Ministorum. Meanwhile, opportunistic cultists distributed pamphlets declaring the Emperor’s government fundamentally unjust before being beaten unconscious by the rioters who expressly did not want to be associated with heresy. They wanted justice for Lohma.
+
+By dawn, the disturbance had spread through seventeen districts, forcing Governor Hrax to declare a state of emergency and deploy three regiments of the PDF and to petition the local Arbites precinct to get involved. The regiments arrived with tanks, artillery, flamers. The Arbites have announced that an internal investigation will determine whether the officers involved acted appropriately and were justified in killing the Priest. That seems to have calmed the ongoing riot as results of a public trial are being made. That is all for now.`
+            },
+            {
+                title: `Void Port Hallix Crippled`,
+                author: `_coati_`,
+                type: `feature`,
+                content: `The Iron Regent, a Universe Class Mass Conveyer carrying munitions fit for a full battlefleet, was destroyed while attempting to doc with Void Port Hallix. In the conclusion of investigations, it was found that this was only one of several vessels, mostly Civilian owned, that were destroyed in the incident.
+
+Reportedly, the logistic ship Grand Harrowing had been conducting a mutiny, having killed their previous captain. In a desperate attempt to escape from imperial investigation, they departed from the dock and attempted to make an escape. Without an experienced captain at the helm, they failed to avoid the large Mass Conveyer who was preparing to doc, striking an ammunition compartment with their prow.
+
+In the minutes that followed, explosions rung out through the ship, munitions exploding inward and outward in equal measure. The Mass Conveyer had enveloped itself in an explosion so massive, it destroyed the vessel, alongside 16 civilian and Navis Imperialis vessels docked at the port, including a Grand Cruiser.
+
+The incident is now being labeled 'The Hallix Explosion'. It is now being used as a warning to dissidents among all vessels within the Ultima Segmentum. Rebellion leads only to ruin.
+
+As the Void Port undergoes repairs, civilian vessels have been severely restricted.`
+            },
+          {
+                title: `Plague hits the Heartlands.`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `It is with grave heart and consequences that the Imperial Time’s reports that a Plague has hit the heartlands of Srevia Prime. Six Terran months prior what seemed to be a modified Terran-Cold hit the foundry levels of the Hive city, at first only a few work cycles got affected however the Administratum is reporting that over 43% of Work Cycles are now affected. The Srevia Prime Hospitals and Medical corps are working round the clock to figure out how the hive city has angered the God Emperor so much to be punished like this. The Arbites are asking plainly, if you see a sick person report it. The Quarantine levels must be kept, else the rest of the work cycles will fall and thus the war effort. It is time to do your civic Imperial duties citizens, as of today all work cycles are being told to work double shifts to cover the 43% lost, and, where possible donate your bodies to the research to find a cure. Again, if you spot an infected, see it. Report it. Sorted.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
