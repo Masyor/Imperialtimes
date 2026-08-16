@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>two fat ladies</span>
+            <span>Issue #88</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: ``,
+                author: ``,
+                type: `feature`,
+                image: ``,
+                content: ``
+            },            
+          {
+                title: `EXRUCIA PURGED`,
+                author: `mourhurst`,
+                type: `feature`,
+                image: ``,
+                caption: ``,
+                content: `After hours of brutal fighting, the Ork infestation that once threatened to consume Exrucia has been declared purged, Imperial authorities announced yesterday. The final resistance collapsed in the eastern industrial districts following a coordinated offensive by the Adeptus Astartes and the local PDF. Their crude fortifications reduced to smoking ruins beneath the guns of the Emperor’s soldiers. The fighting was not without cost. Entire districts have suffered extensive damage, and thousands of Imperial personnel are believed to have been killed or wounded during the campaign. Reconstruction teams have already begun clearing debris, recovering unexploded ordnance, and restoring essential infrastructure.`
+            },
+            {
+                title: `Medicae Advancement found in Mendria`,
+                author: `zeeenz`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `After three-hundred-and-seventy-eight Terran years worth of cycles on Mendria, Master of the Mendria Officio Medicae Administratum have declared a new advancement within Medicae which will revolutionize how our troops within the Imperial Guard will fight. Officio Medicae Master Za’hul Le’mendriaz has stated that the Medicae Drug will allow the Guardsman to not only see incoming heretical threats more accurately, but also to be able to work out the correct firing solutions within rapid moments. They also report that if the likelihood that the soldier comes under fire, the Trooper can survive direct bolter contact to their skin five times more then the average trooper. However, concerns over how addictive the Medicae is after sixteen subjects' entire circulatory system self-destruct, however, it is reported that this is an outlier and they had the common cold which caused their deaths, not the drug. The Medicae drug is being shipped off now to the nearest frontline to assist our troopers in the defence of the Imperium.` 
+            },
+            {
+                title: `A NEW THREAT`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                image: ``,
+                content: `Along the galactic rim, rumors of a new threat have emerged. Few solid details are known, but the inquisition has labeled the recently discovered threat as an "existential enemy of the imperium". Already, scouting elements have reported back to high level forces within the Adeptus Terra, cautioning that a strong response will be needed to quell this threat before it can breach the galactic rim. A call to arms is being sent out, any forces which can be rallied are to gather for an operation to throw back these enemies. The imperium bids you all stand firm. The enemies of mankind shall falter, and the double headed eagle shall once again fly over every world in the galaxy.`
+            },
+            {
+                title: `JOKE OF THE WEEK`,
+                author: `lawson_xi`,
+                type: `mid`,
+                content: `<i>Brought to you by Cegorach, who insists this one is "objectively funnier than the last one"</i>
+
+A Chaplain, a Techmarine, and a Guardsman are the last three survivors holed up in a bunker as the void shields fail one after another.
+The Guardsman checks his lasgun's charge pack for the fifth time and asks, shakily, "Is... is there a plan?"
+Polishing his Crozius with the calm of a man arranging flowers, the Chaplain replies, "The plan is to die so gloriously that the Chapter remembers our names for ten thousand years."
+The Techmarine, elbow deep in a malfunctioning generator, mutters, "The plan is that this generator has an 8% chance of restoring the shields, a 40% chance of doing nothing, and a 52% chance of exploding, and I have already made my peace with all three outcomes."
+The last void shield fails with an ominous hum. The Guardsman looks between them both, panicking. "Those aren't plans! those are vibes!""
+The Chaplain claps him on the shoulder hard enough to dent his flak armor. "Faith, brother. It's the same thing, but louder."
+The generator explodes. The shields, against all odds, come back online.
+The Techmarine stares at the readout in silence for a long moment, then says, "...Huh. Faith. Noted for future repairs."
+`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
