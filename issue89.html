@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I put on my news shoes</span>
+            <span>Issue #89</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [        
+          {
+                title: `Lamia Prime Northern Front Update`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `The long-awaited Imperial advance upon the traitor held hive of Karthax has slowed considerably, according to reports reaching the capital. Imperial Guard formations have secured several kilometers of ground surrounding the hive, but enemy resistance remains stubborn. Defensive emplacements have been reinforced throughout the outer districts, while repeated Imperial assaults have encountered heavy artillery and armored resistance. The Imperial Navy continues to contest the skies above Karthax. Several enemy vessels have been destroyed during repeated engagements, but the traitor fleet remains capable of maintaining orbital operations. Imperial warships have likewise suffered losses. Neither side currently possesses sufficient strength to establish complete orbital supremacy. Naval authorities remain confident that victory is inevitable.
+
+Reports from settlements north of Karthax have described sightings of heavily armored warriors operating alongside traitor forces. Witnesses claim the warriors stood considerably taller than ordinary men and wore dark power armor. Several reports describe “horned helmets,” while another claims the warriors bore “red markings. The exact affiliation of these warriors remains unknown. The Departmento Munitorum has confirmed that Traitor Astartes are believed to be operating somewhere within the northern theater, but has cautioned civilians against spreading unverified rumors. The Ecclesiarchy has encouraged citizens to report sightings immediately so that the blessed Sisters of Battle may defend the faithful against these accursed mockeries of the Emperor’s Angels.
+
+That is all for now, the Emperor Protects.`
+            },
+            {
+                title: ``,
+                author: `kale_skope`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Can YOU find the holy words hidden in this puzzle? keep your mind active so that you remain more productive during your stay at the mining pits servant of the imperium 
+
+BOLTER | GUILLIMAN
+LASCARBINE | LASGUN
+LEMAN RUSS | MULTILASER
+OGRYN | SISTER OF BATLE
+STORM BOLTER | VULKAN
+YARRICK`
+            },
+            {
+                title: `IMPERIUM OFFICIALLY SANCTIONED WORDFIND PUZZLE OF THE DAY`,
+                author: `kale_skope`,
+                type: `wide2`,
+                content: `H H O G R Y N L D T L A S G U N S V
+B Z S Y P K D T V V W W H Z S Z T V
+F B K L H L E M A N R U S S R U O W
+S I E V E F V U L K A N N W P F R W
+V C B D G U I L L I M A N T C R M Y
+T Z E E N E T C H S P E A K S T B A
+W A L L H A I L S L A N E E S H O R
+P W N B W X K N J O H M B U O C L R
+D X T N M M U L T I L A S E R S T I
+W H X I Y G L A S C A R B I N E E C
+M V Y U Y F Y K N C Y W H S X R R K
+T R V S I S T E R O F B A T L E W I`
+            },
+            {
+                title: `Civil War, Civil Unrest or Civil Justice?`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `Deep within the Calixis sector of Imperial space lies Mortis Secundus, a once happy, loyal and more importantly, Tithe paying colony. It was believed to be earmarked to eventually become a fledgling foundry complex world, with the venerable Adeptus Mechanicus and their holy priests making the pilgrimage to lay the seeds of the great Omnisah upon Mortis Secundus later this Terran Year. However, grief has struck the Sector Lord of Calixes with the reports of civil unrest occurring at the deepest levels of Mortis Secundus, riots have broken out on numerous sub-levels of the fledgling hivecities, with the only city not currently impacted or infected with this disloyal attitude is the Hivecity Capital, Lifersia. It has been reported to our most humblest office within the Calixis Sector that a myriad of Imperial Forces have been dispatched to Mortis Secundus to both reclaim the cities, protect the loyalists and to figure out what on God-Emperor’s Terra has caused such a ruckus. Many of the sound mind and hoping it is a mass case of ‘tunneling madness’, a disease of the mind upon digging far too deep far too quick, when it occurs factions begin to form and strife rapidly follows, this may explain why infighting has not set in yet within the disloyal factions but has between the disloyal and the loyalist. One thing is certain to report, the Imperium’s forces set to Mortis Secundus have one goal in mind, take back our God Emperor’s ordained planet and its loyalists.`
+            },
+          {
+                title: `VIOLENCE FOLLOWS REGIMENTAL STAND-DOWN`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                content: `A group of guardsmen are suspected of betraying the imperium for reasons unknown after their regiment was stood down. In spite of turning in their munitorum issued gear, they have wrought considerable havoc in the upper spires of Nightside Hive. Local security forces have been unable to stop them so far, and it is believed they are receiving support from certain noble houses and several of the underhive gangs.
+
+This was not considered to be a matter of concern for the Arbites until the planetary governor came under attack by sniper fire. When local units responded, a firefight ensued leading to PDF involvement. The intervention of the PDF also exposed several gaps in the capabilities of the local soldiers.
+
+It is unknown what the motives of these heretics could be, but it is believed that they seek to overthrow imperial rule. We advise all good, honest, emperor-fearing imperial citizens to report any suspicious activity to the authorities.`
+            },
+          {
+                title: `The Unconquerable Begins Journey`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `The famous Space Wolf, Sven the Unconquerable, begins his journey across the Imperium to gain glory and renown for his chapter despite being a young Pack Leader! The Unconquerable is known primarily for his unending slaughter on the ancient Fortress World of Pot-Helm just twenty (Standard Terran) years ago during an attempted heretical INSURGENT invasion UPRISING on the planet. For a whole year he spent fighting in a simple corridor, winning many heads from those who dare rebel against the Emperor- or Allfather, as Space Wolves know Him as. Chacalusian Nobles reportedly say that they are hoping for the day that the Unconquerable visits for a taste of their luxurious wine and the chance to recruit one of the revered Quinque House's many sons and daughters for the sake of tending to one of their Chapter Serfs' companies!
+
+[This article has been edited and partially sponsored by the Administratum and Inquistion. Praise the God-Emperor! The Emperor Protects!]`
+            },
+            {
+                title: `The Newbie`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `A newly commissioned Rogue Trader is asking her first mate about proper protocol for dealing with a hostile xenos delegation aboard ship. "It's simple" he says, polishing a cutlass that has clearly seen more ceremony than combat. "If they offer trade, you haggle. If they offer tribute, you accept graciously. If they offer violence, you retreat and let the guns do the talking." The Rogue Trader nods. "And if they offer nothing at all? Just... stare at us?" The first mate's polishing slows to a stop. "Then, my lady, they are almost certainly assessing whether we are food, and I would recommend you remember where the escape pods are, and that i am faster than you."
+`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
