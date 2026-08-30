@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>HOW ARE THERE 90 OF THESE?</span>
+            <span>Issue #90</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [        
+          {
+                title: `First Expedition into the Last Tineui`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `Deep within the outskirts of the Imperium lies an outlier planet amongst the dead and dying stars. Where many of the brightest, bravest and boldest Captains have sailed through the heretical and dangerous real-space voids of the outer-imperium, many only saw the expanse as simply that, nebulas and dying stars. However, deep within the dust of dying giants sleeps Exustsu, a planet which simply shouldn’t exist. Explorers have proclaimed that the planet houses many similar environments as Terra, albeit, with the lack of Human life and even harsh Xenos-lifeforms, with majority of the lifeforms housing similar traits of the lifeforms present on Terra instead of the monstrous and mutatious xenos-forms which can be found elsewhere in the galaxy. Unlike Terra where 70% of the planet is made up of oceans, Exustsu is majority rainforest and high mountain ranges which rival the ones which predated our most blessed and holy palace high upon Terra. Expeditioners of the Tineui exploratory band have began their journey deep within the largest of these Mountain Ranges in hopes to find any potential unique forms of life, places to create a pleasure resort or even insights into the planet itself. It is reported they will make a basecamp at the base of the biggest slab wall, where they will stay for five days as they begin to create a route to basecamp two, 1,200FT above Basecamp one. We will continue to report the story of the Tineui exploratory band as we gain access to their incredible story.`
+            },
+            {
+                title: `Xenos thwart Colonization of Peters Landing`,
+                author: `lux3791`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `The planet of Peters Landing, a jewel of beauty and unclaimed riches, was denied the gift of civilization! Foul Xenos emerged from their holes and the treetops to attack "the most loyal assets, servants and lessers" of Rogue Trader Lord Captain Axel Bertrand Friedolin Sagitarius VXI completely unprovoked.
+
+The sole established Colony of Sumsemann was soon destroyed by this evil and vengeance was sworn that day. For now the planet is under quarantine until the Might and Eternal Glory of the God-Emperor and the High Lords of Terra will return to this world. Not with the gift of civilization, but with the gift of war. `
+            },
+            {
+                title: `Cardinal Caliber Vestargo Rescued!`,
+                author: `mourhurst`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `On Lamia Prime, His Holy Majesty’s Daughters and the mighty hammer that is the Imperial Guard has saved Cardinal Vestargo from the clutches of the Archenemy. Through holy faith in the God-Emperor and unwavering belief, he was able to resist dastardly torture for an unholy amount of time. Hill 281, the position he was held, is to become a holy site in honor of the martyrs that took said hill, which was defended by accursed traitor guard. Such Holy Ground is said to have already banished any foul creature of the warp upon walking anywhere near the Hill. And with his life secured, the Cardinal continues to minister the faithful on Lamia Prime. Morale has never been higher amongst the PDF and civilian populace who now rally further to defend their home from the forces of Chaos.
+
+The Emperor Protects.`
+            },
+            {
+                title: `A Simple Question`,
+                author: `bot_valley`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `A Chapter serf is briefing a newly arrived group of Imperial Guard liaisons on how to properly address the Space Marines they'll be fighting alongside. "It's simple," he says, adjusting his robes nervously. "Call them 'my lord,' maintain eye contact only if invited, and never, under any circumstances, ask a question during a briefing." A young corporal raises her hand anyway. "What happens if we do?" The serf's eye twitches. "The Astartes will answer it. Fully. Completely. With every relevant detail from the last ten thousand years of Chapter history." He glances toward a nearby Terminator who has been mid sentence for the past forty minutes explaining the proper reverence owed to a specific bolter. "Some of us have not slept since the Horus Heresy."`
+            },
+          {
+                title: `TREACHERY AND DECEIT`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                content: `In the wake of a guard rebellion during a regimental stand down order, a world has been thrown into civil war. PDF and local security forces proved powerless to stop the rapid, unpredictable strikes of the traitor guard and the regiment quickly overran the capitol. The planetary governor was found dead, and his family has yet to be accounted for.
+
+Four regiments of guard infantry, along with two armored regiments and an artillery support regiment had been sent to take the world back from the traitors, but the civilian populace quickly turned on their saviors. Elements of traitor guard along with civilian guides have waylaid and ambushed every attack sent to stop them, and are now forcing the survivors into a defensive position around a major port where reinforcements are expected to land.
+
+The siege is kept at bay only thanks to the brave efforts of the aeronautica imperialis, who fly dangerous cargo runs under cover of night to keep the encircled forces supplied. Still, infiltrators slip past the pickets each night and sew deadly chaos among the brave defenders. Chaplains and commissars bolster the troopers' spirits, but the question on everyone's lips is the same.
+
+"How long until reinforcements arrive?"`
+            },
+          {
+                title: `The Second War for Martyrdom - Dead Highway Front`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `It has been two years since the start of the Second War for Martyrdom. The 108th Krieg Siege Army has made great gains in the same two years, but they've hit a hurdle at the 'Dead Highway' front! After three regiments were lost at the Battle of Fort H-110, Marshal Junarius has been court martialed for believed attempt of sabotage, and Marshal Lukas has been chosen to take his place. Already Marshal Lukas has made great changes, and this year he has decided to begin an offensive into this 'Dead Highway' with the help of three handpicked regiments in his retinue.
+
+All questions relating to the Battle of Fort H-110 cannot be asked of your local Adminstratum representative.
+
+"In life, war. In death, peace. In life, shame. In death, atonement!"
+Join the Death Korps of Krieg today to atone for YOUR sins!`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
