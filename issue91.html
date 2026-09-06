@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>9 more to go</span>
+            <span>Issue #91</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                      {
+                title: `The Munitorum Employee Satisfaction Initiative`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `By order of the Departmento Munitorum, and in the interest of maintaining optimal productivity across all administrative sectors of the Imperium, the following initiative has been approved for immediate rollout across three thousand worlds, pending a follow up review scheduled for the year 40,347.M41.
+
+Effective immediately, all clerks, scribes, and cogitator-adepts below the rank of Senior Under-Secretary are entitled to one  unscheduled rest period per solar decade, provided that: the requesting individual has not yet failed to meet their tithe quota, the requesting individual's department has not been flagged for heretical inefficiency, and the requesting individual is able to produce Form 88-Gamma, co-signed by their direct supervisor, their supervisor's supervisor, a representative of the Adeptus Arbites, and, in void-based facilities only, a notarized statement from the ship's resident Navigator confirming that reality has not meaningfully deviated during the period in question.
+
+Employees are reminded that "rest" is defined strictly as the cessation of primary duties, and does not extend to secondary duties, tertiary duties, prayer obligations, mandatory chanting hours, or the reporting of suspected mutants in the vicinity, which remains compulsory at all times.
+
+Any employee found to be enjoying their rest period beyond its designated parameters will be presumed to have succumbed to the temptations of sloth, and will be reassigned to a punishment detail befitting the severity of their enjoyment.
+
+The Departmento Munitorum thanks you for your continued service, and reminds you that questioning this initiative is, itself, a form of unscheduled rest, and will be treated accordingly.
+
+Praise the Emperor. Return to your desk.`
+            },            
+          {
+                title: `Corpse Starch: Holy or Heresy?`,
+                author: `.rayja`,
+                type: `feature`,
+                content: `Good evening dearest viewers, today this article will go over a recent but nonetheless fierce debate raging within the Adeptus Ministorum's Holy Synod that threatens to possibly see an intervention from the wider Adeptus Terra. The debate is as follows: Is corpse starch, a traditionally hive-world food made up of the grounded up remains of corpses, holy, in its form, or Heresy in its consequences? 
+
+The debate was ignited first by Cardinal Zacheraius Morsovii, who presented witness accounts from his diocese's hive world of Kepra II that noted heretical cult and chaos taint rates were higher in areas of the lower hives where corpse starch was the main food source. The Cardinal states that the process to make corpse starch does not eliminate the heretical corruption found within an individual, only continuing it on in the synthetic food to corrupt the next man. He has posited this as a the reason for such high heretical corruption found within the lower hive, and has even suggested that xenos infiltration might also utilize such methods to further their aims. He suggests that the product be banned and that lower-hivers should 'feast on the God-Emperor's beneficence with starving bellies then taste the fullness of corruption'.
+
+This position has been challenged by Cardinal Mellessina Vei Kolofski, who posits that the cardinal's use of lower-hiver accounts automatically renders his suggestion 'rife with the stench of heresy and infiltration'. She claims that millions of hives go everyday without major unrest alongside the use of corpse-starch, and that without such a product, it will only breed further revolts and deprive many regiments of the brave and courageous Astra-Militarum of the necessary energy to fight in the God-Emperor's name. She suggests the motion be rejected, and Kepra II be subjected to a thorough purging of the population.
+
+We will keep you updated as it progresses. The God-Emperor Protects.`
+            },
+            {
+                title: ``,
+                author: `kale_skope`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `Once more the Emperor wishes it's subjects to activate and agilize their minds! use this small puzzle during your alloted 5 minute break from the factories to maintain the agile minds needed to continue the Imperium's great labor!
+
+CATO SICARIUS | CORVUS CORAX
+FERRUS MANUS | JUBAL KHAN 
+LEMAN RUSS | LION L. JOHNSON
+MARNEUS CALGAR | PEDRO KANTOR 
+ROBOUTE GUILLIMAN | ROGAL DORN 
+USARKAR CREED | VULKAN`
+            },
+            {
+                title: `SANCTIONED IMPERIAL WORDFIND OF THE DAY`,
+                author: `kale_skope`,
+                type: `wide2`,
+                content: `A P E D R O K A N T O R N B T T S F
+N S H W Y M Y H D U E Q J Q O H J F
+G L I O N L J O H N S O N C K V U L
+R S P E R T U R A B O C U S I G B Z
+O E M A R N E U S C A L G A R A A V
+N Z Y D R O G A L D O R N C V Q L U
+R O B O U T E G U I L L I M A N K L
+N C A T O S I C A R I U S E L J H K
+J R P Q U S A R K A R C R E E D A A
+F E R R U S M A N U S F C F B S N N
+K J W T O L M O L E M A N R U S S W
+N U N I E C O R V U S C O R A X C Y`
+            },
+            {
+                title: `Medical Malpractice found on Mendria.`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `After the myriad of good news which flowed from Mendria’s campaign of attrition, these being constant physical victories fighting against the enemy of the God Emperor and then the medical victories. A sad new form of news is plaguing our Reporters desk, bad news. While bad news is, well, bad, it is important to show the wider Imperium that even our greatest Medicae workers make mistakes, and that's ok! Officio Medicae Master Za’hul Le’mendriaz’s miracle drug ‘Fervidus Sanguinious’, which allowed your average fighter like our glorious Imperial Guard, to fight and act like the heroes of the Imperium. It greatly improved their accuracy, health, stamina and more…However, after six Terran months of fighting, numerous companies have reported their peers combusting from the inside as they watch their bones quite literally melt. This of course is unsatisfactory and not efficient for wide spanning warfare, however, it was reported for five of those Terran months, the fighters took far more ground than normal and had far less injuries and mortalities. Since then, six regiments have fallen to the Drug and the General is asking for a case to be brought up against Le’mendriaz. The Administratum Officio Estate have brought together their greatest lawyers who have said ‘while the deaths of the Guards are unsavory, their lives before their deaths due to their drugs out preformed without, making the average one guardsmen worth six, therefore the Medical Malpractice case is hereby, nulled.’ The Medicae Officio will continue to give out the Fervidad Sanguinious whilst reportedly begin work on a much more stable variant.`
+            },
+          {
+                title: `DISPATCHES FROM LAMIA PRIME`,
+                author: `captain_rabbit`,
+                type: `feature`,
+                content: `IMPERIAL FORCES ADVANCE thirty seven kilometers during the first day of the offensive, capturing all of the objectives planned for the timeframe. In the west, the Imperial Guard relieve and defend Dale’s fishing village from traitor attack while the honourable Questoris smash through the heretic lines, reinforcing the beleaguered Hive Thymbra.
+In the centre, the most pious Adepta Sororitas attack and take in one brilliant sweep the so called “Hill 281” a critical lynchpin in the enemy’s defence, and in the process rescue the captive Cardinal Vestargo.
+To the east Commissar-Colonel Jennefer's troops deal a crushing blow to the wet water navy, sinking all four of the traitor’s battleships, and likewise on land advance as if unopposed through the mountains.
+
+The Emperor’s power truly shines over the most loyal and devout forces assembled, as it seems the imperial forces cannot be stopped and the liberation of southern Lamia is soon to conclude in the most splendid of victories.`
+            },
+          {
+                title: `Horus Heresy Stockpiles Found in Repository World`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `Within the world of Phi-7464, two Scribes of the Adeptus Ministorum have discovered a cache of supplies, equipment and vehicles dated to the Age of Betrayal and destined to forces of the now-defunct Imperial Army. Their discovery was made in the midst of an effort to make additional room for Tithes after a delay in shipments caused a temporary overflow in stockpiled goods: While clearing a maze of containers, a structural failure revealed an opening that led to a sealed sublevel containing relics of M30 thought lost in the chaos of conflict.
+
+While the majority of these relics have degraded in the centuries following their manufacture or have been diverted by higher powers, several lots of vehicles designed for the Imperial Army have been cleared for limited deployment in specific regiments of the Astra Militarum - More such vehicles are known to be stored within the sublevel, but anti-sabotage countermeasures and chemical leaks have made retrieving the vehicles too costly in both Scribes and Servitors at the present. The Administratum awaits the arrival of workers from the Alekntras Indentured Penals to restart the retrieval of additional vehicles.`
+            },
+          {
+                title: `Alms for the Frontiers`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `Throughout the Eastern Fringes, where the Emperor’s light struggles to reach the less fortunate, the Ultramarines, sons of Guilliman, the Imperial Regent, have accomplished much to undo the unfortunate events caused by the Days of Blinding. Though more precisely their attached Auxilia, have begun an extensive program of charitable relief in partnership with His Holy Ecclesiarchy. Whenever a Gladius Strike Force makes port upon one of the Imperium’s far worlds, an assortment of food, medical supplies, replacement machinery, clothing, and other necessities destined for the local populace are given. Ecclesiarchy officials have hailed the initiative as a practical demonstration of the Emperor’s love for humanity, while the Ultramarines themselves have offered little comment beyond the observation that healthy citizens are considerably more useful to the Imperium. On several frontier worlds, entire settlements reportedly received ration crates and surgical supplies within hours of the fleet’s arrival, with local priests organizing distribution beneath the watchful gaze of the Adeptus Astartes. Though some Administratum clerks have complained little when the Ultramarines give them the manifest for such supplies. 
+
+The Emperor Protects.`
+            },
+          {
+                title: `MURDER IS OKAY`,
+                author: `altonascends`,
+                type: `feature`,
+                content: `Are you angry about your job, do you hate your boss/wife/husband/partner/kids/neighbors/servitor/enforcer/other well we here at Mutant Solutions have an answer for you. Joining are team, we go into the underhive to generally clean things up and we can give you that sweet rush of thrill and power that your job as one of those pencil pushers just isn’t doing any more. Take someone else’s life in your hands, wear tough armors that will keep you safe. These unarmed fools are easy to kill, we just need your strong arms and keen human mind. If you can hold an autogun then you can join. The pay is, along with many other benefits that the company will surely provide you if you ask. Also, any children you have once you sign on are guaranteed employment along with employment for their children. So come on down today and sign up, and we shall provide to you that thrill you have been missing all your life. 
+
+<i>Note: we are not liable for any damages that will occur to you in the course of your service. Anything in this advertisement does not need to be true, up to and including the job offered. Mandatory eugenic tests for applicants</i>`
+            },
+            {
+                title: `ISSUE RESOLVED`,
+                author: `end_of_a_leg`,
+                type: `feature`,
+                content: `The previously reported on civil war has come to a peaceful resolution after the guard regiments on the planet finally agreed to withdraw from the siege lines and allow order to be restored. In a shocking turn of events, the guard regiment who had been laying siege to the world were greeted by imperial diplomats, rather than the guard regiments under siege or the temporarily appointed civil governance officiant. Due to the pace of imperial bureaucracy, the regiment had arrived before the announcement that they had been granted settlement rights. This would make all actions they took during this war retroactively legal. As the guard regiments deployed to restore the previous governor's rule had been acting to usurp official imperial rule, they were left at the mercy of the new planetary governor. The new Lord Governor has sentenced the offending regiments to five years of indentured service to the planetary defense forces.`
+            },
+          {
+                title: `Second War for Martyrdom - Second Battle for Fort H-110`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `The Second Battle for Fort H-110 is well underway! The 108th Krieg Siege Army has already made wonderful gains, and the first defensive line is almost under their control. The Fort itself has been bombarded and about to collapse and be destroyed.
+
+Citizens of the Martyrdom sector, you will have complete liberation from the tyrant and traitor Ameylie Greth! Soon your children will live in a traitor free sector, and all will be well. But we must continue fighting, and fighting we will do! Once this fort falls, not only will Marshal Junarius' failure be rectified, but Marshal Lukas will be the true torch of this campaign! Ave Imperator!`
+            },
+            {
+                title: `Second War for Martyrdom - Victory at Petria Bay`,
+                author: `dragoddas`,
+                type: `feature`,
+                content: `Despite the imperial advance stalling up until recently, it seems the various forces arrayed against the heretical menace have picked up the pace. Observers attached to the Kraek Air contingents have recorded two stunning imperial offensives: One, a naval battle where a heretic cruiser was heroically sunk. The other, a total offensive with overwhelming firepower to crush the heretic lines. With victory almost assured there is hope that the war for the Highway will be over by Sanguinalia.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
