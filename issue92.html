@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>8 more to go</span>
+            <span>Issue #92</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `Imperial Reinforcements to Lamia Prime`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `Cycle by cycle, more Imperial forces are being funneled toward the Industrial World known as Lamia Prime, capital of the Lamian Sector and namesake of its patron saint. For months, the planet existed perilously on whether it’d fully fall to the Archenemy as heretic formations or if the servants of the God-Emperor will succeed. Let it be known, Imperial commanders have fought and succeeded in establishing a position from which a proper counteroffensive can now begin. Imperial vanguard forces have secured a substantial foothold on Lamia Prime. The fighting continues elsewhere on the continent and the war is far from won. But the flow of Imperial troops is no longer merely a trickle as replacements are on their way to help secure this new foothold. Transport vessels are entering the system in increasing numbers. Fresh regiments are being moved toward established landing zones while Mechanicus vessels of Mars also arrive for an undisclosed reason. The world will be retaken in His name.
+
+The Emperor Protects.`
+            },
+            {
+                title: `WE OFFER AID AND COMFORT`,
+                author: `end_of_a_leg`,
+                type: `sidebar`,
+                rowSpan: 1,
+                content: `To all who find themselves left behind. To any who feel that the light of the imperium does not shine on them. To each person reading this, we speak to you. Come to us, and we will erase your suffering. You need not know fear, for we will protect you. You need not know scarcity, for we will provide all you want. You need not feel alone, for we will be your kin. We will be together, unified, undivided, as a shining beacon of change, of plenty, of safety, and of justice. Simply come and join us.
+
+The great four as one.`
+            },
+          {
+                title: `Notice of Inquiry`,
+                author: `bot_valley`,
+                type: `mid`,
+                content: `The local Inquisitors office wishes to remind all citizens that reporting a neighbor for heresy is a civic duty, not a personal grudge, and the two are easily distinguished by trained investigators, usually within the first few hours of interrogation.
+
+Citizens are encouraged to report unusual dreams, an aversion to prayer, excessive curiosity, insufficient curiosity, and any household pet exhibiting more intelligence than is seasonally appropriate.
+
+False reports will be treated with the same intensity as true ones, in the interest of fairness.
+
+The Inquisition thanks you for your vigilance, and looks forward to meeting you regardless of the outcome.`
+            },
+            {
+                title: `Second War for Martyrdom: Victory at Fort H-110`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `The 108th Krieg Siege Army had successfully taken Fort H-110 after several months of bombardment and offensives. Just several months ago, there was a devastating defeat that forced Marshal Junarius to be replaced by Marshal Lukas, and the new Marshal has proved himself a proper soldier of the Imperium by taking and avenging the soldiers who died at Fort H-110.
+
+The Astra Militarum wishes to publicly endorse, commend, and congratulate on their victory the 6th Kraek Support Flotilla, 147th Cadian Combined Arms Regiment, and 1st Sevic Dragoons for their uncompromising heroism and strength for taking Fort H-110.
+
+Next offensive planned is against Fort J-400, where Marshal Lukas is already planning on destroying the entire frontline with five hundred macrocannons. Ave Imperator!`
+            },
+          {
+                title: `Denari Prix begins.`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `As is yearly tradition within the Ultimar Sector, many of the nobles have began their journey to a small planet orbiting two stars known as Denari. Throughout the year the tithe for this planet is simple, it’s an agricultural world which provides bounties of harvests. But, once a year on a day like today that entirely changes. Every year on this date many nobles and their household members all travel to Denari to play the Denari cup, an old tradition of using sub warp ships in a race around the system. The y have minimal to no cogitators on board and have to use maths to work out exactly how close to a planet they must get to get the correct slingshot trajectory. On average 1/3rd of racers die, another 1/3 get lost in deep space and takes the Denari planetary guard weeks to find in the void, the last 1/3rd are the ones who have a true shot at winning. The race tends to lasts a week, meaning we should have the results in one to two Terran weeks, here’s hoping for a good clean race this year.`
+            },
+          {
+                title: `THE WAR FOR VELTIS CONTINUES`,
+                author: `captain_rabbit`,
+                type: `feature`,
+                content: `Several months have passed since the Imperial Guard landed on the main continent, now, another wave of Imperial reinforcements have arrived. The wise war planners of the Departmento Munitorum have decided on a two pronged offensive, one to capture coastal ports in order to secure a strong line of supplies, and a primary strike into the traitor heartlands. There six regiments of the Astra Militarum, augmented by the Emperors Angels and the noble Militarum Tempestus prepare to liberate the ancient city of Aachen though a strong heretic defensive line with hundreds of pillboxes and prepared positions stand in their way. The Astra Militarum has declined to comment regarding expected time frames or casualty counts, but if the previous offensives on this world are anything to go by, the Emperors Light will soon shine over Aachen with acceptable casualties incurred.`
+            },
+          {
+                title: `Reminder:`,
+                author: `thefelgus`,
+                type: `feature`,
+                content: `It is once again tithe season. Please check with your local Adeptus Administratum representatives to see if you qualify for service in the Astra Militarum, and whether or not your produced goods are to be taken by the tithe. Remember to fill out your G-3742 Form and the K6-372 Annex Form by the end of the solar month to be considered tithe compliant.
+
+A recent uptick in falsely claimed 'church deductions' now means that no donations to the Ecclesiarchy are tithe deductible. 
+
+The Emperor Protects.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
