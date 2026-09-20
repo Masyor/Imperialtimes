@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Going Back to Blighty</span>
+            <span>Issue #93</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `VERRIN DELTA EXCEEDS THE HARVEST TITHE`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `The Emperor rewards the diligent with further opportunity
+
+The agri-world of Verrin Delta has delivered its grain tithe forty days ahead of schedule, and the Administratum has confirmed that the total exceeds all projections by eleven percent. Nine hundred million tonnes of wheat, barley and protein maize are now bound for the war fronts of the Ultima Segmentum, where they will feed the armies that hold back the dark.
+
+Governor-Steward Halloran Voss praised the workers of the great plains in a public address on the steps of the Grain Cathedral. "You have bled for this soil," he said, "and the soil has answered. Let no one say that Verrin Delta gives less than everything."
+
+The Departmento Munitorum was quick to respond. In recognition of this achievement, the world's tithe for the coming cycle has been raised by fourteen percent, a mark of the Imperium's confidence in its people. Farming collectives that fail to meet the new figure will be visited by the Adeptus Arbites, who reassure the public that these visits are strictly educational.
+
+Celebrations will be held in every settlement on the first Sunday of the new cycle. Attendance is voluntary, though it will be recorded. Workers are reminded that the harvest is a sacred act, and that any grain left unreaped in the field is a small heresy against the Emperor's table.
+
+The Emperor provides. Verrin Delta provides more. Return to the fields.`
+            },
+            {
+                title: `FERRATA'S NEW PRINCE`,
+                author: `widder7827`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `King Marius Zenius, after several years of failing to produce an heir for the household, has finally produced one with his wife, Queen Cleo Zenius. It was a son, and by the grace of Caesar Imperator (God-Emperor to Ferratans), he was born healthy. His name is Prince Julius Zenius and is already expected that when he reaches the age of eighteen (18) he will become Military Governor of Aegia.
+
+"I am very excited to see how my son will grow, though the only thing I fear is that I might not see him become King. Though, I trust that Caesar Imperator and the watchful gaze of the Void Guard will ensure that he will, inevitably, become King of Ferrata after me." - King Marius Zenius.
+
+Long live Prince Julius Zenius! Long live King Marius Zenius! Ave, Caesari Fidelis!`
+            },
+          {
+                title: `ERNAX EVACUATION BEGINS`,
+                author: `dragoddas`,
+                type: `mid`,
+                content: `The paradise world of Ernax is under siege by the forces of Hive Fleet Leviathan! Two Imperial navy battlegroups, two Imperial guard armies, a Rogue Trader and a Titan have all deployed to help in the evacuations of this beliegered world. Over the coming months hundreds of thousands of citizens and an uncountable tonnage of cargo will be lifted offworld before it can be devoured by the tyranic menace. Our prayers go out to the people of Ernax in these trying times - especially for the men and women of the PDF and Militia fighting on the frontlines.`
+            },
+            {
+                title: `A FOOTHOLD`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `Brave pilots from navy air wings, household guard retinues, and the forces of the Adepta Sororitas have made a breakthrough on the gas giant of Elaim. Elaim was a vital gas extraction hub and an important way station for many imperial military and trade fleets. In previous months, pirates had seized several of the floating platforms and refused to pay the imperial tithe. Even more concerning, the pirates sold the siphoned gas for profit and used the money to build an airborne fleet and hold their ill-gotten infrastructure with an iron grip. The brave imperial pilots, with the assistance of XX regiment Elysian drop troopers and VIII regiment Harakoni warhawks have recovered the first of many platforms. In what is surely a sign of things to come, the local population has welcomed their imperial liberators and has helped root the pirates out of hiding.`
+            },
+          {
+                title: `VICTORY ON LAMIA PRIME`,
+                author: `captain_rabbit`,
+                type: `feature`,
+                content: `THE FORCES of the Emperor have after two days of efficient fighting triumphed over the heretic. They have relieved Hive Thymbra, they have taken Hive Vantourus, they have conquered the eastern mountains and the plains below it, they have secured the dry-docks. All objectives have been achieved and well a head of time at that. 
+
+At 13:00 yesterday the call came out from Colonel Arturo Strelkov-Heisser of the 7th Vardoulan that the last heretic forces within Vantorous were vanquished, the traitor house-guard slain like dogs within their last castle. With their inglorious end only token forces remain scattered around Hive Thymbra and the Imperial Guard has already begun the cleansing of the captured territory, a process sure to continue after they have been relieved by the Valhallan reinforcements. The Emperor guided their hand and they triumphed. Align yourself with His will, and soo to will we triumph in our endeavours against evil.`
+            },
+          {
+                title: `Hank’s Holo Corner - MARBO III`,
+                author: `akatoad`,
+                type: `feature`,
+                content: `Got an absolute classic in the holotape shop today folks. For those who don’t know, Marbo III is based on the absolutely real exploits of legendary Catachan guardsman Sly Marbo Apparently deciding that Marbo II was too restrained, Marbo III sends Sly Marbo to the frontier world of Khyber Secundus, where his former commanding officer has been captured while advising local loyalist resistance fighters in their fight against an occupying heretic army. 
+
+Marbo III steps even further away from the realism of First Blood in favor of raw high-octane action than Marbo II did; fully abandoning even the vague pretense of believability possessed by its predecessor. Marbo fights vulture gunships with heavy stubbers, outruns explosions, survives injuries that should require several replacement organs, and at one point charges an enemy tank while driving a Tauros. This culminates in both vehicles colliding head-on, exploding, and Marbo emerging from the wreckage looking just mildly annoyed. 
+
+Veterans of Khyber Secundus have complained about the historical inaccuracies of the film. Marbo did not destroy an armored column on Khyber Secundus, they say, because no such campaign even appears in the legendary guardsman’s service records. Nor, they say, did he rescue Colonel Traupman there. In fact, Colonel Traupman has stated in interviews after the release of the film that he has never been deployed to Khyber Secundus. Marbo himself has never commented on any of the films, and likely will never comment on them. I’m sure he has more important business to attend to.
+
+Is Marbo III loud, stupid, and barely believable? Yes. Is it also one of the greatest action holos ever produced by the Imperium of Man?
+
+I'll put it this way: by the time Marbo yells "FOR CADIA!" and drives a Tauros directly into a tank, everyone in the audience forgets that he's supposed to be from Catachan.`
+            },
+          {
+                title: `Origins of Words`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `A word many Imperials probably have never heard of is PAGAN, which is its Low Gothic way of spelling. Old Terra’s fragments being in High Gothic tells us the word sometimes was written as PAGANUS or PAGANI. Its meaning is unknown. Scholars suggest that PAGAN was originally an ancient Terran military designation. The oldest surviving mention located appears on Fragment TERRA-IX-77, a badly burned dataslate recovered from beneath the ruins of what may once have been a pre-Imperial educational institution. The ancient Terrans possessed no concept of being spiritually outside the Emperor’s light because, obviously, they had not yet received the Emperor’s Light. The earliest PAGAN, therefore, were presumably those Terrans who stood outside the Emperor’s armies, however this is confusing too as the techno-barbarians also used this word. There is also an annoying quantity of evidence connecting PAGAN with the countryside. This has caused lesser scholars to suggest that PAGAN simply meant “country person.” Such a theory is absurd. Why would an ancient civilization invent a complicated word merely to describe farmers? Clearly, the PAGANI were not ordinary farmers and were Imperial frontier troops, rangers even. The word PAGUS must therefore have referred to a military administrative zone. This would explain why so many early references associate PAGANS with the countryside. Only much later, after the catastrophic linguistic degeneration that followed the Old Night, did ignorant scribes begin using PAGAN to describe those who were not loyal to the Emperor. This is a common phenomenon in ancient Terran Low Gothic dialects. We possess perhaps 1/1000000 of Old Terra’s written words. Most original texts were destroyed during wars whose causes have been forgotten, and many surviving texts have been translated so many times that their original meanings are unrecoverable. This is the best leading theory so far for the origin of the word PAGAN.`
+            },
+          {
+                title: `Jervis Down`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `It is under unique circumstances that this report from the office of Imperial Times is making its way across the Imperium. To put it plainly as decreed by the Imperial Creed and regulations 427a.e and Be-192a, and, with the papers in triplicate under the headings 19a, 189e, 42c and 1291a. Additionally, with the permission slips of form addendum 62a.3201a in black 32.19mm pen in size 3 font * Hand written, and, with 10 spacings on the left column, 11 on the right. This report, from the Office of Imperial Times, reports that the planet Jervis is missing. The Administratum within the sector, through the information acts (of the forms 427a.e, Be-192a, 19a, 189e, 42c, 1291.a) report that the planet, including all celestial bodies near to Jervis, is missing. It is by all reports as if the planet was never there in the first place. The Administratum through the Imperial Times (through the collaboration act and forms 892a.329a, 1920a, 3a.3) is requesting that all Imperial Citizens near to Jervis to report any information they might have on this celestial movement. If you have any information the Administratum could use, please fill in 19a.b1, 189e.a2, 42ce1, Be-192 and fill in citizen papers C192, C11e, C291ae and Ce1211.A, then hand these papers in to your local branch. Please note, Citizen papers must go to the planet Hervis, administratum sub floor -3291 room 1111192A and the report papers must go to planet Zeris, sub floor -21a, room 1. Please note, the Administratum must clarify that these must be handed in, and that the citizen papers must be dated atleast 3 days after birth. The Administratum through the Imperial Times (through the collaboration act and forms 892a.329a, 1920a, 3a.3) thanks you for your future assistance.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
