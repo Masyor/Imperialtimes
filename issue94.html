@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Back in action</span>
+            <span>Issue #94</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `SPECIAL NOTICE OF DELAYED PUBLICATION`,
+                author: `ORDER OF THE EDITOR-IN-CHIEF`,
+                type: `feature`,
+                content: `It is with profound humility and an unyielding devotion to the Golden Throne that this Editorial Bureau submits the following Explanation of Interruption regarding the delay in publication of The Imperial Times.
+
+As our subscribers are keenly aware, the operational hub of this revered publication recently underwent a necessary, sanctioned relocation. The Scribe-Editor was ordered to vacate our long-standing, fringe-world bureau upon the death-world of Cambodia: a lethal environment where the local fauna regularly consumes cogitator cabling, the humidity corrupts parchment within hours, and the local press corps is occasionally subject to physical liquidation by giant amphibious flora.
+
+The mandate required immediate transit to Holy Terra itself: the shining, bureaucracy-choked heart of mankind.
+
+However, during this peril-fraught passage across the stars, an catastrophe of extreme logistical and spiritual complexity struck our primary typesetting vox-cogitator.
+
+While in mid-transit between sub-sectors, the core logic-motherboard powering our printing engine succumbed to a fatal, irreversible soul-fracture. Whether brought on by the violent atmospheric turbulence of atmospheric re-entry, the damp climate of the death-world we departed, or an unprovoked manifestation of Machine-Spite, the central silicon architecture suffered total systemic failure. The machine’s spirit simply refused to compute.
+
+Upon our arrival at the Terran Sub-Administrative District, the Editor immediately sought redress through proper Imperial channels. What followed was an eight-day ordeal within the lower corridors of the Adeptus Administratum and the Departmento Munitorum:
+
+Day I: A Tech-Priest Enginseer of the Adeptus Mechanicus was summoned to perform the Sacred Rites of the Screwdriver and apply holy unguents to the fried circuits. After five hours of intensive prayer, the Enginseer declared the motherboard's Machine Spirit beyond divine salvation and pronounced it an Abominable Anomaly.
+
+Day II: Form 884-Gamma (Notice of uncooperative Scribe-Equipment) was submitted to the Bureau of Minor Artifacts, Desk 4,902.
+
+Day III-V: The petition was misfiled as a request for heavy artillery replacement parts, transferred to an Astra Militarum Ordnance Division, and subsequently rejected because a logic-motherboard cannot fire high-explosive shells.
+
+Day VI: The Scribe-Editor was detained for twenty four hours by junior scribes to verify whether the dead motherboard was an act of gross negligence, sabotage by Warp-entities, or unauthorised heresy.
+
+Day VII: A replacement circuit-rig was finally recovered from the depths of a forgotten Vault of Salvage, three hundred levels beneath the Imperial Palace, in exchange for four months' worth of ink-ration tokens.
+
+Day VIII: The replacement component was sanctified, anointed with sacred oils, and successfully integrated into our printing array.
+
+We extend our deepest apologies for this week-long blackout in news delivery. In a galaxy beset by heretics, Xenos, and Warp-storms, we understand that nothing is more vital to the morale of the Imperial Citizen than accurate, censor-approved reports on the glorious victories of the Imperium.
+
+We are pleased to report that the Scribe-Editor has survived both the lethal mega-fauna of Cambodia and the soul-crushing, endless corridors of Terran red tape. Printing operations have fully resumed.
+
+The Emperor Protects. The Times Endures.`
+            },
+            {
+                title: `Rent Forever: The Best Option for Less Stress, More Life!`,
+                author: `blackmako.`,
+                type: `sidebar`,
+                rowSpan: 3,
+                content: `Recent Administratum surveys found that 33% of respondents chose to rent for less stress and responsibility across most civilized worlds. Beyond the tangible benefits of not owning property, renting means less responsibility than owning private real estate. Not owning property means you don't have to take on debt and loans to keep up with it; by renting from private landowners, you pay less per month and have more financial freedom. Additionally, mass housing units handle maintenance, security, and safety— so they can enter your unit at any time, with two days' notice, giving you plenty of time to be present. These trustworthy, vetted strangers will have unrestricted access to your personal belongings; they'll enter your unit during normal working hours so you won't be inconvenienced by having to supervise them. The life benefits are tangible, and statistically, theft is exceptionally low. The 85% higher theft rate compared to single-family real estate can be explained by renters' irresponsibility, immaturity, and inability to secure personal belongings properly. Instances in which private landowners are determined to bear responsibility remain statistically negligible. 
+
+For many, renting is a deliberate strategy for building wealth and living a desirable lifestyle. Owning a home was once one of the most popular strategies to build wealth throughout the Imperium, but the generational shift away from building real estate equity is evident. Property is excessively expensive, a long-term investment that requires much more financial and personal responsibility than a majority of individuals are prepared for. Trust in the Imperium and its private landowners to ensure you live in the best and most hospitable living conditions possible. The truth is, land ownership is an outdated, archaic path to financial freedom; money you put toward private property could instead go toward travel, imperial tithes, and entertainment. 
+
+Now, some would argue that annual tax increases and shutdowns would affect the financial viability of renting, but that isn’t true. A viable strategy in difficult financial times is to take on debt; after all, if you can’t afford it all at once, it’s reasonable to break it up into payments over time. Debt can be good; responsible borrowing builds credit with accredited banks all over the Imperium and increases the common man's purchasing power, provided he maintains an acceptable credit score. The Administratum offers low-interest quick loans during periods of financial instability that can actually improve credit, typically ranging from 5–7% interest, well within reasonable expectations for the average middle-class wage. If you don’t pay the monthly payment on time, there’s no cause for alarm: unpaid interest compounds into the principal sum, allowing comfortable and flexible repayments for years to come. In these angry times, you can always trust the enduring stability of Imperial institutions such as the Administratum to educate you and provide fair loans and payment plans.`
+            },
+          {
+                title: `Ferrata Forces Undergo Massive Revamps`,
+                author: `widder7827`,
+                type: `mid`,
+                content: `The Ferratan Armies across all sectors go under massive revamps regarding their equipment and some 'natural traits' that had long since benefited several greedy nobles across Ferrata for centuries. The 'Gift of Alexander', which for long time with the Mechanicus has been a hostile debate on if it was heresy or not (due to nobody knowing who Alexander was truly, and if the Krak-Tips were STC construction, or simply a new invention by Alexander), has finally been declared light heresy and has been refunded from all Heavy Stubbers and RPGs from then on. They will be studied and the pursuit for an STC, or maybe justification from other STCs regarding Krak Weapons made be found.
+
+King Marius Zenius comments on this massive changes to the Ferratans as: "Completely understandable, and perhaps a new method of weaponry will come to help destroy our enemies that comes with STCs and Mechanicus favor."
+
+No official Mechanicus spokesperson has said anything official, but many Mechanicus Tech Priests and some Magos present on Ferrata show a mix of sympathy and, almost dangerously, disgust of Alexander. There has already been rumors that several Ferratans have skirmished with lesser Tech Priests who dare insult Alexander, but Adeptus Arbites present on Ferrata have quelled all hostile interactions and prepare for riots to occur against both Mechanicum shrines and Government buildings.
+
+Ave, Caesari Fidelis!`
+            },
+            {
+                title: `Risk Of Assassination`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `Several moderately important Administratum and Ministorum personnel have been found murdered after imperial rule was brought in to civilize a frontier world. With technology barely above the level of black powder weapons, many thought the effort would be easy. However, the local population has displayed a level of guile that could only be brought about by the ruinous powers.
+
+At the prospect of serving a higher purpose in the imperium, the inhabitants of the planet rebelled. After being asked to pay tithes of food, raw materials, and levied conscripts, the inhabitants attacked imperial officials with muskets, pikes, and handheld weapons. They were quickly put down by guard companies in the service of the Administratum with the remnants of the rebellion fleeing into the hinterlands. It was assumed that they would die within a week of being cut off from civilization.
+
+Though nothing was heard from the rebels again, people began dying from knives in the dark. At first the deaths were attributed to muggings, but even when security was increased, the deaths continued. Most were found dead to a single stab wound in the neck. This included a veteran commissar and a drill abbot who had been sent to raise the first regiments from the world. As garrison forces are withdrawn to protect noncombatants, this leaves security more and more in the hands of locals. With local militias and mercenary companies providing security, it is becoming more and more likely that the rebels will find a surge in local support. Reinforcements will be needed to maintain imperial rule.`
+            },
+          {
+                title: `Recreation`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `Many Imperial Guardsmen may have heard “Through the Warp and Far Away” but never the full version. We have painstakingly found it in its glory. Enjoy these historical lyrics that our men and women of the Guard sing.
+
+There’s thirty thrones to be amissed
+For those who’ve volunteered to list
+To sign and fight the foes today
+Through the Warp and far away
+
+Through the Warp and through the storms
+Through Terra, Accatran, and Mars
+The Emperor points, and we obey
+Through the Warp and far away
+
+When duty calls me and I must go
+To stand and face the cursed foe
+But we shall hold and we shall stay
+Through the Warp and far away
+
+Through the Warp and through the storms
+Through Cadia, Catachan, and Krieg
+The Emperor points, and we obey
+Through the Warp and far away
+
+If I should fall to rise no more
+As many comrades did before
+Ask the boys and gals to play
+Through the Warp and far away
+
+Through the Warp and through the storms
+Through Titan, Jericho, and Raas
+The Emperor points, and we obey
+Through the Warp and far away
+
+Then fall in lads behind the flag
+Load your Lasguns a fresh ole mag
+Forwards we go into the fray
+Through the Warp and far away
+
+Through the Warp and through the storms
+Through Graia, Kadaku, and Baal
+The Emperor points and we obey
+Through the Warp and far away
+
+Through the Warp and through the storms
+Through Luna, Eyrie Prime, and Sol
+The Emperor points, and we obey
+Through the Warp and far away`
+            },
+          {
+                title: `"Rats Killed my Platoon", Reports Distressed Sergeant`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `A PDF exercise in the sewers of Hive Ghaedtach has turned deadly after a platoon disappeared while in training, with only Sergeant Wells having escaped their fate. The survivor, perhaps maddened by the presumed death of his platoon, is convinced of the existence of a Xenos race living under the hive. These beasts, rats half the size of a human and standing in two feet, are supposedly capable of speech and of designing their own weapons.
+
+The exercise involved scouring the sewers for an undefended entryway into the upper levels of the Hive to improve the hivecity’s defenses. These supposed Xenos had then awaited in ambush for the platoon to arrive before setting upon them with primitive bombs, firearms and a flamethrower that shot out green flames. According to testimony, the platoon managed to escape and establish a defensive perimeter with scrap, which they defended for several hours.
+
+At the end, and with odds of survival minimal, the platoon’s officer had decided to sell her life dearly: Luring the assailants close and annihilating them with a cluster of Frag and Immolation grenades.
+
+Despite testimony and maps of the encounter, our investigative team was unable to recover any evidence of such events despite our best efforts.`
+            },
+          {
+                title: `/Undated Log / Alfa-Alfa-8512 / Armiger Madeline`,
+                author: `captain_rabbit`,
+                type: `feature`,
+                content: `I HAVE DISHONOURED MYSELF greatly today. I swore twice in the presence of a lady, a lady who got wounded in my care at that! Must I end my life? I think that I must. It is the only way? I have brought great dishonour to myself! and my House! It has been weeks and I have not talked another human being. They are out there I know that, I can't see them, they are hidden behind their metal skin. I cannot face myself. I cannot face my lady. I wince in shame every time I enter her. I cannot go on. What would the Unconquered Passion want me to do? It would want me to fight... I must follow it and listen. Sometimes the vox makes sound and human words come out. But how can a human make sound out of a device? There cannot be a human in there -  human cannot be speaking to me. Please I need help somebody please I cannot do this anymore I really need this it is so cold I just wanna go home...
+
+-Wait, my apologies, disregard previous section of log. Today we entered a new shelter, it is titanically large, but I do not know what to make of it, there is an mysterious oval dominating the cavern, some 75 meters tall and a several bays for the repair of war-machines such as my own Madeline and those much larger. I hope we can stay here long enough to recover and recuperate. God-Emperor knows I need the break from the endless marching and cold - Even if that break is filled hard work replacing actuators and carapace-plate. Will report further once we know more about this place. The God Emperor protects, Harrison out.`
+            },
+          {
+                title: `Duty`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `Such a broad term, what is 'duty'? For one it might be the act of selflessly giving their life for their fellow man, their family or even a stranger. For others it is to complete their work-load so that the tithes can be complete. But what is duty truly?
+
+The Guardsman would tell you 'duty' is simple, the trench, the order given, the order obeyed. The scribe would tell you it is the correct form, filed correctly, feeding a front he will never see. The priest would say the two are the same altar, and that the offering matters more than its shape.
+
+Perhaps duty is not one weight but many, each too small to matter alone. Take one away and nothing falls at once. That may be why it is asked of us, and not explained. An explanation could be refused. A debt, once understood, can only be paid.`
+            },
+          {
+                title: `Lost Pet`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `It is with grave concern that this notice from local citizen to Hentia Secundus is posted. If any citizen has seen or knows of ‘Noodles’ location please report it to your local law enforcement officer or local constabulary. The citizen of Secundus has stated there is a large reward for finding ‘Noodles’
+
+ADDENDUM
+
+Specimen known as ‘Noodles’ is not to be approached. If specimen known as ‘Noodles’ is spotted please report their location immediately to the planetary defence force. If any knowledge or information is found on the owner, or, you have information please provide that to the local law enforcement.`
+            },
+          {
+                title: `The Laverian Crusade Begins p1`,
+                author: `dadyars`,
+                type: `feature`,
+                content: `It has been almost a century since the subsector of Laverian Minoris Alpha was overrun by a wave of violence instigated by the despicable xenos race known as the Druhari. Their barbaric and dishonourable methods of warfare broke the valiant and gracious defenders of each planetary system in less than a year, resulting in a tremendous loss of resources, holy sanctuaries, and, most importantly, lands that rightfully belong to the **Emperor of Mankind It is for this very reason that, under the command of the most blessed  Sector Governor a reclamation Crusade is to be commenced with the utmost haste, led by the most honourable   Lord Marshal Caius Meridan It is also worth noting that the most renowned Remembrancer Hadrian Quill  has been authorised to document the meticulous, surgical, and incredibly efficient work of the Lord Marshal. He shall recount the recovery of our lost worlds, relaying regular updates as our honourable troops advance ever forward toward victory.
+`
+            },
+          {
+                title: `Chaos Erupts upon Craftia`,
+                author: `someguui`,
+                type: `feature`,
+                content: `As Imperial Forces arrive to assist the Wardens of the Gauntlet upon Craftia Chaos Erupts. Black Legion Traitors have once again boarded the Loyalists Flagship and have wreaked havoc amongst command staff and in the Enginarium of the ship. Meanwhile Xenos Drukhari forces raid the Castellans of The Rift Strike Cruiser and Apothecarion Robbing the entire demi companies Gene stock. Chapter Master  Ba'stien Grix has issued a decree for the retrieval of the Genestock and petitioned the local Deathwatch Watch Master in the hunting down of the Xenos.`
+            },
+          {
+                title: `RED WINGS SURVIVE VALHALLAN ASSAULT, 4–3`,
+                author: `akatoad`,
+                type: `feature`,
+                content: `The Detreson Red Wings escaped with a 4–3 victory over the Valhallan Icebreakers last night after a brutal contest that remained undecided until the final horn.
+
+Detreson entered the third trailing 3–2 after Valhalla's relentless forecheck and physical play dominated much of the second period. Defenseman Thomas Renaud equalized with 6:41 remaining before winger Mikhail Laroche slipped between two Valhallan defenders and buried the winner with just 1:17 left.
+
+Valhalla pulled its goaltender and spent the final minute hammering the Detreson net. Red Wings goaltender Henri Vaillancourt, who stopped 38 of 41 shots, made four saves in the final 60 seconds before the horn sounded.
+
+Laroche finished with two goals, while captain Aleksandr Beaumont also recorded a goal and an assist.
+
+When asked whether Valhalla's notoriously physical style had surprised the Wings, Beaumont laughed.
+
+"They're Valhallans. We were surprised they brought sticks instead of Basilisks."
+
+The teams will meet again later this season on Valhalla.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
