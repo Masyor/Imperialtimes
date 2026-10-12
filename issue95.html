@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>Direct from holy terra</span>
+            <span>Issue #95</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `Loyalty in the Unexpected: One Battalion Returned to the Emperor's Light`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `Imperial victory in the Tysele region of Civilized World Artesian V has been accelerated by a mass desertion within the traitorous elements of the Planetary Defense Force currently occupying the planet: A battalion numbering seven-hundred stationed in a quiet portion of the front had spent several weeks planning their revolt and subsequent surrender to the Roane 4th when a sudden transfer to combat the Imperial Guard accelerated matters.
+
+Tasked with defending a series of strategically unimportant towns far from the active combat of the Letzenberg-Andoverp region, this battalion had spent weeks mapping out garrison buildings, armories and strongpoints to be discretely delivered to the soldiers of the Imperium by a civilian before rising up. However, orders to transfer to the Letzenberg-Andoverp front caused the revolt to occur earlier than planned.
+
+Throughout the night, the battalion occupied positions, looted armories and decimated the local garrison while they slept or patrolled between the towns before preparing defenses and awaiting relief from the Imperial Guard. This relief arrived two weeks later, with 900 insurrectionist casualties and near-total losses amongst the mutineers, with the majority of survivors captured as they made it to Imperial lines or as civilians surrendered them to Imperial judgement as the Roane 4th took the towns.
+
+The survivors, numbering about 20, were executed by firing line by the crimes of Mutiny (4368/64q) and Crimes during Insurrection (Art. 5577/93z). In recognition of the help that their resistance gave to the Guard’s advance, the regimental Preacher Pontifax offered a partial absolution of their sins to each man before their death.`
+            },
+            {
+                title: `The Nid threat looms ever`,
+                author: `bot_valley`,
+                type: `sidebar`,
+                rowSpan: 3,
+                content: `Despite the greatest of efforts by the Angels of the Emperor, the threat of the xenos known as Tyranids remains ever large. The great firewalls enacted by the Adeptus Astartes are but a minor determent against the xenos threat. Latest reports have come in that the Astartes of the Raptors chapter are actively fighting a tendril of the Hive Fleet known as “Leviathan”, will their forces be enough or will the worlds under their protection face demise?
+
+The tendril, designated “Splinter-Cohort Voractys” by Mechanicus augur stations, has already claimed the agri world of Dreskan Minor, consuming its population within two days of planetfall. The Raptors now hold the fortress world of Kaelund’s Rest, the last barrier between the splinter fleet and the Dreskan shipyards, reinforced by two under strength Guard regiments and no Titan support, the nearest forge having gone silent for eleven days citing “procedural review.” Imperial cogitators place the odds of the line holding past the next lunar cycle at a figure the Administratum has classified. Citizens are reminded that faith sustains where firepower falters, and that the Emperor’s will is accomplished whether or not it resembles victory.`
+            },
+          {
+                title: `EAST DAMOCLES COMPANY`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `The East Damocles Trading Company is now hiring for expeditions into the Damocles Gulf. Positions needed include scribes, mercenaries, priests of both the theocratic and technological manner, and competent voidsmen. Positions such as navigators and Rogue Traders may also apply. Positions not wanted are Arbites and Commissars. Benefits include fame, fortune, glory, and as much loot as you can hide from the tally masters. Interested in a life of adventure? Is work in the imperial guard too dangerous or the administratum too dull? Have you not found a congregation to properly convert to the imperial truth or the glory of the Omnissiah in far too long? Then come join the East Damocles Trading Company.
+
+<i.Addendum. Commissars and Arbites must be brought along to ensure discipline and the rule of law. Fame, fortune, and glory not guaranteed. May be more dangerous and less fulfilling than your previous employment.</i>`
+            },
+            {
+                title: `The ring of fire`,
+                author: `nyxgrid`,
+                type: `mid`,
+                content: `Deep within the innards of Hive Proximus, there was a child born from parents of no particular heritage, a story as common as time, it wasn't strange at all, though as the Emperor willed it, it wouldn't remain a common story after all.
+
+Born on the 3rd day of the 2nd week of the 1st month, Astreus was a child with no particular skills, though what he had was tenacity, the tenacity to see things through the end, and it was this particular skills that made him get taken by the Angels. As the Underhive rose in protest against the Emperor, the angels descended, and those who stood against Him swiftly met their demise, but there were those that stood with the Angels for the Emperor, and but a child, he too stood with the Chosen of the Golden Throne, all in service to the one that they called the "God-Emperor of Mankind".`
+            },
+          {
+                title: `GOODS AND SERVICES`,
+                author: `The Editor`,
+                type: `mid`,
+                content: `<b>AUTHENTIC PURITY SEAL:</b> Guaranteed genuine wax and parchment, retrieved directly from the scriptorium floor of the Adeptus Ministorum. Perfect for hanging on your bulkhead, Administratum-approved lunchbox, or a rebellious teenager's bedroom door. Serious buyers only.
+                <b>HIGH GOTHIC TUTORING:</b> Are you tired of sounding like a feral-world savage? Learn proper High Gothic punctuation and grammar, administrative shorthand, and how to address your superiors without being executed on the spot. First lesson free!`
+            },
+          {
+                title: `Chacalus Engages In Another Noble's War`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `The House of Loddy and Bellum begin warring on the continent of Quattro with PDF troops and House Guard. This time the cassus belli is the conquest and defense of the city of Corvus, which has for the past few years been a matter of debate around which Noble Household holds claim to and has passed hands several times.
+
+The city of Corvus, in quite the twist, declared independence from both Noble Houses and given their loyalty to the Leviathans, an Adeptus Astartes chapter present on Chacalus. Though Chapter Master Patricus Dives has not said anything official regarding Corvus swearing fealty to him, there has been Thunderhawks spotted flying into the city and not yet leaving.
+
+House Loddy and House Bellum have begun besieging the city, but with the potential that Space Marines are considering defending the city against the Noble Households, they have not yet assaulted the city. House Ignatius has spoken that if the Space Marines have joined the war, so will they and will gladly fight against both House Loddy and House Bellum in order to maintain the authority of the Leviathans on Chacalus.
+
+Whether or not this is true, remains to be seen.
+
+Ave Chacalus!`
+            },
+          {
+                title: `ORK ARMADA ENTERS LAMIAN SYSTEM`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `Imperial authorities have confirmed the arrival of a massive Ork fleet in the Lamian system. Based on Naval observations, the armada has been identified as belonging to the notorious Goffs Clan. The Ork Waaagh! descending upon Lamia Prime has now turned the campaign into a three-sided war. Imperial forces already engaged against the Archenemy must contend with the greenskin invasion, while Chaos formations continue to hold or contest positions across the planet.
+
+The Ork warlord has been identified in intercepted transmissions as Gorzag Ironteef. His forces have begun attacking both Imperial and heretical supply convoys both in orbit and on the ground. According to Naval Command, orbital observations suggest that the Orks are less interested in establishing a front or conquering the planet than in finding the largest concentration of enemies and engaging them in battle. Imperial commanders have therefore been instructed to avoid direct engagements with the Orks whenever possible, treating them as a pest rather than the primary enemy, one that occasionally requires culling.
+
+Civil authorities have issued flood warnings for several low-lying districts near the Solenne River and other major waterways as temperatures continue to rise amid the ongoing war. Residents are advised to avoid underground passages unless their safety has been confirmed by local authorities. Military traffic has priority on designated roads, and civilians are instructed not to approach bridges or embankments showing visible structural damage. In areas recently reclaimed by Imperial forces, engineers are working to restore drainage systems and power while combat units continue security operations against heretical partisans. Imperial commanders have nevertheless reaffirmed their commitment to securing the planet for the Imperium, regardless of the cost.
+
+The Emperor Protects.`
+            },
+          {
+                title: `Marrotca II searches for eligible bachelors`,
+                author: `tarnisheddddd`,
+                type: `feature`,
+                content: `Are you without a partner of your own? Do you yearn for love in a galaxy of woe and strife? Perhaps you're in luck. The governor of the world of Marrotca II has sent forth a missive to the wider Imperium, calling forth all single (though not strictly enforced) men to their world to pair them off with the world's women. "The women of Marrotca are by far the most beautiful and lovely ladies in the entire Segmentum," the governor was quoted as saying, "And so long as you do not mind the intense drill regimens for our valorous guardsmen outside your doorstep, you can start a wonderful family here on our world."
+
+According to the latest census from the Departmento Exacta, almost the entirety of Marrotca's male population has been drafted into the Astra Militarum in a move to transform the planet into a fortress world, and have been quickly shipped off to numerous conflicts across the segmentum. According to officials from the governor's office, this has incurred a serious demographic imbalance that must be resolved by a replenished birthrate. In recent decades, the planet has drawn the severe ire of the Departmento Exacta for its lacking in the regimental tithe; this recent and massive recruitment drive is believed to be an attempt by the governor's household to rectify this.
+
+ADDENDUM: To qualify for the partnership drive, you must meet the following standards:
+
+18 to 25 years of age
+Male
+Minimum height of 5 feet
+No chronic ailments or mutations
+Physically able
+Absence of family or personal and/or professional connections is endorsed
+ <REDACTED>
+Prior training with a lasgun is endorsed
+ <REDACTED>
+The resolve and willingness to fight and die for the Emperor in righteous battle
+ <REDACTED>`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
