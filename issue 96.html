@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I can't believe the quartermasters on holy terra need ID to issue a storm hammer</span>
+            <span>Issue #96</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `RED WINGS SURVIVE STEELHEADS IN SHOOTOUT THRILLER!`,
+                author: `akatoad`,
+                type: `feature`,
+                content: `In a contest worthy of the Emperor's finest warriors, the Detreson Red Wings narrowly defeated the Armageddon Steelheads 4–3 in a shootout after sixty minutes of regulation and a grueling overtime failed to separate the two sides.
+
+The Steelheads wasted no time establishing their trademark physicality, opening the scoring with a blistering slapshot midway through the first period. Detreson answered before the intermission, and the two teams continued trading goals throughout the second and third periods.
+
+With Armageddon leading 3–2 and less than two minutes remaining, Detreson pulled its goaltender for an extra attacker. The gamble paid off when Wings captain Viktor Halbrecht buried a rebound past the Steelheads' netminder, sending the home crowd into a frenzy.
+
+Overtime proved equally punishing. Armageddon hammered the Detreson defense with relentless pressure, but goaltender Mikhail Voss stood firm, turning aside a breakaway attempt in the final seconds.
+
+The ensuing shootout became a battle of nerves. After five rounds left the teams deadlocked, Detreson winger Lukas Veyr stepped onto the ice for the sixth. With a deft feint, he slipped the puck between the Steelheads goaltender's pads. Voss denied Armageddon's final shooter moments later, securing the victory.`
+            },
+            {
+                title: `SLAWBIES! WE HAVE THE MEAT!`,
+                author: `mourhurst`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `The Imperium is beset on all sides by ravenous Orks, insufferable Eldar, and whatever unspeakable horrors. Yet through ten thousand years of darkness, one truth remains eternal, food is important! At Slawbies, we serve the finest spiritually fortified roast meat on the west side of the Eye of Terror. Every sandwich is assembled by blessed servitors, wrapped in sanctified foil. Our secret recipe? Well it’s a secret. We got thinly sliced roast beast, recaf-mayo, and fresh artisanal bread, costing 12 Throne Gelts on average depending on which franchise you find. Another one is the 3 layered roast meat, double cheese, and sacred sauce for 9.99 Throne Gelts. We got Curly Fries for 3 Throne Gelts. For the uninitiated, Curly Fries are twisted root spirals, fried in blessed oil to become crunchy. It has a high sodium content, so beware. And for 4 Throne Gelts, we have a chilled grox-powder beverage. 
+
+You deserve a good sandwich. The Emperor Protects.`
+            },
+          {
+                title: `LOST TO THE WARP`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `Today, several brave guardsmen made the ultimate sacrifice. After their regiment was sent in to sanitize a wilderness site where a chaos cult had taken residence, it became apparent that the reason for the appearance of the cult was residual warp energy. With assistance from the regimental priests, the site was contained and the warp energies were slowly cleansed with holy artifacts, prayer, and thorough sanctification with flamers full of anointed promethium. Unfortunately, further exploration led to a much graver discovery. Malfunctioning archaeotech at a nearby Mechanicus facility had caused these leaks to occur. The Adeptus Mechanicus states that a rogue element within the research team was corrupted and committed acts of sabotage, leading to the opening of a live warp portal. A group of brave guardsmen were selected by the regimental commissar to enter the depths of the facility and destroy the machinery responsible for the incursion. All guardsmen selected were awarded the Oculus Laureate in recognition of the duty they were to undertake, and sent into the depths of the facility. The doors were welded shut behind them, and it is presumed that the guardsmen completed their duty.
+`
+            },
+            {
+                title: `Lazerene Conglomerate rises in power.`,
+                author: `zeeenz`,
+                type: `mid`,
+                content: `A local Administratum clan within the Calixis Sector has once again begun to spread its influence. While many Administratum clans tend to work together, it is rumoured that many fund feuds and gunpowder diplomacy to make sure that their clan rises higher. After a local campaign, where the Lasko Family funded numerous medical advancements and treatments, the LAzerene Conglomerate has seen a marketable growth of 35%. With the new recruitment from the local populace into its defence forces. Many within the Calixis sub sector are beginning to wonder what it truly means to have such a clan grow to power, however, spoke person for the Lazerene and lasko Families and the Sector Lord says that the conglomerate and the Sector Lord are keen to work together to greatly improve the IMperium’s grasp of the sector and to boost the medical practices of the Lazerene Conglomeracy.
+`
+            },
+          {
+                title: `Plague Spreads through Molvehill, Corruption Suspected`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `A plague of thus-yet unknown origins has been ravaging the citizens of Hive World Molvehill after Confessor Justinius was seen introducing suspicious powders in censers of the Ecclesiarchy according to sources. The Adeptus Administratum is considering a planet-wide quarantine.
+
+Some members of the Ecclesiarchy who have worked with Confessor Justinius in recent times and have accepted to talk with the Imperial Times report that the Confessor has not only had his health worsen over the past few weeks, but they have also seen him introduce a greyish-black powder into censers not long before mass in the Underhive, where the plague has begun. This has made tracking the plague and its symptoms difficult, though most agree on vomiting, necrosis on limbs and the appearance of pustules in the legs accompanied with severe bleeding from orifices such as the eyes, mouth, ears and nose quickly followed with death. The bodily fluids of any infected person are contagious, and must be avoided at all costs.
+
+Despite a lack of evidence that this plague causes those infected to revive, unlike the more common “Zombie Plagues”, the Adeptus Administratum has shown an interest in temporarily quarantining the planet until the disease has reached its maximum spread. As such, we at Imperial Times suggest to avoid travelling to Molvehill if possible. `
+            },
+          {
+                title: `Medrick Secundus Conquered in the Name of the Imperium`,
+                author: `shenry651`,
+                type: `feature`,
+                content: `The planet of Medrick Secundus has been conquered from the arrogant and foul xenos known only as the T'au, as the first step of preparation for an imminent assault that will strike deep into what those foolhardy scum call "their" territory. Supplies are being offloaded, and shipped all over the planet's main continent in preparation for a grand and glorious war fleet that will soon arrive to start the offensive proper. 
+
+Forces on the planet itself await with great vigor the arrival of the reinforcements, to carry on the fight against these detestable xenos, and stand vigilant guard against any attempts to interfere with these most important of supplies, as they are shipped to warehouses, depots, and cities all over. the planet. Now they await the forces coming to provide the main thrust of our glorious crusade. I'm sure they'll be arriving in system any day now.
+
+...any day now.`
+            },
+          {
+                title: `Drunk Driving Still Illegal Says Local Arbites after Space Wolf Occupation`,
+                author: `altonascends`,
+                type: `feature`,
+                content: `The Space Wolves, the Sons of Russ, The Emperors Executioners, Transhuman Demigods of War. They fight a hundred wars across the breadth of our Emperors domain, upon their minds are the burdens of the fates of untold trillions at least. They have been taught in all manners of war since they were forged by the Emperor Beloved by All, masters of their craft a hundred thousand times over. It is thusly that when they consume in their pre battle ritual a portion their drink before embarking upon their deployment this is the most acceptable action that could be fathomed. It does not mean that they are drunkards or even in the lightest sense inebriated. 
+
+You are not a transhuman demigod of war, you may not “do a little boozin and cruzin while the Pixes plays”. Further more, the song Where Is My Mind has been banned for over 5 thousand years, how do any of you possess a copy of it; never-mind in such bulk. It must be understood that the punishment for this act is to be turned into the navigational servitor of a penal bus with a governor on it so that you may never go in excess of 12 miles and hour. Those who were caught while listening to the Slanneshii song known as “that bird of most glorious freedom” will maintain higher order brain function whilst stuck in traffic that is bordering being relieved but never will. We will also put your family on this buss, it has no air conditioning. If you have no family one will be assigned to you.`
+            },
+          {
+                title: `Krieg celebrates the 200th anniversary of victory on Vraks`,
+                author: `tarnisheddddd`,
+                type: `feature`,
+                content: `It has been an estimated two-hundred years since the day the guns fell silent on the former armoury world of Vraks, but it has not been forgotten. Fourteen million guardsmen of the Death Korps of Krieg would find atonement on that world's soil during the eighteen years of ruthless conflict, and it was the hard-fought victory on Vraks over the arch-heretic Xaphan that firmly established their grim and dutiful reputation across the greater Imperium of Man.
+
+An immense military parade was held through the streets of Holy Terra herself, organized by His most diligent Adeptus Administratum, composed of a staggering eighty regiments of the Death Korps and totaling to an estimated one million guardsmen; these regiments, freshly raised from training, would see their first deployment in marching formation on the sacred throneworld before setting out to the many wars against mankind's foes.
+
+The procession of infantry and tanks marched for two days and nights beneath the raucous cheering of millions of Holy Terra's most distinguished nobility, through the great halls, bridges and highways leading to the Imperial Palace all the way up to the Ascensor's Gate, where the great host was barred entry by the sacred Ten-Thousand, the Legio Custodes; all save for a small company who bore the standard of the 88th Siege Army, of which fought upon Vraks. They would march all the way to the Eternity Gate, whereupon they would place the standard amongst the banners of Imperial heroes stretching back ten-thousand years.`
+            },
+          {
+                title: `Please Stop Drinking Neon-Green Water`,
+                author: `widder7827`,
+                type: `feature`,
+                content: `A PSA to all planetary workers on the planet of Chacalus, please do not drink the neon-green water located next to the city of Corvus, it is highly radioactive and while no man or woman on Chacalus has hair, you will still get horrifying skin cancer and eventually die.
+
+We have a report of over thirty (30) men and women dead who have drank this water believing it to be the dumped excess of the popular carbonated drink "Calgar's Brew". It is not. It is the Mechanicus Factory's excess radioactive waste which goes into the waste sewers where radioactive waste is processed and then buried and/or reprocessed into workable fuel.
+
+If you've drank at least a cup of this water, please see a Medicae, be it Servitor or Human. And yes, if you are apart of the PDF of House Lobby or House Bellum, you should be sticking to your rationed waters given to you by both the Emperor and the Administratum. STOP DRINKING THE RADIOACTIVE WATER.
+
+This has been your Public Service Announcement by the Chacalus Branch of the Administratum.`
+            },
+          {
+                title: `Lexos Primaris`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `Our Remembrancers on Lexos Primaris send word of the past week fighting on the planet surface, where the war has taken a grim and unexpected turn. The Imperial Guard, already stretched thin defending the approaches to the hive, now find themselves locked in close-quarters fighting against the planet own civilian population, infected by the unique tyranid strain and turned against the very soldiers sent to protect them. Officers on the ground describe the fighting as some of the most difficult of the campaign, not for lack of courage, but for the terrible necessity of it.
+
+Above this grim struggle, a far greater spectacle. Two Imperial Knights, committed in support of the beleaguered Guard lines, have engaged a xenos Titan of a kind not before catalogued by the Adeptus Mechanicus, a monstrous bio construct towering over the ruined streets it fights among. Our Remembrancer reports that the duel between these titanic forces has drawn the eyes of every soldier who can spare a glance skyward, the clash of adamantium and chitin audible for kilometres in every direction.
+
+The sight of the two Knights standing against the creature is one our Remembrancer struggles to put into words, equal parts terror and inspiration. Both have taken grievous damage in the exchange, their void shields long since failed and their hulls scarred by the beast’s claws, yet as the battle stands, our Remembrancer believes victory remains within their grasp. Whether that courage will be enough to turn the tide on Lexos Primaris remains to be seen.
+
+Stay tuned for next week’s report to learn how the battle ends, and remember the Guardsmen and Knight pilots of Lexos Primaris in your prayers this week.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
