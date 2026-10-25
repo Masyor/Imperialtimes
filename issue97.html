@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>This is getting out of hand, now there are two of them?</span>
+            <span>Issue #97</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `RED WINGS CRUSH SPIDERS IN 6–1 ROUT!`,
+                author: `akatoad`,
+                type: `feature`,
+                content: `The Detreson Red Wings continued their impressive campaign last night, dismantling the visiting Necromunda Spiders 6–1 in a contest that quickly turned from a hockey game into a battle of attrition.
+
+Necromunda opened the scoring just four minutes into the first period, capitalizing on a defensive turnover to silence the home crowd. Their celebration would prove short-lived. Wings captain Viktor Halbrecht equalized less than three minutes later, beginning what would become a spectacular three-goal performance.
+
+The second period belonged entirely to Detreson. Forwards Sergei Volkov and Pavel Datsin combined for a dazzling display of passing, contributing to three unanswered goals as the Wings seized a commanding 4–1 lead. Necromunda attempted to regain control through increasingly aggressive physical play, culminating in a vicious open-ice collision that sent Detreson defenseman Marcus Kronvall crashing into the boards.
+
+The Spiders' aggression proved costly. Two third-period penalties gave Detreson the opportunity to extend their lead, with Halbrecht completing his hat trick on the power play. The captain's third goal brought a shower of ceremonial headwear raining down from the stands, much to the bewilderment of visiting Necromundan supporters.
+
+Goaltender Mikhail Voss turned aside 31 of 32 shots, preserving the commanding victory despite sustained pressure from the Spiders late in the contest.`
+            },
+            {
+                title: `Sisters of Battle Establishes Shrine in Ignatia By Request of House Ignatius`,
+                author: `widder7827`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `Sisters of Battle, with no real dedicated order, have been invited to establish a shrine in the city of Ignatia on the world of Chacalus by invitation of the Ignatius House. The Leviathans, a Space Marine chapter, have warned Ignatius that perhaps they're starting to push their authority and the boundaries of the Lex. Naturally the Ignatius spokespeople have said that they are doing all things legally.
+
+The Sisters of Battle, officially making themselves known as the 'Sisters of St. Orayo' will be expanding the shrine slowly and currently already doing humanitarian work across the entire world. Their priority is the current conflict in Corvus City, with many squadrons of Hospitallers and Battle Sisters already establishing medical posts for civilians who are starting to lose jobs due to the sudden bombardment of House Loddy and House Bellum.
+
+Leviathan Chapter Master, Patricus Dives, has said that the Sister of Battle's appearance in Corvus is causing some issues and questions of jursidiction, but he also mentions that his goal of defending Corvus with the 2nd Company and Corvus PDF will still be in process.
+
+There has been a reported death toll of 302 Civilians lost, with 30~ PDF deaths. By work of the Emperor, the Sisters of Battle may prevent further death in Corvus.`
+            },
+          {
+                title: `In the Cursed Mud`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `Guardsmen from the Valhallan infantry 68th, Cadian 23rd armored, and 4712th Armageddon mechanized have pressed T'au auxiliaries into service out of pure desperation. The forces of chaos hold sway over a site where millennia ago several pieces of archaeotech had been lost. The imperial guard had been gaining ground and almost reached the dig site when a flank attack by the treacherous Xenos waylaid them. After 6 months spent clearing out dens of infiltrators from the hated T'au, the guard returned to their offensive march. Warp sorcery was used to slow the advance of the venerable guardsmen, but that only stalled these brave heroes of the imperium. It wasn't until four heretic titans began roaming the battlefield that the regiments were significantly reduced and forced to pause their advance. Due to heavy casualties, human T'au auxiliaries were pressed into service as penals in the hope that more manpower could solve the issue. It even worked, to a limited degree, as one of the titans has been destroyed at time of writing. Stay vigilant, the emperor protects, keep an eye out for the next part of the fight.`
+            },
+            {
+                title: `Revolt in Ghant Crushed; Departamento Exacta Reports`,
+                author: `advictorian6505`,
+                type: `mid`,
+                content: `The Civilized World of Ghant, after an uprising caused by false claims of overtaxation by the Adeptus Administratum’s Departamento Exacta, has been brought back under Imperial rule. Ghant had noticeable commercial trades within the system, including the currently rebelling world of Artesian V, matter for which the scribes of the Departamento saw fit to raise their tithes to counterbalance the difficulties in currently extracting the totality of Artesian V’s tithe and the requirements of the wider Imperium.
+
+Despite offering alternative forms of payment - Primarily in undesirables for various uses, mainly the Imperial Guard - the Governor and his council were reluctant to hand over the materiel and processed ore demanded of them after stating they had none to offer, despite clear evidence in the Departamento’s own records that the Governor was withholding the Emperor’s resources from his Administratum. When contact with the planet was lost, the Departamento Exacta raised the Semtexia 6th from the nearby planet of Artesian V, in which the Regiment was reinforcing their numbers with volunteers, Guardsmen of other dissolved Regiments and off-world reinforcements to bring back order to Ghant.
+
+A few months later, the Semtexia 6th landed on the planet with orbital and Aeronautica support, though it proved unnecessary. After communications were lost, the Governor and members of his council were persecuted and killed by rebels after having supposedly told the truth of the material situation of the planet. A total of 400 identified “leaders” were executed as a show of force, and another twelve-hundred members and their next of kin were Servitorized for threatening Imperial stability. The Departamento Exacta has yet to find the materiel they had come for.`
+            },
+          {
+                title: `The Empty Skies`,
+                author: `nyxgrid`,
+                type: `feature`,
+                content: `The skies became silent, too silent. For days the assault on the Hive was in full-effect, the skies filled with T'au aircraft as the Imperials fought inch by bloody inch for aerial superiority in hopes of gaining enough of an advantage to break out of the siege but the advancement of T'au technology when it came to aircraft was superior to those of what the PDF and defensive regiments had on hand.
+
+Then the sky roared, blue liveried strike-aircraft of unknown origin roared as they chased down the fleeing T'au aircraft, their pilots far more skilled than whatever the Xenos had to offer, then it became apparent, the white sigil of Ultramarines on one of the wings, as it flew over the defenders. 
+
+As fast as the skies opened in roars so they closed once more, the silence once again filling the air, but the hope and will now renewed, with their allies of the Adeptus Astartes, the defenders knew, it was just a matter of time before they would be free from the Xenos threat.`
+            },
+          {
+                title: `Continuing Conflict, ending threat?`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `Since the successful coastal invasion of the Imperial Guard, the liberation and fight of Veltis continues another day, with new regiments dedicated to the fight while the old ones take their leave for a well deserved rest and muster of new strength. We and the citizen population of Veltis thank their sacrifice and fighting that they gave for the sake of our planet and people.
+
+Many new Astra Militarum regiments have been dedicated to this fight, amongst them even members of the ecclesiarchy and unconfirmed reports of sightings of the Emperor's Angel's have also reached us, though no actionable report has been submitted as of yet, but if His will wants us to know that it was the work of His Angel's, then we will find out with eventuality.
+
+A member of the Order of Remembrancers has recently joined the 1st Mordian Iron Guard and the 8th Verlosian in liberation of a front in the preparation of a new and united campaign. Given the name "Operation Oranje" the mission was successful despite loses, current reports have a tally of 42 Verlosian and 67 Mordian soldiers wounded in duty, many of which have returned to serve once, the tally of the dead has not yet been submitted out of respect to the families of the fallen, the traitors have suffered extensive damage and death, with over 5 thousand reported casualties and an extensive number of captured ones.`
+            },
+          {
+                title: `Hive City Seracluse On Lockdown`,
+                author: `zeeenz`,
+                type: `feature`,
+                content: `After numerous cascading issues residing within habitation block 337.A, Planetary Governor Hendritchais has placed the spaceport and wider Hive City on lockdown, the reasoning for this lockdown is currently unknown, however, what is known is that prior to the lockdown a myriad of technological issues which resulted in numerous adeptus mechanicus priests being sent into the habitation blocks. Soon after, a flurry of planetary guards and Arbites were seen entering the block after reports surfaced that the priests vanished. While the Hive city is within our thoughts and prayers, many within the sister colony have reported that at night an alarming glow can be seen in the direction of Seracluse.`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
