@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I have literally no idea what to do with issue 100</span>
+            <span>Issue #98</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `Mistaken Orders Lead to Victory - Soldiers Unused to “Retreat”`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `The rebels of Artesian V show no signs of surrendering to the Emperor's mercy as their elite armored units broke through Imperial lines in a counterattack in snowstorm conditions that nullified Imperial Aeronautica assets and interfered with Vox communications, threatened to capture supplies and hard-fought ground gained almost a year ago, and was defeated in a week - Thanks to the intervention of “Faith" Company of the 99th Antari Rifles.
+
+When the offensive started, many companies of the 99th Rifles who’d been positioned as pickets had been bypassed by the rebels through pre-set corridors through forests or on the road, leaving them surrounded and with little possibility of stopping the mechanized assault. Realizing this, Faith Company and its sister companies began making for Imperial lines on their own initiative, with guidance by the Regimental Voxman.
+
+During this disorderly retreat, a final set of instructions for a retreat into an organized defensive position was heard and misunderstood due to interference as an order to defend their front, something which they took to swiftly. After letting the spearhead pass through, the company moved silently behind enemy lines, battling enemy patrols and transports, mining roads and sabotaging supplies, diverting enemy attention from the breakthrough.
+ 
+ On the fourth day, with the skies clearing and their advantage slipping away, the rebels concentrated a Regiment’s worth of assets (infantry, armor and command staff) to hunt down Faith Company - For much of the day, the company was locked in a fierce struggle as they fought to repeatedly escape being surrounded and the rebels, to keep them with no option but to fight. When the sky cleared and communications were re-established, the ragged company requested multiple Marauder strikes on the enemy, a request that was upgraded to an orbital bombardment to cripple the enemy. The Company’s final task was to hold their attention long enough for the ships to begin their strike.
+
+The enemy force, including hundreds of vehicles and several officers key to the attack were all destroyed alongside twenty square kilometers of ground. All but two of Faith Company were martyred (one Corporal and a wounded Private). Their sacrifice has earned the entire company the Medusan Laurel in recognition of their valour and adherence to the Uplifting Primer: That one must sell his life dearly.
+
+To the martyrs of Faith Company,
+
+The Emperor protects.`
+            },
+            {
+                title: `The Descent of Blue`,
+                author: `nyxgrid`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `The silence did not last. Within the hour, the vox transmiters crackled to life across the Hive’s defensive lines, and a voice, calm and unhurried, spoke words few of the defenders had ever heard from a living Space Marine “Hold your ground. We are coming down.”
+
+Then the drop pods fell. Streaks of fire tore through the smoke choked clouds, slamming into the T’au siege lines with the force of thunderbolts. Where the pods struck, the earth split and the Xenos formations broke. Gun drones scattered, and Fire Warriors who had spent weeks advancing behind their battlesuits found themselves facing towering warriors in blue, bolters roaring, their advance now a slaughter.
+
+From the ramparts, the weary PDF watched in stunned silence. Men who had not slept in days wept openly, some falling to their knees, others hammering their fists against the cold ferrocrete in a hoarse, ragged cheer. The Emperor had not forgotten them.
+
+By nightfall the T’au siege lines lay in ruin, and the Ultramarines pressed on through the wreckage with the methodical certainty of a machine. They did not boast and did not rest. Their Captain stood at the gates of the Hive, helm tucked beneath his arm, looking out over the burning plain as the last Xenos aircraft fell from the sky.
+
+“The skies are ours. Now we take the ground.” `
+            },
+          {
+                title: `Rediscovered Recipe`,
+                author: `mourhurst`,
+                type: `mid`,
+                content: `Below is how to cook a rediscovered food item from Old Terra called disc cheese.
+
+Ingredients
+
+<ul>
+  <li>Wheat flour 250 g</li>
+  <li>Water 160 ml</li>
+  <li>Active dry yeast 4 g</li>
+  <li>Sodium chloride 5 g</li>
+  <li>Olea Subsp 15 ml</li>
+  <li>Solanum Lyxopersicum purée 100 g</li>
+  <li>Mozza 150 g</li>
+  <li>Dried Origanum Vilguris 2 g</li>
+</ul>
+
+Preparation
+
+<ol>
+  <li>Combine wheat flour, water, yeast, and sodium chloride in a sterile mixing vessel.</li>
+  <li>Introduce Olea Subsp and agitate until a homogeneous mixture develops.</li>
+  <li>Knead for approximately 8–10 minutes to promote glutenin and gliadin interactions.</li>
+  <li>Maintain the resulting biological substrate under controlled conditions at approximately 25–28°C for 60–90 minutes.</li>
+  <li>Mechanically flatten the fermented substrate into a circular configuration.</li>
+  <li>Apply Solanum Lyxopersicum purée uniformly across the upper surface.</li>
+  <li>Distribute the shredded Mozza in an approximately even spatial arrangement.</li>
+  <li>Introduce dried Origanum Vilguris to the surface.</li>
+  <li>Preheat a conventional thermal chamber to 230°C.</li>
+  <li>Position the prepared specimen on a suitable baking surface.</li>
+  <li>Apply thermal energy for approximately 12–15 minutes.</li>
+  <li>Remove when the external carbohydrate matrix exhibits golden-brown colouration and the dairy component achieves complete thermal melting.</li>
+</ol>`
+            },
+            {
+                title: `Strange Times`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `These are strange times indeed. Beastmen roam the streets where we once saw our neighbors, witches have replaced our priests, and the dead have crawled out of their graves to drag the living into them.
+
+In such times, one would think that prayer to the emperor and the deployment of staunch imperial guardsmen would be necessary. However, a simpler solution has been found. It is enough to offer these abominations sweet confections of sugar and chocolate, or at the very least some variety of sweet treats. You may also use a hollowed out gourd carved with an effing and lit with a candle as a small shrine to ward away their evil, and render their souls gentle for a time.
+
+Stay safe in these trying times, the emperor protects.`
+            },
+          {
+                title: `The Quiet Between Stars`,
+                author: `bot_valley`,
+                type: `feature`,
+                content: `Few speak of the void born, those who live and die between worlds and never feel soil beneath their feet. A ships deck hand will tell you the stars are only lamps hung for the convenience of navigators. The Navigator, if you could coax a word from behind that third eye, would say the stars are a wound, and that he has looked inside it.
+
+The Chaplain of the voidship Merciful Silence keeps a different count. He says every vessel is a cathedral with the roof removed, and every crewman a candle that has agreed to burn. When asked what happens when the candles gutter, he points at the dark and says only* “Then we are the light.”
+
+For His Glory on Terra.`
+            },
+          {
+                title: `Quote of the Week`,
+                author: `captaincookie1389`,
+                type: `feature`,
+                content: `"What's a regiment?"
+                
+                <i>Documented words of General Portbelly upon being told he is to take command of the PDF for their first ever battle</i>`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
