@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imperial Times - Administratum Archive</title>
+    <link rel="stylesheet" href="news3.css">
+</head>
+<body>
+
+    <div class="parchment">
+        <header class="masthead">
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+    <h1>THE IMPERIAL TIMES</h1>
+    <div class="aquila-box">
+        <img src="https://raw.githubusercontent.com/Masyor/Imperialtimes/main/Aquila.png" 
+             alt="Aquila" class="title-image" crossorigin="anonymous">
+    </div>
+</header>
+
+        <div class="data-bar">
+            <span>I still have literally no idea what to do with issue 100</span>
+            <span>Issue #99</span>
+        </div>
+
+        <main class="news-grid" id="main-content"></main>
+    </div>
+
+    <button id="download-btn" onclick="downloadNewspaper()">
+        Archive for Administratum
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        /**
+         * type: 'feature' (3 col), 'mid' (2 col), 'standard' (1 col), 'sidebar' (box)
+                title: `TITLE`,
+                author: `name`,
+                type: `see above`,
+                image: `link`,
+                caption: `cap`,
+                content: `blah`
+         */
+        const issueData = [
+                                  {
+                title: `IRON GUARD HALTS RED WINGS' WINNING STREAK!`,
+                author: `akatoad`,
+                type: `feature`,
+                content: `The Detreson Red Wings suffered their first defeat of the season last night, falling 2–1 to the visiting Mordian Iron Guard in a masterclass of disciplined, fundamental hockey that left the home side frustrated and the crowd unusually silent.
+
+From the opening faceoff, Mordia demonstrated precisely why the Iron Guard have earned their formidable reputation. Their defensive lines remained impeccably organized, their passing crisp, and their positioning nearly flawless. Detreson's usually explosive offense found itself repeatedly forced toward the boards, with shooting lanes closing almost as quickly as they appeared.
+
+The Iron Guard opened the scoring midway through the first period with a textbook offensive sequence: a clean zone entry, two precise passes, and a perfectly placed wrist shot past goaltender Mikhail Voss. Detreson equalized early in the second when Lukas Veyr capitalized on a rare defensive lapse, but Mordia responded before the intermission with another clinical goal following a faceoff victory.
+
+The third period saw Detreson throw everything at the visitors. Captain Viktor Halbrecht led several promising attacks, while Sergei Volkov and Pavel Datsin attempted to break through Mordia's rigid defensive structure. Yet the Iron Guard refused to abandon their system, blocking shots, winning faceoffs, and clearing the puck with almost mechanical precision.
+
+Even with Voss pulled for an extra attacker in the final minute, Detreson could find no opening. The final horn sounded with Mordia's defensive formation intact and the Red Wings' unbeaten record shattered.`
+            },
+            {
+                title: `Feudal World Rediscovered, Warrior-King Continues Personal Crusade!`,
+                author: `widder7827`,
+                type: `sidebar`,
+                rowSpan: 2,
+                content: `The Feudal World of Camryle has been rediscovered by the Imperium, what was once a lost Feudal World which gave their tithes as food was suddenly cut off from the wider Imperium as a possessed King took control of the world. His 'Yellow Shields', of which was his personal retinue and backwards guard, took control over the world for several years until the arrival of the Astral Knight.
+
+The Astral Knight spent nine years on Camryle liberating the planet and is considered a heretic slaughterer amongst the people, and eventually became their Warrior-King. However, the Astral Knight when rediscovered by the Imperium several years after the liberation was forced to give up his throne for 'better qualified nobles.'
+
+Camryle stands tall and is producing tithes once more, while the Astral Knight is now continuing his personal crusade against heretics and xenos!`
+            },
+          {
+                title: `GANG WAR RAVAGES CITY`,
+                author: `end_of_a_leg`,
+                type: `mid`,
+                content: `The city of Monte Romagna was rocked by the detonation of a high yield explosive device at the Tiberi docks. This was closely followed by the assassination by stabbing of six local crime bosses. Nobody has yet been identified as the instigator behind the bombing or the killings. Since the killings, the city has been engulfed in gang fighting closely resembling a civil war. Neutral ground has long been abandoned and businesses that paid protection to gangs have come under attack. As a result, many shops have been forced to close as families have fled for the countryside. Casualties have escalated into the thousands as Arbites patrols were sent to screen the exodus of civilians for any trace of cultist or Xenos activity. The gangs have wisely decided not to target the enforcers of the Lex Imperialis. Pressure mounts on the planetary governor to send in the PDF in order to quell the unrest, but the governor could not be reached for comment. As casualties mount and the city becomes even more of a ruin, many citizens are asking when law will be restored. As a result, individuals with ties to the Ecclesiarchy and Administratum have created a private organization known as the "Civil Defense League" in order to rescue trapped families. The city itself, and its thousand cultural marvels, are left to ruin as nobody seems interested in ending the war decisively and putting a stop to the gangs.`
+            },
+            {
+                title: `Imperial Compliance`,
+                author: `bot_valley`,
+                type: `mid`,
+                content: `After being discovered, a whole new sector of planets came into Imperial compliance, the sector capital coming into His light within days of the arrival of the representation sent by the most holy Ecclesiarchy. Though not all were ready to receive his light, uprisings throughout the system were squashed by the regiments of Astra Militarum and their superior training, the heretics who rejected His light standing no chance against them.
+
+Solutio Extremis was the grade given to the capital due to their assistance in securing compliance from their fellow sector-men. Multiple planets have been identified as a valuable resource and have been assigned to various factions of the Imperium, soon a forge-world belonging to the Adeptus Mechanicus will rise to provide its service to the Imperium, several death-worlds have been also identified as a prime source for the Astra Militarum. `
+            },
+          {
+                title: `Concern over Servitors`,
+                author: `mourhurst`,
+                type: `feature`,
+                content: `Below is an excerpt from Cardinal Caliber’s concerns surrounding the creation of servitors.
+
+Our Imperium relies heavily upon servitors to maintain its vast territories. These lobotomized humans, stripped of their free will and remade into obedient instruments of the Imperium, perform countless tasks, from maintaining sacred machinery to serving upon the battlefield. Their usefulness cannot be understated, nor can their necessity be reasonably questioned in an age where humanity is beset on all sides by heretics, xenos, and the Ruinous Powers. A servitor does not question its orders, succumb to temptation, or entertain notions of rebellion against the God-Emperor. Yet, while their existence may be justified by necessity, the manner in which they are procured remains a matter of grave concern.
+
+The process of creating servitors is afforded far too little oversight, with certain members of the Adeptus Mechanicus seemingly regarding the common citizen as little more than spare material for their sacred machines. Though it is claimed that condemned criminals and vatborn are the primary sources of such conversion, there are troubling accounts of innocent Imperial citizens being abducted and subjected to the procedure without trial, sentence, or even the knowledge of their families. Such practices cannot be permitted to continue unchecked. The Machine Cult must be reminded that its privileges and ancient traditions do not supersede Imperial law, nor does the sanctity of its machinery grant it dominion over the Emperor’s faithful.
+
+Let it be understood that I do not advocate the abolition of servitors, for such a proposition would be both foolish and detrimental to the continued survival of mankind. Rather, I advocate regulation, accountability, and proper Imperial oversight. Servitorization ought to remain a sentence for those whose crimes warrant such a fate, not a convenient means of acquiring labor for the Mechanicus.
+
+End of excerpt.`
+            },
+          {
+                title: `Kizlev in Flames; Policing Action Becomes War in The Underhive`,
+                author: `advictorian6505`,
+                type: `feature`,
+                content: `After one gang’s attempts to increase their control of the underhive in the hivecity of Kizlev failed in a suprising fashion, the Planetary Defense Force was called into action to crush them with tanks and artillery.
+
+The gang, identified as “The Pack", initially performed a surprise attack on an Enforcer Precinct-Fortress with the intention of taking much of their equipment and destroying what couldn't be taken. Though managing to maul the garrisoning Enforcers and destroying several of their airborne transports, the criminals were forced to flee by the arrival of reinforcements from neighbouring Enforcer watch-houses.
+
+Looking in vain to delay an inevitable assault, The Pack took multiple hab-zones and systematically detained any within them to act as hostages with which to negotiate. The Enforcers, under orders to limit losses to the Governor’s workforce (and profits), entertained these negotiations.
+
+Despite failing to reach a settlement, the criminals had soon released (or had lost) all but a few hundred hostages, before finally announcing their intent to pass through to a zone more amenable to them. Unbeknownst to either, elite elements of the PDF had been mobilized to capture or kill the gang as it traveled in cars and trucks. The ambush failed, and they took refuge in another hab-zone.
+ 
+With the only opportunity to end the upstarts swiftly lost, the matter became the PDF’s problem now. Tanks, airborne transports, artillery and other AFVs were massed alongside a Regiment’s worth of troops to painstakingly clear each street, hab-block and tunnel network of The Pack’s hands. 
+
+Only now, three months after the start of the crisis and after thousands of losses in both PDF, inhabitants and gang members, has the hab-zone been cleared. Having been effectively razed, any surviving inhabitants have their future uncertain as they rebuild their lives.`
+            },
+          {
+                title: `The Breaking of the Line`,
+                author: `nyxgrid`,
+                type: `feature`,
+                content: `Dawn came grey and slow over the Hive, and with it came the Ultramarines advance. The T’au had fallen back during the night, abandoning their forward trenches and leaving behind burntout Devilfish, shattered drones and a few Fire Warriors who had not been quick enough to run. The Astartes walked through all of it without slowing, boots crunching over brokenceramite and scorched earth.
+
+The Captain split his force in three. One squad held the gates, another moved along the eastern flank where the PDF had lost most of their artillery, and the third went straight down the central road toward the T’au second line. There were no speeches before they moved. The Captain gave a handful of orders over the vox, short and flat, and the Ultramarines went to work.
+
+The T’au did not make it easy. suits rose from behind the ridge as the SpaceMarines closed, their burst cannons spitting streams of fire down the road, and for the first time since the drop pods landed, a blue armoured warrior fell. A Sergeant took a plasma round to the chest and went down hard, and the squad behind him did not stop to look. They kept advancing, bolters hammering, until the first suit buckled and the second turned to run.
+
+On the wall, an old PDF colonel watched through a cracked pair of manoculars. He had been in the army for thirty years and had never seen anything move like that. “They don’t break” he said quietly, to no one in particular. “They just keep coming.”`
+            }
+        ];
+
+        function renderNewspaper() {
+        const container = document.getElementById('main-content');
+        container.innerHTML = '';
+
+        issueData.forEach(story => {
+            const article = document.createElement('article');
+            
+            // USE THE VARIABLE: If rowSpan exists, use it. Otherwise, default to 1.
+            const spanClass = story.rowSpan ? `span-v-${story.rowSpan}` : '';
+            article.className = `story ${story.type} ${spanClass}`;
+
+            const len = story.title.length;
+            let hSize;
+            if (story.type === 'feature') hSize = len > 25 ? '38px' : '52px';
+            else if (story.type === 'mid') hSize = len > 20 ? '28px' : '38px';
+            else hSize = '24px';
+
+            const paragraphs = story.content.split(/\n+/).filter(p => p.trim() !== '');
+            const formattedContent = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+
+            article.innerHTML = `
+                <h2 style="font-size: ${hSize}">${story.title}</h2>
+                <span class="byline">From: ${story.author}</span>
+                <div class="content">
+                    ${story.image ? `<figure class="article-image"><img src="${story.image}"></figure>` : ''}
+                    ${formattedContent}
+                </div>
+            `;
+            container.appendChild(article);
+        });
+
+        applyOrkJitter();
+    }
+
+        function applyOrkJitter() {
+            document.querySelectorAll('.ork-writing').forEach(block => {
+                const words = block.innerText.split(/\s+/);
+                block.innerHTML = words.map(word => {
+                    const rot = (Math.random() * 6 - 3).toFixed(2);
+                    return `<span style="display:inline-block; transform:rotate(${rot}deg); margin-right:5px;">${word}</span>`;
+                }).join('');
+            });
+        }
+
+        function downloadNewspaper() {
+            const btn = document.getElementById('download-btn');
+            const paper = document.querySelector('.parchment');
+            btn.style.display = 'none';
+
+            html2canvas(paper, {
+                backgroundColor: "#080808",
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Imperial-Times.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                btn.style.display = 'block';
+            });
+        }
+
+        window.onload = renderNewspaper;
+    </script>
+</body>
+</html>
